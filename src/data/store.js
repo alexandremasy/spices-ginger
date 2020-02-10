@@ -17,14 +17,14 @@ const actions = {
   },
 
   setRoutes({commit}, routes){
-    commit('setRoutes', routes);
+    commit('addRoutes', routes);
   }
 }
 
 // mutations
 const mutations = {
-  setRoutes( state, routes) {
-    state.routes = routes;
+  addRoutes( state, routes) {
+    state.routes = state.routes.concat(routes);
   },
 
   addModule( state, module ){
