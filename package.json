@@ -1,0 +1,17 @@
+{
+  "name": "@spices/ginger",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/spices-ginger.js",
+  "module": "src/index.js",
+  "scripts": {
+    "bundle:lib": "webpack"
+  },
+  "keywords": [],
+  "author": "Alexandre Masy <hello@alexandremasy.com",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
