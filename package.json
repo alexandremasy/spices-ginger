@@ -1,21 +1,21 @@
 {
-  "author": "Alexandre Masy <hello@alexandremasy.com",
-  "description": "",
-  "devDependencies": {
-      "webpack": "^4.41.5",
-      "webpack-cli": "^3.3.10"
-  },
-  "keywords": [],
-  "license": "UNLICENSED",
-  "main": "dist/spices-ginger.js",
-  "module": "src/index.js",
-  "name": "@spices/ginger",
-  "publishConfig": {
-      "access": "public",
-      "registry": "https://npm.infinity-commerce.io/"
-  },
-  "scripts": {
-      "bundle": "webpack"
-  },
-  "version": "0.0.1"
+    "author": "Alexandre Masy <hello@alexandremasy.com",
+    "description": "",
+    "devDependencies": {
+        "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10"
+    },
+    "keywords": [],
+    "license": "UNLICENSED",
+    "main": "dist/spices-ginger.js",
+    "module": "src/index.js",
+    "name": "@spices/ginger",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://npm.infinity-commerce.io/"
+    },
+    "scripts": {
+        "bundle": "webpack"
+    },
+    "version": "0.0.2"
 }
