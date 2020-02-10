@@ -5,8 +5,8 @@ module.exports = {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'spices-cayenne.js',
-    library: 'spices-cayenne',
+    filename: 'spices-ginger.js',
+    library: 'spices-ginger',
     libraryTarget: 'umd'
   }
 };
