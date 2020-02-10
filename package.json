@@ -5,7 +5,7 @@
   "main": "dist/spices-ginger.js",
   "module": "src/index.js",
   "scripts": {
-    "bundle:lib": "webpack"
+    "bundle": "webpack"
   },
   "keywords": [],
   "author": "Alexandre Masy <hello@alexandremasy.com",
