@@ -1,6 +1,7 @@
 import Ginger from './ginger'
 
-Ginger.install = function(Vue, opts){
+const VueGinger = {};
+VueGinger.install = function(Vue, opts){
   if (!Vue.spices){
     Vue.spices = {}
   }
@@ -14,4 +15,7 @@ Ginger.install = function(Vue, opts){
   });
 }
 
-export default Ginger
+export {
+  Ginger,
+  VueGinger
+}
