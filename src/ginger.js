@@ -42,7 +42,8 @@ class Ginger{
    */
   register({fqn, url, ...options}){
     return new Promise((resolve, reject) => {
-      let module = this.modules[fqn] = new GingerModule({fqn, url, options})
+      let module = this.modules[fqn] = new GingerModule({fqn, url, options});
+      console.log(module);
       module.init({http: this.http})
       .then(() => {
         // module routes
@@ -55,9 +56,10 @@ class Ginger{
         // module stores
         if (module.stores){
           module.stores.forEach(store => {
-            this.store.registerModule(module.fqn, store);
+            this.store.registerModule([fqn, store.name].join('.'), store);
           });
         }
+
         console.group('@spices/ginger', module.fqn);
         console.log('%d store(s)', Object.keys(module.stores).length);
         console.log('%d route(s)', r.length);
@@ -88,12 +90,7 @@ class Ginger{
    */
   _configure({config}){
     return new Promise((resolve, reject) => {
-      if (typeof config == 'Array'){
-        this.config = config;
-        console.log('Ginger configured: %d module active(s)', this.actives.length);
-        resolve(this.config);
-      }
-      else{
+      if (typeof config === 'string'){
         getConfig({http: this.http, url: config})
         .then((config) => {
           this.config = config;
@@ -103,6 +100,11 @@ class Ginger{
         .catch((error) => {
           reject(error);
         });
+      }
+      else{
+        this.config = config;
+        console.log('Ginger configured: %d module active(s)', this.actives.length);
+        resolve(this.config);
       }
     })
   }
