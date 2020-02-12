@@ -2,9 +2,10 @@ import GingerModule from './module'
 import GingerStore from './data/store'
 
 class Ginger{
-  constructor({config, http, router, store}){
-    this.http = http;
+  constructor({config, eventbus, http, router, store}){
     this.config = null;
+    this.eventbus = eventbus;
+    this.http = http;
     this.router = router;
     this.store = store;
     this.modules = [];

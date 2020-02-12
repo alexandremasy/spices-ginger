@@ -1,7 +1,8 @@
 import fetchModule from './utils/fetch-module'
 
 class GingerModule{
-  constructor({fqn, url, options}){
+  constructor({eventbus, fqn, url, options}){
+    this._eventbus = eventbus;
     this._fqn = fqn;
     this._url = url;
     this._options = options;
@@ -52,7 +53,6 @@ class GingerModule{
 
       if (typeof this.url === 'function'){
         let module = this.url();
-        console.log(module);
         this._initModule({http, module});
         resolve();
       }
@@ -69,7 +69,7 @@ class GingerModule{
   _initModule({module, http}) {
     this._bundle = module.default;
     try {
-      this._bundle.install({ config: this._options, fqn: this.fqn, http });
+      this._bundle.install({ eventbus: this._eventbus, config: this._options, fqn: this.fqn, http });
     } catch (e) {
       console.log('install module error');
       console.log(e);
