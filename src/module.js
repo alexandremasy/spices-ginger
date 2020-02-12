@@ -33,7 +33,7 @@ class GingerModule{
 
   get routes(){
     let ret = this._bundle && this._bundle.routes ? this._bundle.routes : null;
-    if (this._options.router.prefix){
+    if (this._options && this._options.router && this._options.router.prefix){
       ret = ret.map(route => {
         route.path = this._options.router.prefix + route.path;
         return route;
@@ -49,21 +49,35 @@ class GingerModule{
 
   init({http}){
     return new Promise((resolve, reject) => {
-      fetchModule(this.url).then(module => {
-        this._bundle = module.default;
 
-        try {
-          this._bundle.install({config: this._options, fqn: this.fqn, http});
-        } catch (e) {
-          console.log('install module error');
-          console.log(e);
-        }
-
-        this._loaded = true;
+      if (typeof this.url === 'function'){
+        let module = this.url();
+        console.log(module);
+        this._initModule({http, module});
         resolve();
-      })
+      }
+
+      if (typeof this.url === 'string'){
+        fetchModule(this.url).then(module => {
+          this._initModule({http, module});
+          resolve();
+        })
+      }
     });
   }
+
+  _initModule({module, http}) {
+    this._bundle = module.default;
+    try {
+      this._bundle.install({ config: this._options, fqn: this.fqn, http });
+    } catch (e) {
+      console.log('install module error');
+      console.log(e);
+    }
+
+    this._loaded = true;
+  }
 }
+
 
 export default GingerModule
