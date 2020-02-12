@@ -32,7 +32,15 @@ class GingerModule{
   }
 
   get routes(){
-    return this._bundle && this._bundle.routes ? this._bundle.routes : null;
+    let ret = this._bundle && this._bundle.routes ? this._bundle.routes : null;
+    if (this._options.router.prefix){
+      ret = ret.map(route => {
+        route.path = this._options.router.prefix + route.path;
+        return route;
+      })
+    }
+
+    return ret;
   }
 
   get stores(){

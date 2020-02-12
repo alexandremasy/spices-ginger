@@ -43,11 +43,11 @@ class Ginger{
   register({fqn, url, ...options}){
     return new Promise((resolve, reject) => {
       let module = this.modules[fqn] = new GingerModule({fqn, url, options});
-      console.log(module);
       module.init({http: this.http})
       .then(() => {
         // module routes
         let r = module.routes;
+        
         if (r){
           this.store.dispatch('ginger/setRoutes', r);
           this.router.addRoutes(r);
@@ -94,7 +94,7 @@ class Ginger{
         getConfig({http: this.http, url: config})
         .then((config) => {
           this.config = config;
-          console.log('Ginger configured: %d module active(s)', this.actives.length);
+          // console.log('Ginger configured: %d module active(s)', this.actives.length);
           resolve(this.config);
         })
         .catch((error) => {
@@ -103,7 +103,7 @@ class Ginger{
       }
       else{
         this.config = config;
-        console.log('Ginger configured: %d module active(s)', this.actives.length);
+        // console.log('Ginger configured: %d module active(s)', this.actives.length);
         resolve(this.config);
       }
     })
