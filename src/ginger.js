@@ -50,12 +50,13 @@ class Ginger{
    * @param  {String} url     The url to load the module
    * @param  {object} options A configuration object.
    */
-  register({fqn, url, ...options}){
+  register({fqn, url, options}){
     return new Promise((resolve, reject) => {
       let opts = {
         eventbus: this.eventbus,
         dispatch: this.store.dispatch,
         fqn: fqn,
+        ginger: this,
         http: this.http,
         url: url,
         options: options

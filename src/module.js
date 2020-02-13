@@ -7,14 +7,16 @@ class GingerModule {
    * @param {Function} dispatch 
    * @param {Vue} eventbus 
    * @param {String} fqn 
+   * @param {Ginger} ginger 
    * @param {Axios} http 
    * @param {String} url 
    * @param {Object} options 
    */
-  constructor({ dispatch, eventbus, fqn, http, url, options }){
+  constructor({ dispatch, eventbus, fqn, ginger, http, url, options }){
     this._dispatch = dispatch;
     this._eventbus = eventbus;
     this._fqn = fqn;
+    this._ginger = ginger;
     this._http = http;
     this._url = url;
     this._options = options;
@@ -112,6 +114,7 @@ class GingerModule {
         dispatch: this._dispatch,
         eventbus: this._eventbus, 
         fqn: this.fqn, 
+        ginger: this._ginger,
         http: this._http
       });
     } catch (e) {
