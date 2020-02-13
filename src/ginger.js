@@ -36,6 +36,15 @@ class Ginger{
   }
 
   /**
+   * Return a module based on its fqn
+   * @param {String} fqn 
+   * @return {GingerModule}
+   */
+  get(fqn){
+    return fqn in this.modules ? this.modules[fqn] : null;
+  }
+
+  /**
    * Register a module
    * @param  {String} fqn     The unique identifier of the module
    * @param  {String} url     The url to load the module
@@ -43,32 +52,40 @@ class Ginger{
    */
   register({fqn, url, ...options}){
     return new Promise((resolve, reject) => {
-      let module = this.modules[fqn] = new GingerModule({fqn, url, options});
-      module.init({http: this.http})
-      .then(() => {
-        // module routes
-        let r = module.routes;
-        
-        if (r){
-          this.store.dispatch('ginger/setRoutes', r);
-          this.router.addRoutes(r);
-        }
+      let opts = {
+        eventbus: this.eventbus,
+        dispatch: this.store.dispatch,
+        fqn: fqn,
+        http: this.http,
+        url: url,
+        options: options
+      };
+      let module = this.modules[fqn] = new GingerModule(opts);
 
-        // module stores
-        if (module.stores){
-          module.stores.forEach(store => {
-            this.store.registerModule([fqn, store.name].join('.'), store);
-          });
-        }
+      module.init()
+            .then(() => {
+              // module routes
+              let r = module.routes;
+              if (r){
+                this.store.dispatch('ginger/setRoutes', r);
+                this.router.addRoutes(r);
+              }
 
-        console.group('@spices/ginger', module.fqn);
-        console.log('%d store(s)', Object.keys(module.stores).length);
-        console.log('%d route(s)', r.length);
-        console.groupEnd('@spices/ginger', module.fqn);
+              // module stores
+              if (module.stores){
+                module.stores.forEach(store => {
+                  this.store.registerModule([fqn, store.name].join('.'), store);
+                });
+              }
 
-        // done
-        resolve();
-      });
+              console.group('@spices/ginger', module.fqn);
+              console.log('%d store(s)', Object.keys(module.stores).length);
+              console.log('%d route(s)', r.length);
+              console.groupEnd('@spices/ginger', module.fqn);
+
+              // done
+              resolve();
+            });
       this.store.dispatch('ginger/register', module);
     })
   }
@@ -79,7 +96,12 @@ class Ginger{
    */
   _init({config}){
     this._configure({config})
-    .then(() => { this._autoRegister() });
+    .then(() => { this._autoRegister() })
+    .then(() => {
+      if (this.eventbus){
+        this.eventbus.$emit('GINGER_COMPLETE')
+      }
+    })
   }
 
   /**
