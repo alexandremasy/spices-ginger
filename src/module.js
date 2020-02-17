@@ -101,6 +101,9 @@ class GingerModule {
           this._initModule(module);
           resolve();
         })
+        .catch(error => {
+          reject(error)
+        })
       }
     });
   }

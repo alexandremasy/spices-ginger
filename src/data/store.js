@@ -2,7 +2,8 @@
 // initial state
 const state = {
   routes: [],
-  modules: []
+  modules: [],
+  error: []
 }
 
 // getters
@@ -14,6 +15,10 @@ const getters = {
 const actions = {
   register({commit}, module){
     commit('addModule', module);
+  },
+
+  error({commit}, error){
+    commit('addError', error);
   },
 
   setRoutes({commit}, routes){
@@ -29,6 +34,10 @@ const mutations = {
 
   addModule( state, module ){
     state.modules.push(module);
+  },
+
+  addError( state, error ){
+    state.error.push(error);
   }
 }
 

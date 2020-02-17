@@ -86,7 +86,10 @@ class Ginger{
 
               // done
               resolve();
-            });
+            })
+            .catch(error => {
+              this.store.dispatch('ginger/error', error);
+            })
       this.store.dispatch('ginger/register', module);
     })
   }
