@@ -50,6 +50,13 @@ class Ginger{
    */
   register({fqn, url, options}){
     return new Promise((resolve, reject) => {
+      let cap = { ...this.capacities };
+
+      // Custom logger per module
+      if (this.capacities.logger){
+        cap.logger = this.capacities.logger.get({name: fqn});
+      }
+
       let opts = {
         capacities: this.capacities,
         fqn: fqn,
@@ -74,10 +81,10 @@ class Ginger{
                 });
               }
 
-              console.group('@spices/ginger', module.fqn);
-              console.log('%d store(s)', Object.keys(module.stores).length);
-              console.log('%d route(s)', r.length);
-              console.groupEnd('@spices/ginger', module.fqn);
+              this.capacities.logger.group('@spices/ginger', module.fqn);
+              this.capacities.logger.info(Object.keys(module.stores).length + ' store(s)');
+              this.capacities.logger.info(r.length + ' route(s)');
+              this.capacities.logger.groupEnd('@spices/ginger', module.fqn);
 
               // done
               resolve();
@@ -157,7 +164,7 @@ function getConfig({http, url}){
       }
     })
     .catch(error => {
-      console.error('getConfig', error);
+      this.capacities.logger.error('getConfig', error);
     })
   });
 }

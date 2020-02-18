@@ -12,7 +12,7 @@ VueGinger.install = function(Vue, opts){
   let capacities = new Capacities({
     eventbus: o.eventbus || null,
     http: o.http || null,
-    logger: null,
+    logger: o.logger || null,
     store: o.store || null,
     router: o.router || null,
   });
