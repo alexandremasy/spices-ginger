@@ -109,10 +109,8 @@ class GingerModule {
    */
   run({action}){
     let ret = null;
-    console.log('module run', action);
 
     try {
-      console.log(action in this._bundle);
       if (action in this._bundle){
         ret = this._bundle[action].call(this._bundle);
       }
