@@ -2,15 +2,13 @@ import GingerModule from './module'
 import GingerStore from './data/store'
 
 class Ginger{
-  constructor({config, eventbus, http, router, store}){
+  constructor({capacities, config}){
     this.config = null;
-    this.eventbus = eventbus;
-    this.http = http;
-    this.router = router;
-    this.store = store;
+    this.capacities = capacities;
+    this.capacities.parent = this;
     this.modules = [];
 
-    this.store.registerModule('ginger', GingerStore);
+    this.capacities.store.registerModule('ginger', GingerStore);
     this._init({config});
   }
 
@@ -53,11 +51,8 @@ class Ginger{
   register({fqn, url, options}){
     return new Promise((resolve, reject) => {
       let opts = {
-        eventbus: this.eventbus,
-        dispatch: this.store.dispatch,
+        capacities: this.capacities,
         fqn: fqn,
-        ginger: this,
-        http: this.http,
         url: url,
         options: options
       };
@@ -68,14 +63,14 @@ class Ginger{
               // module routes
               let r = module.routes;
               if (r){
-                this.store.dispatch('ginger/setRoutes', r);
-                this.router.addRoutes(r);
+                this.capacities.store.dispatch('ginger/setRoutes', r);
+                this.capacities.router.addRoutes(r);
               }
 
               // module stores
               if (module.stores){
                 module.stores.forEach(store => {
-                  this.store.registerModule([fqn, store.name].join('.'), store);
+                  this.capacities.store.registerModule([fqn, store.name].join('.'), store);
                 });
               }
 
@@ -88,9 +83,9 @@ class Ginger{
               resolve();
             })
             .catch(error => {
-              this.store.dispatch('ginger/error', error);
+              this.capacities.store.dispatch('ginger/error', error);
             })
-      this.store.dispatch('ginger/register', module);
+      this.capacities.store.dispatch('ginger/register', module);
     })
   }
 
@@ -102,8 +97,8 @@ class Ginger{
     this._configure({config})
     .then(() => { this._autoRegister() })
     .then(() => {
-      if (this.eventbus){
-        this.eventbus.$emit('GINGER_COMPLETE')
+      if (this.capacities.eventbus){
+        this.capacities.eventbus.$emit('GINGER_COMPLETE')
       }
     })
   }
@@ -118,7 +113,7 @@ class Ginger{
   _configure({config}){
     return new Promise((resolve, reject) => {
       if (typeof config === 'string'){
-        getConfig({http: this.http, url: config})
+        getConfig({ http: this.capacities.http, url: config})
         .then((config) => {
           this.config = config;
           // console.log('Ginger configured: %d module active(s)', this.actives.length);

@@ -4,20 +4,14 @@ class GingerModule {
 
   /**
    * Constructor
-   * @param {Function} dispatch 
-   * @param {Vue} eventbus 
+   * @param {Capacities} capacities 
    * @param {String} fqn 
-   * @param {Ginger} ginger 
-   * @param {Axios} http 
-   * @param {String} url 
    * @param {Object} options 
+   * @param {String} url 
    */
-  constructor({ dispatch, eventbus, fqn, ginger, http, url, options }){
-    this._dispatch = dispatch;
-    this._eventbus = eventbus;
+  constructor({ capacities, fqn, options, url }){
+    this.capacities = capacities;
     this._fqn = fqn;
-    this._ginger = ginger;
-    this._http = http;
     this._url = url;
     this._options = options;
 
@@ -113,12 +107,9 @@ class GingerModule {
 
     try {
       this._bundle.install({ 
-        config: this._options, 
-        dispatch: this._dispatch,
-        eventbus: this._eventbus, 
+        capacities: this.capacities,
         fqn: this.fqn, 
-        ginger: this._ginger,
-        http: this._http
+        options: this._options
       });
     } catch (e) {
       console.log('install module error');

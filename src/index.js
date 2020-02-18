@@ -1,4 +1,5 @@
 import Ginger from './ginger'
+import Capacities from './capacities'
 
 const VueGinger = {};
 VueGinger.install = function(Vue, opts){
@@ -6,13 +7,19 @@ VueGinger.install = function(Vue, opts){
     Vue.spices = {}
   }
 
-  let o = opts || {}
-  Vue.spices.ginger = new Ginger({
-    config: o.config || null,
+  let o = opts || {};
+  
+  let capacities = new Capacities({
     eventbus: o.eventbus || null,
     http: o.http || null,
+    logger: null,
+    store: o.store || null,
     router: o.router || null,
-    store: o.store || null
+  });
+
+  Vue.spices.ginger = new Ginger({
+    capacities,
+    config: o.config || {},
   });
 }
 
