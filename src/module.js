@@ -102,6 +102,27 @@ class GingerModule {
     });
   }
 
+  /**
+   * Execute a function on the bundle
+   * @param {String} action
+   * @return {*}
+   */
+  run({action}){
+    let ret = null;
+    console.log('module run', action);
+
+    try {
+      console.log(action in this._bundle);
+      if (action in this._bundle){
+        ret = this._bundle[action].call(this._bundle);
+      }
+    } catch(error) {
+      console.log(error);
+    }
+
+    return ret;
+  }
+
   _initModule(module) {
     this._bundle = module.default;
 

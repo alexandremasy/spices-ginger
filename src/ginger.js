@@ -97,6 +97,29 @@ class Ginger{
   }
 
   /**
+   * Execute a function on all the module
+   * 
+   * @param {String} action The method name to execute
+   * @return {Array}  
+   */
+  run({action}){
+    let ret = [];
+
+    Object.keys(this.modules).forEach(fqn => {
+      let module = this.modules[fqn];
+      let data = module.run({action});
+      if (data){
+        ret.push({
+          fqn: module.fqn,
+          data: data
+        })
+      }
+    })
+
+    return ret;
+  }
+
+  /**
    * Initialized the ginger plugin
    * @param  {Array | url} config Either an Array with the module configure or
    */
