@@ -91,7 +91,15 @@ class GingerModule {
       }
 
       if (typeof this.url === 'string'){
-        fetchModule(this.url).then(module => {
+        let u = this.url;
+
+        if (process.env.NODE_ENV === 'development'){
+          let cache = new URL(u);
+          cache.searchParams.append('v', new Date().valueOf());
+          u = cache.href;
+        }
+        
+        fetchModule(u).then(module => {
           this._initModule(module);
           resolve();
         })
