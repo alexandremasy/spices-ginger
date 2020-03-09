@@ -20,12 +20,10 @@ class GingerModule {
 
     if (!fqn){
       throw new Exception('GingerModule', 'The fqn is required');
-      console.trace();
     }
 
     if (!url){
       throw new Exception('GingerModule', 'The url is required');
-      console.trace();
     }
   }
 
@@ -84,7 +82,7 @@ class GingerModule {
   init(){
     return new Promise((resolve, reject) => {
 
-      if (typeof this.url === 'function'){
+      if (!!(this.url && this.url.constructor && this.url.call && this.url.apply)){
         let module = this.url();
         this._initModule(module);
         resolve();
@@ -119,11 +117,14 @@ class GingerModule {
     let ret = null;
 
     try {
-      if (action in this._bundle){
+      if (this._bundle && action in this._bundle){
         ret = this._bundle[action].call(this._bundle);
       }
+      else{
+        this.capacities.logger.warn(`Action [${action}] not found in module [${this.fqn}]`);
+      }
     } catch(error) {
-      console.log(error);
+      this.capacities.logger.error(error);
     }
 
     return ret;
@@ -139,8 +140,8 @@ class GingerModule {
         options: this._options
       });
     } catch (e) {
-      console.log('install module error');
-      console.log(e);
+      this.capacities.logger.log('install module error');
+      this.capacities.logger.log(e);
     }
 
     this._loaded = true;

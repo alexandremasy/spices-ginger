@@ -146,7 +146,6 @@ class Ginger{
         getConfig({ http: this.capacities.http, url: config})
         .then((config) => {
           this.config = config;
-          // console.log('Ginger configured: %d module active(s)', this.actives.length);
           resolve(this.config);
         })
         .catch((error) => {
@@ -155,7 +154,6 @@ class Ginger{
       }
       else{
         this.config = config;
-        // console.log('Ginger configured: %d module active(s)', this.actives.length);
         resolve(this.config);
       }
     })
