@@ -1,16 +1,21 @@
 class Capacities{
 
-    constructor({eventbus, http, logger, router, store}){
+    constructor({eventbus, transport, logger, router, store}){
+        console.log('transport', transport);
         this.eventbus = eventbus;
         this.logger = logger;
         this.parent = null;
         this.router = router;
         this.store = store;
-        this.transport = [ http ];
+        this.transport = transport;
     }
 
     get http(){
-        return this.transport[0] || null;
+        return this.transport.http || null;
+    }
+
+    get socket(){
+        return this.transport.socket || null;
     }
 }
 
