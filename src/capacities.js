@@ -1,22 +1,21 @@
-class Capacities{
+import Transports from './transports'
 
-    constructor({eventbus, transport, logger, router, store}){
-        console.log('transport', transport);
+export default class Capacities {
+
+    constructor({eventbus, transports, logger, router, store}){
         this.eventbus = eventbus;
         this.logger = logger;
         this.parent = null;
         this.router = router;
         this.store = store;
-        this.transport = transport;
+        this.transports = new Transports(transports);
     }
 
     get http(){
-        return this.transport.http || null;
+        return this.transport.http;
     }
 
     get socket(){
-        return this.transport.socket || null;
+        return this.transport.socket;
     }
 }
-
-export default Capacities;

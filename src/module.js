@@ -140,8 +140,8 @@ class GingerModule {
         options: this._options
       });
     } catch (e) {
-      this.capacities.logger.log('install module error');
-      this.capacities.logger.log(e);
+      this.capacities.logger.debug('install module error');
+      this.capacities.logger.debug(e);
     }
 
     this._loaded = true;

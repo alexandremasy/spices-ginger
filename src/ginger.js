@@ -90,6 +90,10 @@ class Ginger{
               resolve();
             })
             .catch(error => {
+              if (process.env.NODE_END === 'development'){
+                console.error('error', error);
+              }
+
               this.capacities.store.dispatch('ginger/error', error);
             })
       this.capacities.store.dispatch('ginger/register', module);
