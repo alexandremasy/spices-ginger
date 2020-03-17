@@ -77,7 +77,7 @@ class Ginger{
               // module stores
               if (module.stores){
                 module.stores.forEach(store => {
-                  this.capacities.store.registerModule([fqn, store.name].join('.'), store);
+                  this.capacities.store.registerModule(store.name, store);
                 });
               }
 
