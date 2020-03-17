@@ -90,7 +90,7 @@ class Ginger{
               resolve();
             })
             .catch(error => {
-              if (process.env.NODE_END === 'development'){
+              if (process.env.NODE_ENV === 'development'){
                 console.error('error', error);
               }
 
