@@ -92,6 +92,11 @@ class GingerModule {
         let u = this.url;
 
         if (process.env.NODE_ENV === 'development'){
+
+          if (!u.includes('http') && !u.includes('https')){
+            u = document.location.origin + u;
+          }
+
           let cache = new URL(u);
           cache.searchParams.append('v', new Date().valueOf());
           u = cache.href;
