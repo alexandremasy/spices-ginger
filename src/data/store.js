@@ -8,7 +8,7 @@ const state = {
 
 // getters
 const getters = {
-
+  getRoutes: state => state.routes
 }
 
 // actions
@@ -23,6 +23,10 @@ const actions = {
 
   setRoutes({commit}, routes){
     commit('addRoutes', routes);
+  },
+
+  getRoutes({ state }){
+    return Promise.resolve(state.routes);
   }
 }
 
