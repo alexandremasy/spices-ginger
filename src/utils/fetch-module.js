@@ -1,6 +1,5 @@
 export default async function fetchModule(url) {
   const name = url.split('/').reverse()[0].match(/^(.*?)\.umd/)[1];
-  console.log(name);
 
   if (window[name]) { 
     return window[name]; 
@@ -14,7 +13,6 @@ export default async function fetchModule(url) {
       script.removeEventListener('load', onLoad);
       script.removeEventListener('error', onError);
       
-      console.log('load complete', name);
       resolve(window[name]);
     };
 
