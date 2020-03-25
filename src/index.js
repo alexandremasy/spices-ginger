@@ -3,8 +3,8 @@ import Capacities from './capacities'
 
 const VueGinger = {};
 VueGinger.install = function(Vue, opts){
-  if (!Vue.spices){
-    Vue.spices = {}
+  if (!Vue.prototype.$spices){
+    Vue.prototype.$spices = {}
   }
 
   let o = opts || {};
@@ -17,7 +17,7 @@ VueGinger.install = function(Vue, opts){
     router: o.router || null,
   });
 
-  Vue.spices.ginger = new Ginger({
+  Vue.prototype.$spices.ginger = new Ginger({
     capacities,
     config: o.config || {},
   });
