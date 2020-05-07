@@ -1,4 +1,4 @@
-import fetchModule from './utils/fetch-module'
+import fetchModule from './fetch-module'
 
 class GingerModule {
 
@@ -19,11 +19,11 @@ class GingerModule {
     this._bundle = null;
 
     if (!fqn){
-      throw new Exception('GingerModule', 'The fqn is required');
+      throw new Exception('@spices/ginger', 'The fqn is required');
     }
 
     if (!url){
-      throw new Exception('GingerModule', 'The url is required');
+      throw new Exception('@spices/ginger', 'The url is required');
     }
   }
 

@@ -1,5 +1,5 @@
-import GingerModule from './module'
-import GingerStore from './data/store'
+import GingerModule from '@/module'
+import Store from '@/master/data'
 
 class Ginger{
   constructor({capacities, config}){
@@ -8,13 +8,13 @@ class Ginger{
     this.capacities.parent = this;
     this.modules = [];
 
-    this.capacities.store.registerModule('ginger', GingerStore);
+    this.capacities.store.registerModule('ginger', Store);
     this._init({config});
   }
 
   /**
    * Base of the config get the module enabled.
-   * @return {Array} The enabled modules
+   * @type {Array} The enabled modules
    */
   get actives(){
     return this.config.filter((module) => !module.hasOwnProperty('enabled') || module.enabled === true);
@@ -22,7 +22,7 @@ class Ginger{
 
   /**
    * The routes from all the enabled modules.
-   * @return {Array} The routes
+   * @type {Array} The routes
    */
   get routes(){
     let ret = [];

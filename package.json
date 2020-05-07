@@ -5,10 +5,12 @@
         "webpack": "^4.41.5",
         "webpack-cli": "^3.3.10"
     },
+    "files": [
+      "dist"
+    ],
     "keywords": [],
     "license": "UNLICENSED",
     "main": "dist/spices-ginger.js",
-    "module": "src/index.js",
     "name": "@spices/ginger",
     "publishConfig": {
         "access": "public",
@@ -17,5 +19,11 @@
     "scripts": {
         "bundle": "webpack"
     },
-    "version": "0.2.5"
+    "version": "0.2.5",
+    "dependencies": {
+        "@spices/cayenne": "^0.0.3",
+        "axios": "^0.19.2",
+        "vue": "^2.6.11",
+        "vue-router": "^3.1.6"
+    }
 }

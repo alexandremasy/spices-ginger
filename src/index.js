@@ -1,5 +1,6 @@
-import Ginger from './ginger'
-import Capacities from './capacities'
+import Ginger from '@/master'
+import GingerCapacities from '@/helpers/capacities'
+import GingerManifest from '@/module/manifest'
 
 const VueGinger = {};
 VueGinger.install = function(Vue, opts){
@@ -7,23 +8,21 @@ VueGinger.install = function(Vue, opts){
     Vue.prototype.$spices = {}
   }
 
-  let o = opts || {};
-  
-  let capacities = new Capacities({
-    eventbus: o.eventbus || null,
-    transports: o.transports || null,
-    logger: o.logger || null,
-    store: o.store || null,
-    router: o.router || null,
-  });
-
+  let o = opts || {};  
   Vue.prototype.$spices.ginger = new Ginger({
-    capacities,
+    capacities: new GingerCapacities({
+      eventbus: o.eventbus,
+      transports: o.transports,
+      logger: o.logger,
+      store: o.store,
+      router: o.router,
+    }),
     config: o.config || {},
   });
 }
 
 export {
   Ginger,
+  GingerManifest,
   VueGinger
 }
