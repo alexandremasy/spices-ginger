@@ -1,4 +1,4 @@
-export default class GingerManifest{
+export default class GingerModuleManifest{
   constructor({name, version, views, routes}){
     this.name = name;
     this.version = version;

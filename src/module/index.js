@@ -1,23 +1,19 @@
-import GingerManifest from '@/module/manifest'
+import GingerModuleManifest from '@/module/manifest'
+import fetch from '@/module/fetch'
 
 export default class GingerModule{
 
   /**
    * Constructor
-   * @param {GingerCapacity} capacities 
-   * @param {String} fqn 
-   * @param {GingerManifest | String} manifest 
-   * @param {Object} options 
-   * @param {String | Function} src 
+   * @param {GingerCapacities} capacities - The module capacities 
+   * @param {GingerModuleConfig} config   - The module configuration
    */
-  constructor({ capacities, fqn, manifest, options, src}){
+  constructor({ capacities, config }){
     this._capacities = capacities;
-    this._fqn = fqn;
-    this._manifest = manifest;
-    this._options = options;
-    this._src = src;
+    this._config = config;
     
     this._loaded = false;
+    this._manifest = null;
     this._bundle = null;
   }
 
@@ -26,7 +22,7 @@ export default class GingerModule{
    * @returns {String}
    */
   get fqn(){
-    return this._fqn;
+    return this._config.fqn;
   }
   
   /**
@@ -35,6 +31,14 @@ export default class GingerModule{
    */
   get loaded(){
     return this._loaded;
+  }
+
+  /**
+   * The module options
+   * @return {Object}
+   */
+  get options(){
+    return this._config.options
   }
   
   /**
@@ -58,7 +62,7 @@ export default class GingerModule{
    * @return {String | Function}
    */
   get src(){
-    return this._src
+    return this._config.src
   }
   
   /**
@@ -75,24 +79,19 @@ export default class GingerModule{
   /**
    * Register the module
    * 
-   * @return {Promise.<GingerManifest>}
+   * @return {Promise.<GingerModuleManifest>}
    */
   register(){
-    let p;
-    if (this._manifest instanceof GingerManifest){
-      p = Promise.resolve(this._manifest);
+    if (this._manifest){
+      return Promise.resolve(this._manifest);
     }
-    else{
-      const http = this._capacities.http;
-      http.get(this._manifest).then(response => {
-        console.log('response', response);
+    
+    return new Promise((resolve, reject) => {
+      fetch(this._config.manifest).then(response => {
+        this._manifest = response.default;
+        return resolve(this._manifest);
       })
-    }
-
-    return p.then(manifest => {
-      this._manifest = manifest
     })
   }
-  
 
 }

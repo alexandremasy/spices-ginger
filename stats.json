@@ -1,0 +1,3106 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.43.0",
+  "hash": "b0c50ee0bde52e2184f2",
+  "time": 499,
+  "builtAt": 1588860091777,
+  "publicPath": "",
+  "outputPath": "/mnt/d/projects/spices/ginger/ginger/dist",
+  "assetsByChunkName": {
+    "main": [
+      "spices-ginger.js",
+      "spices-ginger.js.map"
+    ]
+  },
+  "assets": [
+    {
+      "name": "spices-ginger.js",
+      "size": 8831,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "spices-ginger.js.map",
+      "size": 34508,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {
+        "development": true
+      },
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "spices-ginger.js",
+        "spices-ginger.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "spices-ginger.js",
+        "spices-ginger.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 18639,
+      "names": [
+        "main"
+      ],
+      "files": [
+        "spices-ginger.js",
+        "spices-ginger.js.map"
+      ],
+      "hash": "1aa9b11b10df5dbf13c8",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js fbcb3b6e3a4aba4504fe400191c442ce",
+          "name": "./src/index.js + 18 modules",
+          "index": 0,
+          "index2": 18,
+          "size": 18639,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./src/index.js",
+              "loc": "main"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [
+            "Ginger",
+            "GingerModuleConfig",
+            "GingerModuleManifest",
+            "VueGinger"
+          ],
+          "optimizationBailout": [],
+          "depth": 0,
+          "modules": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js",
+              "index": 0,
+              "index2": 18,
+              "size": 253,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": null,
+              "issuerId": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": null,
+                  "module": null,
+                  "moduleName": null,
+                  "type": "single entry",
+                  "userRequest": "./src/index.js",
+                  "loc": "main"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": [
+                "Ginger",
+                "GingerModuleConfig",
+                "GingerModuleManifest",
+                "VueGinger"
+              ],
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is an entry point"
+              ],
+              "depth": 0,
+              "source": "import Ginger from '@/master'\nimport VueGinger from '@/master/plugin'\n\nimport GingerModuleManifest from '@/module/manifest'\nimport GingerModuleConfig from '@/module/config'\n\nexport {\n  Ginger,\n  GingerModuleConfig,\n  GingerModuleManifest,\n  VueGinger\n}\n"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/manifest.js",
+              "name": "./src/module/manifest.js",
+              "index": 3,
+              "index2": 0,
+              "size": 195,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "issuerId": null,
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+                  "module": "./src/module/index.js",
+                  "moduleName": "./src/module/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/module/manifest",
+                  "loc": "1:0-52"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/module/manifest",
+                  "loc": "4:0-52"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "type": "harmony export imported specifier",
+                  "userRequest": "@/module/manifest",
+                  "loc": "7:0-12:1"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 1,
+              "source": "export default class GingerModuleManifest{\n  constructor({name, version, views, routes}){\n    this.name = name;\n    this.version = version;\n    this.views = views;\n    this.routes = routes;\n  }\n}"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/config.js",
+              "name": "./src/module/config.js",
+              "index": 5,
+              "index2": 4,
+              "size": 943,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "issuerId": null,
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "module": "./src/master/index.js",
+                  "moduleName": "./src/master/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/module/config",
+                  "loc": "2:0-48"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/module/config",
+                  "loc": "5:0-48"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "type": "harmony export imported specifier",
+                  "userRequest": "@/module/config",
+                  "loc": "7:0-12:1"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "module": "./src/master/index.js",
+                  "moduleName": "./src/master/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "@/module/config",
+                  "loc": "70:28-46"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 1,
+              "source": "import uuid from '@/helpers/uuid'\n\nexport default class GingerModuleConfig{\n\n  /**\n   * Constructor\n   * @param {Boolean} enabled     - Whether the module is active or not\n   * @param {String} fqn          - FQN\n   * @param {String} name         - Name of the module\n   * @param {String} manifest     - Path to the manifest\n   * @param {Object} options      - Module options\n   * @param {Bundle | String} src - Path to the bundle\n   */\n  constructor({enabled, fqn, name, manifest, options, src}){\n    this._enabled = enabled === false;\n    this._fqn = fqn || uuid();\n    this._name = name;\n    this._manifest = manifest;\n    this._options = options;\n    this._src = src;\n  }\n\n  get enabled(){\n    return this._enabled;\n  }\n\n  get fqn(){\n    return this._fqn;\n  }\n\n  get name(){\n    return this._name;\n  }\n\n  get manifest(){\n    return this._manifest;\n  }\n\n  get options(){\n    return this._options;\n  }\n\n  get src(){\n    return this._src\n  }\n}"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "name": "./src/master/index.js",
+              "index": 1,
+              "index2": 16,
+              "size": 2524,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "issuerId": null,
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/master",
+                  "loc": "1:0-29"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "module": "./src/master/plugin.js",
+                  "moduleName": "./src/master/plugin.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/master",
+                  "loc": "1:0-29"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "type": "harmony export imported specifier",
+                  "userRequest": "@/master",
+                  "loc": "7:0-12:1"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "module": "./src/master/plugin.js",
+                  "moduleName": "./src/master/plugin.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "@/master",
+                  "loc": "11:37-43"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 1,
+              "source": "import GingerModule from '@/module'\nimport GingerModuleConfig from '@/module/config'\nimport GingerCapacities from '@/helpers/capacities'\nimport Store from '@/master/data'\n\nexport default class Ginger{\n  /**\n   * Constructor\n   * @param {GingerCapacities} capacities\n   * @param {Array.<GingerModuleConfig>} config \n   */\n  constructor({ capacities, config = [] }){\n    this._capacities = capacities;\n    \n    // Validations\n    if (!this._capacities instanceof GingerCapacities){\n      throw new Error('@spices/ginger: The capacities are not a valid <GingerCapacities>');\n    }\n    \n    // Initialisation\n    this._capacities.store && this._capacities.store.registerModule('ginger', Store);\n    this._modules = [];\n    this._config = [];\n    this.configure( config );\n  }\n\n  /**\n   * The list of actives module. \n   * @type {Array}\n   */\n  get actives(){\n    return this._config.filter((module) => !module.hasOwnProperty('enabled') || module.enabled === true);\n  }\n\n  /**\n   * The list of routes\n   */\n  get routes(){\n    let ret = [];\n    this.actives.forEach((module, i) => {\n      ret = ret.concat(module.routes);\n    });\n\n    return ret;\n  }\n\n  ////////////////////////////////////////////////////////////////////////////////\n\n  /**\n   * Return the module base on the given fqn\n   * @param {String} fqn \n   * @returns {GingerModule}\n   */\n  get(fqn){\n    return this._modules.find( m => m.fqn === fqn ) || null\n  }\n\n  /**\n   * Configure ginger based on one or more module configuration\n   * \n   * @param {Array.<GingerModuleConfig>} config \n   * @return {Array.<Promise>} - One Promise per entry\n   */\n  configure( config ){\n    if (!Array.isArray(config)) {\n      throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')\n    }\n\n    return config.map(entry => { \n      if (!entry instanceof GingerModuleConfig) {\n        throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')\n      }\n\n      return this.register(new GingerModule({\n        capacities: this._capacities,\n        config: entry\n      }))\n    });\n  }\n\n    \n  /**\n   * Register a module\n   * @param {GingerModule} module \n   * @return {Promise}\n   */\n  register( m ){\n    if (this.get(m.fqn)){\n      throw new Error(`@spices/ginger: A module with the given fqn (${fqn}) already exists`);\n    }\n    return new Promise((resolve, reject) => {\n      this._modules.push( m );\n      m.register().then((manifest) => {\n        console.log('module registered', manifest);\n        resolve();\n      })\n    })\n  }\n}"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "name": "./src/master/plugin.js",
+              "index": 18,
+              "index2": 17,
+              "size": 522,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "issuerId": null,
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/master/plugin",
+                  "loc": "2:0-39"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "type": "harmony export imported specifier",
+                  "userRequest": "@/master/plugin",
+                  "loc": "7:0-12:1"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 1,
+              "source": "import Ginger from '@/master'\nimport GingerCapacities from '@/helpers/capacities'\n\nconst VueGinger = {};\nVueGinger.install = function (Vue, opts) {\n  if (!Vue.prototype.$spices) {\n    Vue.prototype.$spices = {}\n  }\n\n  let o = opts || {};\n  Vue.prototype.$spices.ginger = new Ginger({\n    capacities: new GingerCapacities({\n      eventbus: o.eventbus,\n      transports: o.transports,\n      logger: o.logger,\n      store: o.store,\n      router: o.router,\n    }),\n    config: o.config || [],\n  });\n}\n\nexport default VueGinger"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+              "name": "./src/module/index.js",
+              "index": 2,
+              "index2": 2,
+              "size": 1923,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "issuerId": null,
+              "issuerName": "./src/master/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "name": "./src/master/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "module": "./src/master/index.js",
+                  "moduleName": "./src/master/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/module",
+                  "loc": "1:0-35"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "module": "./src/master/index.js",
+                  "moduleName": "./src/master/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "@/module",
+                  "loc": "74:31-43"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 2,
+              "source": "import GingerModuleManifest from '@/module/manifest'\nimport fetch from '@/module/fetch'\n\nexport default class GingerModule{\n\n  /**\n   * Constructor\n   * @param {GingerCapacities} capacities - The module capacities \n   * @param {GingerModuleConfig} config   - The module configuration\n   */\n  constructor({ capacities, config }){\n    this._capacities = capacities;\n    this._config = config;\n    \n    this._loaded = false;\n    this._manifest = null;\n    this._bundle = null;\n  }\n\n  /**\n   * The FQN\n   * @returns {String}\n   */\n  get fqn(){\n    return this._config.fqn;\n  }\n  \n  /**\n   * Whether the bundle is loaded or not\n   * @returns {Boolean}\n   */\n  get loaded(){\n    return this._loaded;\n  }\n\n  /**\n   * The module options\n   * @return {Object}\n   */\n  get options(){\n    return this._config.options\n  }\n  \n  /**\n   * The module routes\n   * @return {Array}\n   */\n  get routes(){\n    let ret = this._bundle && this._bundle.routes ? this._bundle.routes : null;\n    if (this._options && this._options.router && this._options.router.prefix) {\n      ret = ret.map(route => {\n        route.path = this._options.router.prefix + route.path;\n        return route;\n      })\n    }\n    \n    return ret;\n  }\n  \n  /**\n   * The module src\n   * @return {String | Function}\n   */\n  get src(){\n    return this._config.src\n  }\n  \n  /**\n   * The module stores\n   * @return {Array}\n   */\n  get stores(){\n    return this._bundle && this._bundle.stores ? this._bundle.stores : null;\n  }\n\n  /////////////////////////////////////////////////////////\n\n\n  /**\n   * Register the module\n   * \n   * @return {Promise.<GingerModuleManifest>}\n   */\n  register(){\n    if (this._manifest){\n      return Promise.resolve(this._manifest);\n    }\n    \n    return new Promise((resolve, reject) => {\n      fetch(this._config.manifest).then(response => {\n        this._manifest = response.default;\n        return resolve(this._manifest);\n      })\n    })\n  }\n\n}"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/uuid.js",
+              "name": "./src/helpers/uuid.js",
+              "index": 6,
+              "index2": 3,
+              "size": 209,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/module/config.js",
+              "issuerId": null,
+              "issuerName": "./src/module/config.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/config.js",
+                  "name": "./src/module/config.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/module/config.js",
+                  "module": "./src/module/config.js",
+                  "moduleName": "./src/module/config.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/helpers/uuid",
+                  "loc": "1:0-33"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/module/config.js",
+                  "module": "./src/module/config.js",
+                  "moduleName": "./src/module/config.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "@/helpers/uuid",
+                  "loc": "16:23-27"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 2,
+              "source": "export default () => {\n  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {\n    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);\n    return v.toString(16);\n  });\n}"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "name": "./src/helpers/capacities.js",
+              "index": 7,
+              "index2": 13,
+              "size": 698,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "issuerId": null,
+              "issuerName": "./src/master/plugin.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "name": "./src/master/plugin.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "module": "./src/master/plugin.js",
+                  "moduleName": "./src/master/plugin.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/helpers/capacities",
+                  "loc": "2:0-51"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "module": "./src/master/index.js",
+                  "moduleName": "./src/master/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/helpers/capacities",
+                  "loc": "3:0-51"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "module": "./src/master/plugin.js",
+                  "moduleName": "./src/master/plugin.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "@/helpers/capacities",
+                  "loc": "12:20-36"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "module": "./src/master/index.js",
+                  "moduleName": "./src/master/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "@/helpers/capacities",
+                  "loc": "16:37-53"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 2,
+              "source": "import { Logger } from '@spices/cayenne'\nimport GingerTransports from './transports'\n\nexport default class GingerCapacities {\n\n  /**\n   * Constructor\n   * \n   * @param {Vue} eventbus \n   * @param {GingerTransports} transports\n   * @param {Logger} logger\n   * @param {VueRouter} router\n   * @param {VueX} store\n   */\n  constructor({ eventbus, transports, logger, router, store }) {\n    this.eventbus = eventbus || null;\n    this.logger = logger || Logger.get();\n    this.router = router || null;\n    this.store = store;\n    this.transports = new GingerTransports(transports);\n  }\n\n  /**\n   * The http transport\n   * \n   * @return { Axios }\n   */\n  get http() {\n    return this.transports.http;\n  }\n}"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/data/index.js",
+              "name": "./src/master/data/index.js",
+              "index": 16,
+              "index2": 15,
+              "size": 48,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "issuerId": null,
+              "issuerName": "./src/master/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "name": "./src/master/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "module": "./src/master/index.js",
+                  "moduleName": "./src/master/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/master/data",
+                  "loc": "4:0-33"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "module": "./src/master/index.js",
+                  "moduleName": "./src/master/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "@/master/data",
+                  "loc": "21:78-83"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 2,
+              "source": "import Store from './store'\nexport default Store"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/fetch.js",
+              "name": "./src/module/fetch.js",
+              "index": 4,
+              "index2": 1,
+              "size": 840,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+              "issuerId": null,
+              "issuerName": "./src/module/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "name": "./src/master/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+                  "name": "./src/module/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+                  "module": "./src/module/index.js",
+                  "moduleName": "./src/module/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@/module/fetch",
+                  "loc": "2:0-34"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+                  "module": "./src/module/index.js",
+                  "moduleName": "./src/module/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "@/module/fetch",
+                  "loc": "90:6-11"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 3,
+              "source": "export default async (url) => {\n  const name = url.split('/').reverse()[0].match(/^(.*?)\\.umd/)[1];\n\n  if (window[name]) { \n    return window[name]; \n  }\n\n  window[name] = new Promise((resolve, reject) => {\n    const script = document.createElement('script');\n    script.async = true;\n    \n    let onLoad = () => {\n      script.removeEventListener('load', onLoad);\n      script.removeEventListener('error', onError);\n      \n      resolve(window[name]);\n    };\n\n    let onError = () => {\n      script.removeEventListener('load', onLoad);\n      script.removeEventListener('error', onError);\n      \n      reject( new Error(`Error loading ${url}`) );\n    };\n\n    script.addEventListener('load', onLoad);\n    script.addEventListener('error', onError);\n    script.src = url;\n    document.head.appendChild(script);\n  });\n\n  return window[name];\n}\n"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "name": "./node_modules/@spices/cayenne/src/index.js",
+              "index": 8,
+              "index2": 11,
+              "size": 87,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "issuerId": null,
+              "issuerName": "./src/helpers/capacities.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "name": "./src/master/plugin.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "name": "./src/helpers/capacities.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "module": "./src/helpers/capacities.js",
+                  "moduleName": "./src/helpers/capacities.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "@spices/cayenne",
+                  "loc": "1:0-40"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "module": "./src/helpers/capacities.js",
+                  "moduleName": "./src/helpers/capacities.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "@spices/cayenne",
+                  "loc": "17:28-34"
+                }
+              ],
+              "usedExports": [
+                "Logger"
+              ],
+              "providedExports": [
+                "Level",
+                "Logger"
+              ],
+              "optimizationBailout": [],
+              "depth": 3,
+              "source": "import Logger from './logger'\nimport Level from './level'\n\nexport {\n  Level,\n  Logger\n}"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/transports.js",
+              "name": "./src/helpers/transports.js",
+              "index": 15,
+              "index2": 12,
+              "size": 689,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "issuerId": null,
+              "issuerName": "./src/helpers/capacities.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "name": "./src/master/plugin.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "name": "./src/helpers/capacities.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "module": "./src/helpers/capacities.js",
+                  "moduleName": "./src/helpers/capacities.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./transports",
+                  "loc": "2:0-43"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "module": "./src/helpers/capacities.js",
+                  "moduleName": "./src/helpers/capacities.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./transports",
+                  "loc": "20:26-42"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 3,
+              "source": "export default class GingerTransports {\n  \n  /**\n   * Constructor\n   * @param {Array} transports \n   */\n  constructor(transports) {\n    this.list = transports || {};\n  }\n\n  /**\n   * Return the http utility\n   * @return {Axios}\n   */\n  get http() {\n    return this.list.http || null;\n  }\n\n  /**\n   * Return a socket utility\n   * \n   * @return {Object | null}\n   */\n  get socket() {\n    return this.list.socket || null;\n  }\n\n  /**\n   * Return the connection matching the given name\n   * @param {String} name \n   * @return {*}\n   */\n  getByName(name) {\n    let ret = this.http;\n\n    if (name) {\n      ret = this.list.hasOwnProperty(name) ? this.list[name] : null;\n    }\n\n    return ret;\n  }\n}"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/data/store.js",
+              "name": "./src/master/data/store.js",
+              "index": 17,
+              "index2": 14,
+              "size": 780,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/src/master/data/index.js",
+              "issuerId": null,
+              "issuerName": "./src/master/data/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+                  "name": "./src/master/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/data/index.js",
+                  "name": "./src/master/data/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/data/index.js",
+                  "module": "./src/master/data/index.js",
+                  "moduleName": "./src/master/data/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./store",
+                  "loc": "1:0-27"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/data/index.js",
+                  "module": "./src/master/data/index.js",
+                  "moduleName": "./src/master/data/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./store",
+                  "loc": "2:15-20"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 3,
+              "source": "\n// initial state\nconst state = {\n  routes: [],\n  modules: [],\n  error: []\n}\n\n// getters\nconst getters = {\n  getRoutes: state => state.routes\n}\n\n// actions\nconst actions = {\n  register({commit}, module){\n    commit('addModule', module);\n  },\n\n  error({commit}, error){\n    commit('addError', error);\n  },\n\n  setRoutes({commit}, routes){\n    commit('addRoutes', routes);\n  },\n\n  getRoutes({ state }){\n    return Promise.resolve(state.routes);\n  }\n}\n\n// mutations\nconst mutations = {\n  addRoutes( state, routes) {\n    state.routes = state.routes.concat(routes);\n  },\n\n  addModule( state, module ){\n    state.modules.push(module);\n  },\n\n  addError( state, error ){\n    state.error.push(error);\n  }\n}\n\nexport default {\n  namespaced: true,\n  state,\n  getters,\n  actions,\n  mutations\n}\n"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/level.js",
+              "name": "./node_modules/@spices/cayenne/src/level.js",
+              "index": 10,
+              "index2": 5,
+              "size": 912,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "issuerId": null,
+              "issuerName": "./node_modules/@spices/cayenne/src/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "name": "./src/master/plugin.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "name": "./src/helpers/capacities.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "../level",
+                  "loc": "1:0-28"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "../../level",
+                  "loc": "1:0-31"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/abstract.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/abstract.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/abstract.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "../../level",
+                  "loc": "1:0-37"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./level",
+                  "loc": "2:0-27"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "../../level",
+                  "loc": "2:0-31"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/index.js",
+                  "type": "harmony export imported specifier",
+                  "userRequest": "./level",
+                  "loc": "4:0-7:1"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "11:25-30"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "19:25-30"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "21:11-16"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "24:11-16"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../level",
+                  "loc": "24:68-73"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "27:11-16"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "27:25-30"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "30:11-16"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "35:25-30"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../level",
+                  "loc": "42:68-73"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "43:24-29"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "51:42-47"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "../../level",
+                  "loc": "59:45-50"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 4,
+              "source": "class Level {\n  static get OFF(){ return {name: 'OFF', value: 0} };\n  static get TRACE(){ return {name: 'TRACE', value: 1} };\n  static get DEBUG(){ return {name: 'DEBUG', value: 2} };\n  static get INFO(){ return {name: 'INFO', value: 4} };\n  static get TIME(){ return {name: 'TIME', value: 8} };\n  static get WARN(){ return {name: 'WARN', value: 16} };\n  static get ERROR(){ return {name: 'ERROR', value: 32} };\n  static get ALL(){ return {name: 'ALL', value: 63} };\n\n  /**\n   * Get the level from its value\n   * @param  {Int} value The level value\n   * @return {Level|null}     The level object or null\n   */\n  static getFromValue(value){\n    let ret = null;\n    const list = [Level.OFF, Level.TRACE, Level.DEBUG, Level.INFO, Level.TIME, Level.WARN, Level.ERROR, Level.ALL];\n    list.forEach((e, i) => {\n      if (e.value === value){\n        ret = e;\n      }\n    })\n\n    return ret;\n  }\n}\n\nexport default Level\n"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "index": 9,
+              "index2": 10,
+              "size": 2816,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "issuerId": null,
+              "issuerName": "./node_modules/@spices/cayenne/src/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "name": "./src/master/plugin.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "name": "./src/helpers/capacities.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./logger",
+                  "loc": "1:0-29"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/index.js",
+                  "type": "harmony export imported specifier",
+                  "userRequest": "./logger",
+                  "loc": "4:0-7:1"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 4,
+              "source": "import Level from '../level'\nimport ConsoleTransporter from './transports/console'\nimport DefaultInterface from './interfaces'\n\nclass Logger {\n\n  /**\n   * Constructor\n   */\n  constructor(){\n    this.transports = [ new ConsoleTransporter() ];\n    this.interfaces = [];\n  }\n\n  /**\n   * Get a new interface to log from\n   * @param  {Object} opts    The configuration object\n   * @return {Interface}      An interface to log from\n   */\n  get(opts){\n    let options = {\n      colors: opts && opts.colors ? opts.colors : true,\n      formatter: opts && opts.fomatter ? opts.formatter : this._formatter,\n      level: opts && opts.level ? Logger.getFromValue(opts.value) : Level.ALL,\n      name: opts && opts.name ? opts.name : null,\n      handler: this\n    };\n\n    let ret = new DefaultInterface(options);\n    this.interfaces.push(ret);\n    return ret;\n  }\n\n  /**\n   * Set the interface options\n   * @param {*} opts \n   */\n  set(opts){\n    let options = {\n      colors: opts && opts.colors ? opts.colors : true,\n      formatter: opts && opts.fomatter ? opts.formatter : this._formatter,\n      level: opts && opts.level ? Logger.getFromValue(opts.value) : Level.ALL,\n      name: opts && opts.name ? opts.name : null,\n      handler: this\n    }\n\n    this.interfaces.forEach(iface => iface.update(options));\n  }\n\n  _formatter({level, messages, name}){\n    let d = new Date();\n    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jui', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\n    let date = `${months[d.getMonth()]} ${d.getDate()}, ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;\n\n    let grey = 'color: lightgrey';\n    let orange = 'color: orange';\n    let blue = 'color: lightsteelblue';\n    let black = 'color: black';\n    let purple = 'color: rebeccapurple';\n\n    // style - date - style - ...rest\n    let m = [\n      '%c %s %c',\n      grey,\n      date,\n      black\n    ];\n\n    if (name) {\n      // style - date - style - name - style - ...rest\n      m = [\n        '%c %s %c %s %c',\n        grey,\n        date,\n        purple,\n        name,\n        black\n      ];\n    }\n\n    return m.concat(messages);\n  }\n\n  /**\n   * Get the messages to the transporters\n   * @param  {Level} level      Level of the messages\n   * @param  {String} action    The action to take\n   * @param  {Object} context   Context of the interface\n   * @param  {*} messages       Messages to transport\n   */\n  _invoke({level, action, context, messages }) {\n    messages = Array.prototype.slice.call( messages );\n    if (!action){\n      messages = context.formatter.call(context.formatter, {level, messages, name: context.name});\n    }\n\n    this.transports.forEach((transport) => {\n      transport.invoke({\n        action,\n        context,\n        level,\n        messages: messages\n      })\n    })\n  }\n}\n\nconst L = new Logger();\nexport default L;\n"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "index": 11,
+              "index2": 7,
+              "size": 1734,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "issuerId": null,
+              "issuerName": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "name": "./src/master/plugin.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "name": "./src/helpers/capacities.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/logger/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./transports/console",
+                  "loc": "2:0-53"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./transports/console",
+                  "loc": "11:28-46"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 5,
+              "source": "import AbstractTransport from './abstract'\nimport Level from '../../level'\n\nclass ConsoleTransporter extends AbstractTransport {\n\n  get console(){\n    return (typeof console === 'undefined') ? null : console;\n  }\n\n  invoke({ action, level, context, messages }) {\n    // check for the presence of console\n    if (!this.console){\n      return;\n    }\n\n    // methods\n    let method = this.console.log;\n\n    // based on the level\n    switch( level.value ){\n      case Level.TRACE.value:\n        method = this.console.trace;\n        break;\n      case Level.INFO.value:\n        method = this.console.info;\n        break;\n      case Level.WARN.value:\n        method = this.console.warn;\n        break;\n      case Level.ERROR.value:\n        method = this.console.error;\n        break;\n    }\n\n    if (action != null){\n      switch( action ){\n        case 'group':\n          method = this.console.group;\n          break;\n        case 'groupEnd': \n          method = this.console.groupEnd;\n          break  \n      }\n    }\n\n    // Execute\n\n    // if (messages.length > 2 && Level.DEBUG.value == level.value){\n    //   console.group('');\n    //   Function.prototype.apply.call( method, this.console, messages );\n    //\n    //   console.groupEnd();\n    // }\n    // else{\n      Function.prototype.apply.call( method, this.console, messages );\n    // }\n\n    // if (messages.length <= 1 || [Level.TRACE.value].includes(level.value)){\n    // }\n    // else{\n    //   let first = messages.shift();\n    //   this.console.group( first );\n    //   messages.forEach(message => {\n    //     Function.prototype.apply.call( method, this.console, message );\n    //   })\n    //   this.console.groupEnd( first );\n    // }\n\n  }\n}\n\nexport default ConsoleTransporter\n"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "index": 13,
+              "index2": 9,
+              "size": 1294,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "issuerId": null,
+              "issuerName": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "name": "./src/master/plugin.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "name": "./src/helpers/capacities.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/logger/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./interfaces",
+                  "loc": "3:0-43"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./interfaces",
+                  "loc": "29:18-34"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 5,
+              "source": "import Level from '../../level'\nimport AbstractInterface from './abstract'\n\nclass DefaultInterface extends AbstractInterface{\n\n  /**\n   * Outputs a message with the log level \"debug\".\n   * @param {*} ...args\n   */\n  debug(){\n    this._invoke({level: Level.DEBUG, messages: arguments});\n  }\n\n  /**\n  * Outputs a message with the log level \"info\".\n  * @param {*} ...args\n  */\n  info(){\n    this._invoke({level: Level.INFO, messages: arguments});\n  }\n\n  /**\n  * Outputs a message with the log level \"warn\".\n  * @param {*} ...args\n  */\n  warn(){\n    this._invoke({level: Level.WARN, messages: arguments});\n  }\n\n  /**\n  * Outputs a message with the log level \"error\".\n  * @param {*} ...args\n  */\n  error(){\n    this._invoke({level: Level.ERROR, messages: arguments});\n  }\n\n  /**\n  * Outputs a message with the log level \"trace\".\n  * @param {*} ...args\n  */\n trace(){\n   this._invoke({level: Level.TRACE, messages: arguments});\n  }\n  \n  /**\n   * Output a message as a group\n   * @param {*} ...args\n   */\n  group(){\n    this._invoke({action: 'group', level: Level.ALL, messages: arguments})\n  }\n  \n  /**\n   * Output a message as a groupEnd\n   * @param {*} ...args\n   */\n  groupEnd(){\n    this._invoke({action: 'groupEnd', level: Level.ALL, messages: arguments})\n  }\n}\n\nexport default DefaultInterface\n"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/abstract.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/transports/abstract.js",
+              "index": 12,
+              "index2": 6,
+              "size": 189,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "issuerId": null,
+              "issuerName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "name": "./src/master/plugin.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "name": "./src/helpers/capacities.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/logger/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "name": "./node_modules/@spices/cayenne/src/logger/transports/console.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./abstract",
+                  "loc": "1:0-42"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./abstract",
+                  "loc": "4:33-50"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 6,
+              "source": "class AbstractTransport{\n  invoke({action, level, name, messages}){\n    throw new Exception('Error: No implementation for AbstractTransport.Invoke')\n  }\n}\n\nexport default AbstractTransport\n"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/abstract.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/interfaces/abstract.js",
+              "index": 14,
+              "index2": 8,
+              "size": 1983,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "issuerId": null,
+              "issuerName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+                  "name": "./src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+                  "name": "./src/master/plugin.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+                  "name": "./src/helpers/capacities.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/logger/index.js"
+                },
+                {
+                  "id": null,
+                  "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "name": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js"
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./abstract",
+                  "loc": "2:0-42"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./abstract",
+                  "loc": "4:31-48"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 6,
+              "source": "import LoggerLevel from '../../level'\n\nclass AbstractInterface{\n  constructor({colors, formatter, level, name, handler}){\n    this.colors = colors;\n    this.formatter = formatter;\n    this.level = level;\n    this.name = name;\n    this.handler = handler;\n  }\n\n  /**\n   * Return the logger level\n   * @return {Level} The level\n   */\n  get level(){\n    return this._level;\n  }\n\n  /**\n   * Define the logger level\n   * @param  {Level} value The level\n   */\n  set level(value){\n    if (value && value.hasOwnProperty('value')){\n      this._level = value;\n    }\n  }\n\n  /**\n   * Return the context of the interace\n   * @return {Object}\n   */\n  get context(){\n    return {\n      colors: this.colors,\n      formatter: this.formatter,\n      level: this.level,\n      name: this.name\n    }\n  }\n\n  /**\n   * Is the logger enabled for the given level\n   * @param  {Level} level The level to evaluate\n   * @return {Boolean}\n   */\n  enabledFor(level){\n    return this._level.value & level.value;\n  }\n\n  /**\n   * Get a new interface to log from\n   * @param  {Object} opts    The configuration object\n   * @return {Interface}      An interface to log from\n   */\n  get(opts){\n    return this.handler.get(opts);\n  }\n\n  /**\n   * Update the interface options\n   * @param {Boolean} colors \n   * @param {Function} formatter \n   * @param {Level} level \n   * @param {String} name \n   * @param {Logger} handler \n   */\n  update({colors, formatter, level, name, handler}){\n    this.colors = colors;\n    this.formatter = formatter;\n    this.level = level;\n    this.name = name;\n    this.handler = handler;\n  }\n\n  /**\n   * Invoke the handler if the level is enabled\n   * @param  {Level} level    The level of the messages\n   * @param  {String} action  The action to take\n   * @param  {*}     messages The messages\n   */\n  _invoke({action, level, messages}) {\n    if (this.enabledFor(level)){\n      this.handler._invoke({action, level, context: this.context, messages});\n    }\n  }\n}\n\nexport default AbstractInterface\n"
+            }
+          ],
+          "filteredModules": 0
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "main",
+          "request": "./src/index.js",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js fbcb3b6e3a4aba4504fe400191c442ce",
+      "name": "./src/index.js + 18 modules",
+      "index": 0,
+      "index2": 18,
+      "size": 18639,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "./src/index.js",
+          "loc": "main"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [
+        "Ginger",
+        "GingerModuleConfig",
+        "GingerModuleManifest",
+        "VueGinger"
+      ],
+      "optimizationBailout": [],
+      "depth": 0,
+      "modules": [
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+          "name": "./src/index.js",
+          "index": 0,
+          "index2": 18,
+          "size": 253,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./src/index.js",
+              "loc": "main"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [
+            "Ginger",
+            "GingerModuleConfig",
+            "GingerModuleManifest",
+            "VueGinger"
+          ],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is an entry point"
+          ],
+          "depth": 0,
+          "source": "import Ginger from '@/master'\nimport VueGinger from '@/master/plugin'\n\nimport GingerModuleManifest from '@/module/manifest'\nimport GingerModuleConfig from '@/module/config'\n\nexport {\n  Ginger,\n  GingerModuleConfig,\n  GingerModuleManifest,\n  VueGinger\n}\n"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/manifest.js",
+          "name": "./src/module/manifest.js",
+          "index": 3,
+          "index2": 0,
+          "size": 195,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+          "issuerId": null,
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+              "module": "./src/module/index.js",
+              "moduleName": "./src/module/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/module/manifest",
+              "loc": "1:0-52"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/module/manifest",
+              "loc": "4:0-52"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony export imported specifier",
+              "userRequest": "@/module/manifest",
+              "loc": "7:0-12:1"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "export default class GingerModuleManifest{\n  constructor({name, version, views, routes}){\n    this.name = name;\n    this.version = version;\n    this.views = views;\n    this.routes = routes;\n  }\n}"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/config.js",
+          "name": "./src/module/config.js",
+          "index": 5,
+          "index2": 4,
+          "size": 943,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+          "issuerId": null,
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "module": "./src/master/index.js",
+              "moduleName": "./src/master/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/module/config",
+              "loc": "2:0-48"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/module/config",
+              "loc": "5:0-48"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony export imported specifier",
+              "userRequest": "@/module/config",
+              "loc": "7:0-12:1"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "module": "./src/master/index.js",
+              "moduleName": "./src/master/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "@/module/config",
+              "loc": "70:28-46"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "import uuid from '@/helpers/uuid'\n\nexport default class GingerModuleConfig{\n\n  /**\n   * Constructor\n   * @param {Boolean} enabled     - Whether the module is active or not\n   * @param {String} fqn          - FQN\n   * @param {String} name         - Name of the module\n   * @param {String} manifest     - Path to the manifest\n   * @param {Object} options      - Module options\n   * @param {Bundle | String} src - Path to the bundle\n   */\n  constructor({enabled, fqn, name, manifest, options, src}){\n    this._enabled = enabled === false;\n    this._fqn = fqn || uuid();\n    this._name = name;\n    this._manifest = manifest;\n    this._options = options;\n    this._src = src;\n  }\n\n  get enabled(){\n    return this._enabled;\n  }\n\n  get fqn(){\n    return this._fqn;\n  }\n\n  get name(){\n    return this._name;\n  }\n\n  get manifest(){\n    return this._manifest;\n  }\n\n  get options(){\n    return this._options;\n  }\n\n  get src(){\n    return this._src\n  }\n}"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+          "name": "./src/master/index.js",
+          "index": 1,
+          "index2": 16,
+          "size": 2524,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+          "issuerId": null,
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/master",
+              "loc": "1:0-29"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "module": "./src/master/plugin.js",
+              "moduleName": "./src/master/plugin.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/master",
+              "loc": "1:0-29"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony export imported specifier",
+              "userRequest": "@/master",
+              "loc": "7:0-12:1"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "module": "./src/master/plugin.js",
+              "moduleName": "./src/master/plugin.js",
+              "type": "harmony import specifier",
+              "userRequest": "@/master",
+              "loc": "11:37-43"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "import GingerModule from '@/module'\nimport GingerModuleConfig from '@/module/config'\nimport GingerCapacities from '@/helpers/capacities'\nimport Store from '@/master/data'\n\nexport default class Ginger{\n  /**\n   * Constructor\n   * @param {GingerCapacities} capacities\n   * @param {Array.<GingerModuleConfig>} config \n   */\n  constructor({ capacities, config = [] }){\n    this._capacities = capacities;\n    \n    // Validations\n    if (!this._capacities instanceof GingerCapacities){\n      throw new Error('@spices/ginger: The capacities are not a valid <GingerCapacities>');\n    }\n    \n    // Initialisation\n    this._capacities.store && this._capacities.store.registerModule('ginger', Store);\n    this._modules = [];\n    this._config = [];\n    this.configure( config );\n  }\n\n  /**\n   * The list of actives module. \n   * @type {Array}\n   */\n  get actives(){\n    return this._config.filter((module) => !module.hasOwnProperty('enabled') || module.enabled === true);\n  }\n\n  /**\n   * The list of routes\n   */\n  get routes(){\n    let ret = [];\n    this.actives.forEach((module, i) => {\n      ret = ret.concat(module.routes);\n    });\n\n    return ret;\n  }\n\n  ////////////////////////////////////////////////////////////////////////////////\n\n  /**\n   * Return the module base on the given fqn\n   * @param {String} fqn \n   * @returns {GingerModule}\n   */\n  get(fqn){\n    return this._modules.find( m => m.fqn === fqn ) || null\n  }\n\n  /**\n   * Configure ginger based on one or more module configuration\n   * \n   * @param {Array.<GingerModuleConfig>} config \n   * @return {Array.<Promise>} - One Promise per entry\n   */\n  configure( config ){\n    if (!Array.isArray(config)) {\n      throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')\n    }\n\n    return config.map(entry => { \n      if (!entry instanceof GingerModuleConfig) {\n        throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')\n      }\n\n      return this.register(new GingerModule({\n        capacities: this._capacities,\n        config: entry\n      }))\n    });\n  }\n\n    \n  /**\n   * Register a module\n   * @param {GingerModule} module \n   * @return {Promise}\n   */\n  register( m ){\n    if (this.get(m.fqn)){\n      throw new Error(`@spices/ginger: A module with the given fqn (${fqn}) already exists`);\n    }\n    return new Promise((resolve, reject) => {\n      this._modules.push( m );\n      m.register().then((manifest) => {\n        console.log('module registered', manifest);\n        resolve();\n      })\n    })\n  }\n}"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+          "name": "./src/master/plugin.js",
+          "index": 18,
+          "index2": 17,
+          "size": 522,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+          "issuerId": null,
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/master/plugin",
+              "loc": "2:0-39"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony export imported specifier",
+              "userRequest": "@/master/plugin",
+              "loc": "7:0-12:1"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "import Ginger from '@/master'\nimport GingerCapacities from '@/helpers/capacities'\n\nconst VueGinger = {};\nVueGinger.install = function (Vue, opts) {\n  if (!Vue.prototype.$spices) {\n    Vue.prototype.$spices = {}\n  }\n\n  let o = opts || {};\n  Vue.prototype.$spices.ginger = new Ginger({\n    capacities: new GingerCapacities({\n      eventbus: o.eventbus,\n      transports: o.transports,\n      logger: o.logger,\n      store: o.store,\n      router: o.router,\n    }),\n    config: o.config || [],\n  });\n}\n\nexport default VueGinger"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+          "name": "./src/module/index.js",
+          "index": 2,
+          "index2": 2,
+          "size": 1923,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+          "issuerId": null,
+          "issuerName": "./src/master/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "name": "./src/master/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "module": "./src/master/index.js",
+              "moduleName": "./src/master/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/module",
+              "loc": "1:0-35"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "module": "./src/master/index.js",
+              "moduleName": "./src/master/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "@/module",
+              "loc": "74:31-43"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 2,
+          "source": "import GingerModuleManifest from '@/module/manifest'\nimport fetch from '@/module/fetch'\n\nexport default class GingerModule{\n\n  /**\n   * Constructor\n   * @param {GingerCapacities} capacities - The module capacities \n   * @param {GingerModuleConfig} config   - The module configuration\n   */\n  constructor({ capacities, config }){\n    this._capacities = capacities;\n    this._config = config;\n    \n    this._loaded = false;\n    this._manifest = null;\n    this._bundle = null;\n  }\n\n  /**\n   * The FQN\n   * @returns {String}\n   */\n  get fqn(){\n    return this._config.fqn;\n  }\n  \n  /**\n   * Whether the bundle is loaded or not\n   * @returns {Boolean}\n   */\n  get loaded(){\n    return this._loaded;\n  }\n\n  /**\n   * The module options\n   * @return {Object}\n   */\n  get options(){\n    return this._config.options\n  }\n  \n  /**\n   * The module routes\n   * @return {Array}\n   */\n  get routes(){\n    let ret = this._bundle && this._bundle.routes ? this._bundle.routes : null;\n    if (this._options && this._options.router && this._options.router.prefix) {\n      ret = ret.map(route => {\n        route.path = this._options.router.prefix + route.path;\n        return route;\n      })\n    }\n    \n    return ret;\n  }\n  \n  /**\n   * The module src\n   * @return {String | Function}\n   */\n  get src(){\n    return this._config.src\n  }\n  \n  /**\n   * The module stores\n   * @return {Array}\n   */\n  get stores(){\n    return this._bundle && this._bundle.stores ? this._bundle.stores : null;\n  }\n\n  /////////////////////////////////////////////////////////\n\n\n  /**\n   * Register the module\n   * \n   * @return {Promise.<GingerModuleManifest>}\n   */\n  register(){\n    if (this._manifest){\n      return Promise.resolve(this._manifest);\n    }\n    \n    return new Promise((resolve, reject) => {\n      fetch(this._config.manifest).then(response => {\n        this._manifest = response.default;\n        return resolve(this._manifest);\n      })\n    })\n  }\n\n}"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/uuid.js",
+          "name": "./src/helpers/uuid.js",
+          "index": 6,
+          "index2": 3,
+          "size": 209,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/module/config.js",
+          "issuerId": null,
+          "issuerName": "./src/module/config.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/config.js",
+              "name": "./src/module/config.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/module/config.js",
+              "module": "./src/module/config.js",
+              "moduleName": "./src/module/config.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/helpers/uuid",
+              "loc": "1:0-33"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/module/config.js",
+              "module": "./src/module/config.js",
+              "moduleName": "./src/module/config.js",
+              "type": "harmony import specifier",
+              "userRequest": "@/helpers/uuid",
+              "loc": "16:23-27"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 2,
+          "source": "export default () => {\n  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {\n    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);\n    return v.toString(16);\n  });\n}"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+          "name": "./src/helpers/capacities.js",
+          "index": 7,
+          "index2": 13,
+          "size": 698,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+          "issuerId": null,
+          "issuerName": "./src/master/plugin.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "name": "./src/master/plugin.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "module": "./src/master/plugin.js",
+              "moduleName": "./src/master/plugin.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/helpers/capacities",
+              "loc": "2:0-51"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "module": "./src/master/index.js",
+              "moduleName": "./src/master/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/helpers/capacities",
+              "loc": "3:0-51"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "module": "./src/master/plugin.js",
+              "moduleName": "./src/master/plugin.js",
+              "type": "harmony import specifier",
+              "userRequest": "@/helpers/capacities",
+              "loc": "12:20-36"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "module": "./src/master/index.js",
+              "moduleName": "./src/master/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "@/helpers/capacities",
+              "loc": "16:37-53"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 2,
+          "source": "import { Logger } from '@spices/cayenne'\nimport GingerTransports from './transports'\n\nexport default class GingerCapacities {\n\n  /**\n   * Constructor\n   * \n   * @param {Vue} eventbus \n   * @param {GingerTransports} transports\n   * @param {Logger} logger\n   * @param {VueRouter} router\n   * @param {VueX} store\n   */\n  constructor({ eventbus, transports, logger, router, store }) {\n    this.eventbus = eventbus || null;\n    this.logger = logger || Logger.get();\n    this.router = router || null;\n    this.store = store;\n    this.transports = new GingerTransports(transports);\n  }\n\n  /**\n   * The http transport\n   * \n   * @return { Axios }\n   */\n  get http() {\n    return this.transports.http;\n  }\n}"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/data/index.js",
+          "name": "./src/master/data/index.js",
+          "index": 16,
+          "index2": 15,
+          "size": 48,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+          "issuerId": null,
+          "issuerName": "./src/master/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "name": "./src/master/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "module": "./src/master/index.js",
+              "moduleName": "./src/master/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/master/data",
+              "loc": "4:0-33"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "module": "./src/master/index.js",
+              "moduleName": "./src/master/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "@/master/data",
+              "loc": "21:78-83"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 2,
+          "source": "import Store from './store'\nexport default Store"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/fetch.js",
+          "name": "./src/module/fetch.js",
+          "index": 4,
+          "index2": 1,
+          "size": 840,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+          "issuerId": null,
+          "issuerName": "./src/module/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "name": "./src/master/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+              "name": "./src/module/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+              "module": "./src/module/index.js",
+              "moduleName": "./src/module/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@/module/fetch",
+              "loc": "2:0-34"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/module/index.js",
+              "module": "./src/module/index.js",
+              "moduleName": "./src/module/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "@/module/fetch",
+              "loc": "90:6-11"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 3,
+          "source": "export default async (url) => {\n  const name = url.split('/').reverse()[0].match(/^(.*?)\\.umd/)[1];\n\n  if (window[name]) { \n    return window[name]; \n  }\n\n  window[name] = new Promise((resolve, reject) => {\n    const script = document.createElement('script');\n    script.async = true;\n    \n    let onLoad = () => {\n      script.removeEventListener('load', onLoad);\n      script.removeEventListener('error', onError);\n      \n      resolve(window[name]);\n    };\n\n    let onError = () => {\n      script.removeEventListener('load', onLoad);\n      script.removeEventListener('error', onError);\n      \n      reject( new Error(`Error loading ${url}`) );\n    };\n\n    script.addEventListener('load', onLoad);\n    script.addEventListener('error', onError);\n    script.src = url;\n    document.head.appendChild(script);\n  });\n\n  return window[name];\n}\n"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+          "name": "./node_modules/@spices/cayenne/src/index.js",
+          "index": 8,
+          "index2": 11,
+          "size": 87,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+          "issuerId": null,
+          "issuerName": "./src/helpers/capacities.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "name": "./src/master/plugin.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "name": "./src/helpers/capacities.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "module": "./src/helpers/capacities.js",
+              "moduleName": "./src/helpers/capacities.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "@spices/cayenne",
+              "loc": "1:0-40"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "module": "./src/helpers/capacities.js",
+              "moduleName": "./src/helpers/capacities.js",
+              "type": "harmony import specifier",
+              "userRequest": "@spices/cayenne",
+              "loc": "17:28-34"
+            }
+          ],
+          "usedExports": [
+            "Logger"
+          ],
+          "providedExports": [
+            "Level",
+            "Logger"
+          ],
+          "optimizationBailout": [],
+          "depth": 3,
+          "source": "import Logger from './logger'\nimport Level from './level'\n\nexport {\n  Level,\n  Logger\n}"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/transports.js",
+          "name": "./src/helpers/transports.js",
+          "index": 15,
+          "index2": 12,
+          "size": 689,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+          "issuerId": null,
+          "issuerName": "./src/helpers/capacities.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "name": "./src/master/plugin.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "name": "./src/helpers/capacities.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "module": "./src/helpers/capacities.js",
+              "moduleName": "./src/helpers/capacities.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./transports",
+              "loc": "2:0-43"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "module": "./src/helpers/capacities.js",
+              "moduleName": "./src/helpers/capacities.js",
+              "type": "harmony import specifier",
+              "userRequest": "./transports",
+              "loc": "20:26-42"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 3,
+          "source": "export default class GingerTransports {\n  \n  /**\n   * Constructor\n   * @param {Array} transports \n   */\n  constructor(transports) {\n    this.list = transports || {};\n  }\n\n  /**\n   * Return the http utility\n   * @return {Axios}\n   */\n  get http() {\n    return this.list.http || null;\n  }\n\n  /**\n   * Return a socket utility\n   * \n   * @return {Object | null}\n   */\n  get socket() {\n    return this.list.socket || null;\n  }\n\n  /**\n   * Return the connection matching the given name\n   * @param {String} name \n   * @return {*}\n   */\n  getByName(name) {\n    let ret = this.http;\n\n    if (name) {\n      ret = this.list.hasOwnProperty(name) ? this.list[name] : null;\n    }\n\n    return ret;\n  }\n}"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/data/store.js",
+          "name": "./src/master/data/store.js",
+          "index": 17,
+          "index2": 14,
+          "size": 780,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/src/master/data/index.js",
+          "issuerId": null,
+          "issuerName": "./src/master/data/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/index.js",
+              "name": "./src/master/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/data/index.js",
+              "name": "./src/master/data/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/data/index.js",
+              "module": "./src/master/data/index.js",
+              "moduleName": "./src/master/data/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./store",
+              "loc": "1:0-27"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/src/master/data/index.js",
+              "module": "./src/master/data/index.js",
+              "moduleName": "./src/master/data/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "./store",
+              "loc": "2:15-20"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 3,
+          "source": "\n// initial state\nconst state = {\n  routes: [],\n  modules: [],\n  error: []\n}\n\n// getters\nconst getters = {\n  getRoutes: state => state.routes\n}\n\n// actions\nconst actions = {\n  register({commit}, module){\n    commit('addModule', module);\n  },\n\n  error({commit}, error){\n    commit('addError', error);\n  },\n\n  setRoutes({commit}, routes){\n    commit('addRoutes', routes);\n  },\n\n  getRoutes({ state }){\n    return Promise.resolve(state.routes);\n  }\n}\n\n// mutations\nconst mutations = {\n  addRoutes( state, routes) {\n    state.routes = state.routes.concat(routes);\n  },\n\n  addModule( state, module ){\n    state.modules.push(module);\n  },\n\n  addError( state, error ){\n    state.error.push(error);\n  }\n}\n\nexport default {\n  namespaced: true,\n  state,\n  getters,\n  actions,\n  mutations\n}\n"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/level.js",
+          "name": "./node_modules/@spices/cayenne/src/level.js",
+          "index": 10,
+          "index2": 5,
+          "size": 912,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+          "issuerId": null,
+          "issuerName": "./node_modules/@spices/cayenne/src/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "name": "./src/master/plugin.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "name": "./src/helpers/capacities.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "name": "./node_modules/@spices/cayenne/src/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "../level",
+              "loc": "1:0-28"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "../../level",
+              "loc": "1:0-31"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/abstract.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/abstract.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/abstract.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "../../level",
+              "loc": "1:0-37"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "module": "./node_modules/@spices/cayenne/src/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./level",
+              "loc": "2:0-27"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "../../level",
+              "loc": "2:0-31"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "module": "./node_modules/@spices/cayenne/src/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/index.js",
+              "type": "harmony export imported specifier",
+              "userRequest": "./level",
+              "loc": "4:0-7:1"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "11:25-30"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "19:25-30"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "21:11-16"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "24:11-16"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "../level",
+              "loc": "24:68-73"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "27:11-16"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "27:25-30"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "30:11-16"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "35:25-30"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "../level",
+              "loc": "42:68-73"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "43:24-29"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "51:42-47"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "../../level",
+              "loc": "59:45-50"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 4,
+          "source": "class Level {\n  static get OFF(){ return {name: 'OFF', value: 0} };\n  static get TRACE(){ return {name: 'TRACE', value: 1} };\n  static get DEBUG(){ return {name: 'DEBUG', value: 2} };\n  static get INFO(){ return {name: 'INFO', value: 4} };\n  static get TIME(){ return {name: 'TIME', value: 8} };\n  static get WARN(){ return {name: 'WARN', value: 16} };\n  static get ERROR(){ return {name: 'ERROR', value: 32} };\n  static get ALL(){ return {name: 'ALL', value: 63} };\n\n  /**\n   * Get the level from its value\n   * @param  {Int} value The level value\n   * @return {Level|null}     The level object or null\n   */\n  static getFromValue(value){\n    let ret = null;\n    const list = [Level.OFF, Level.TRACE, Level.DEBUG, Level.INFO, Level.TIME, Level.WARN, Level.ERROR, Level.ALL];\n    list.forEach((e, i) => {\n      if (e.value === value){\n        ret = e;\n      }\n    })\n\n    return ret;\n  }\n}\n\nexport default Level\n"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+          "name": "./node_modules/@spices/cayenne/src/logger/index.js",
+          "index": 9,
+          "index2": 10,
+          "size": 2816,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+          "issuerId": null,
+          "issuerName": "./node_modules/@spices/cayenne/src/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "name": "./src/master/plugin.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "name": "./src/helpers/capacities.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "name": "./node_modules/@spices/cayenne/src/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "module": "./node_modules/@spices/cayenne/src/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./logger",
+              "loc": "1:0-29"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "module": "./node_modules/@spices/cayenne/src/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/index.js",
+              "type": "harmony export imported specifier",
+              "userRequest": "./logger",
+              "loc": "4:0-7:1"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 4,
+          "source": "import Level from '../level'\nimport ConsoleTransporter from './transports/console'\nimport DefaultInterface from './interfaces'\n\nclass Logger {\n\n  /**\n   * Constructor\n   */\n  constructor(){\n    this.transports = [ new ConsoleTransporter() ];\n    this.interfaces = [];\n  }\n\n  /**\n   * Get a new interface to log from\n   * @param  {Object} opts    The configuration object\n   * @return {Interface}      An interface to log from\n   */\n  get(opts){\n    let options = {\n      colors: opts && opts.colors ? opts.colors : true,\n      formatter: opts && opts.fomatter ? opts.formatter : this._formatter,\n      level: opts && opts.level ? Logger.getFromValue(opts.value) : Level.ALL,\n      name: opts && opts.name ? opts.name : null,\n      handler: this\n    };\n\n    let ret = new DefaultInterface(options);\n    this.interfaces.push(ret);\n    return ret;\n  }\n\n  /**\n   * Set the interface options\n   * @param {*} opts \n   */\n  set(opts){\n    let options = {\n      colors: opts && opts.colors ? opts.colors : true,\n      formatter: opts && opts.fomatter ? opts.formatter : this._formatter,\n      level: opts && opts.level ? Logger.getFromValue(opts.value) : Level.ALL,\n      name: opts && opts.name ? opts.name : null,\n      handler: this\n    }\n\n    this.interfaces.forEach(iface => iface.update(options));\n  }\n\n  _formatter({level, messages, name}){\n    let d = new Date();\n    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jui', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\n    let date = `${months[d.getMonth()]} ${d.getDate()}, ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;\n\n    let grey = 'color: lightgrey';\n    let orange = 'color: orange';\n    let blue = 'color: lightsteelblue';\n    let black = 'color: black';\n    let purple = 'color: rebeccapurple';\n\n    // style - date - style - ...rest\n    let m = [\n      '%c %s %c',\n      grey,\n      date,\n      black\n    ];\n\n    if (name) {\n      // style - date - style - name - style - ...rest\n      m = [\n        '%c %s %c %s %c',\n        grey,\n        date,\n        purple,\n        name,\n        black\n      ];\n    }\n\n    return m.concat(messages);\n  }\n\n  /**\n   * Get the messages to the transporters\n   * @param  {Level} level      Level of the messages\n   * @param  {String} action    The action to take\n   * @param  {Object} context   Context of the interface\n   * @param  {*} messages       Messages to transport\n   */\n  _invoke({level, action, context, messages }) {\n    messages = Array.prototype.slice.call( messages );\n    if (!action){\n      messages = context.formatter.call(context.formatter, {level, messages, name: context.name});\n    }\n\n    this.transports.forEach((transport) => {\n      transport.invoke({\n        action,\n        context,\n        level,\n        messages: messages\n      })\n    })\n  }\n}\n\nconst L = new Logger();\nexport default L;\n"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+          "name": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+          "index": 11,
+          "index2": 7,
+          "size": 1734,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+          "issuerId": null,
+          "issuerName": "./node_modules/@spices/cayenne/src/logger/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "name": "./src/master/plugin.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "name": "./src/helpers/capacities.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "name": "./node_modules/@spices/cayenne/src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./transports/console",
+              "loc": "2:0-53"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "./transports/console",
+              "loc": "11:28-46"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 5,
+          "source": "import AbstractTransport from './abstract'\nimport Level from '../../level'\n\nclass ConsoleTransporter extends AbstractTransport {\n\n  get console(){\n    return (typeof console === 'undefined') ? null : console;\n  }\n\n  invoke({ action, level, context, messages }) {\n    // check for the presence of console\n    if (!this.console){\n      return;\n    }\n\n    // methods\n    let method = this.console.log;\n\n    // based on the level\n    switch( level.value ){\n      case Level.TRACE.value:\n        method = this.console.trace;\n        break;\n      case Level.INFO.value:\n        method = this.console.info;\n        break;\n      case Level.WARN.value:\n        method = this.console.warn;\n        break;\n      case Level.ERROR.value:\n        method = this.console.error;\n        break;\n    }\n\n    if (action != null){\n      switch( action ){\n        case 'group':\n          method = this.console.group;\n          break;\n        case 'groupEnd': \n          method = this.console.groupEnd;\n          break  \n      }\n    }\n\n    // Execute\n\n    // if (messages.length > 2 && Level.DEBUG.value == level.value){\n    //   console.group('');\n    //   Function.prototype.apply.call( method, this.console, messages );\n    //\n    //   console.groupEnd();\n    // }\n    // else{\n      Function.prototype.apply.call( method, this.console, messages );\n    // }\n\n    // if (messages.length <= 1 || [Level.TRACE.value].includes(level.value)){\n    // }\n    // else{\n    //   let first = messages.shift();\n    //   this.console.group( first );\n    //   messages.forEach(message => {\n    //     Function.prototype.apply.call( method, this.console, message );\n    //   })\n    //   this.console.groupEnd( first );\n    // }\n\n  }\n}\n\nexport default ConsoleTransporter\n"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+          "name": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+          "index": 13,
+          "index2": 9,
+          "size": 1294,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+          "issuerId": null,
+          "issuerName": "./node_modules/@spices/cayenne/src/logger/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "name": "./src/master/plugin.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "name": "./src/helpers/capacities.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "name": "./node_modules/@spices/cayenne/src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./interfaces",
+              "loc": "3:0-43"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "./interfaces",
+              "loc": "29:18-34"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 5,
+          "source": "import Level from '../../level'\nimport AbstractInterface from './abstract'\n\nclass DefaultInterface extends AbstractInterface{\n\n  /**\n   * Outputs a message with the log level \"debug\".\n   * @param {*} ...args\n   */\n  debug(){\n    this._invoke({level: Level.DEBUG, messages: arguments});\n  }\n\n  /**\n  * Outputs a message with the log level \"info\".\n  * @param {*} ...args\n  */\n  info(){\n    this._invoke({level: Level.INFO, messages: arguments});\n  }\n\n  /**\n  * Outputs a message with the log level \"warn\".\n  * @param {*} ...args\n  */\n  warn(){\n    this._invoke({level: Level.WARN, messages: arguments});\n  }\n\n  /**\n  * Outputs a message with the log level \"error\".\n  * @param {*} ...args\n  */\n  error(){\n    this._invoke({level: Level.ERROR, messages: arguments});\n  }\n\n  /**\n  * Outputs a message with the log level \"trace\".\n  * @param {*} ...args\n  */\n trace(){\n   this._invoke({level: Level.TRACE, messages: arguments});\n  }\n  \n  /**\n   * Output a message as a group\n   * @param {*} ...args\n   */\n  group(){\n    this._invoke({action: 'group', level: Level.ALL, messages: arguments})\n  }\n  \n  /**\n   * Output a message as a groupEnd\n   * @param {*} ...args\n   */\n  groupEnd(){\n    this._invoke({action: 'groupEnd', level: Level.ALL, messages: arguments})\n  }\n}\n\nexport default DefaultInterface\n"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/abstract.js",
+          "name": "./node_modules/@spices/cayenne/src/logger/transports/abstract.js",
+          "index": 12,
+          "index2": 6,
+          "size": 189,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+          "issuerId": null,
+          "issuerName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "name": "./src/master/plugin.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "name": "./src/helpers/capacities.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "name": "./node_modules/@spices/cayenne/src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/transports/console.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./abstract",
+              "loc": "1:0-42"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/transports/console.js",
+              "type": "harmony import specifier",
+              "userRequest": "./abstract",
+              "loc": "4:33-50"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 6,
+          "source": "class AbstractTransport{\n  invoke({action, level, name, messages}){\n    throw new Exception('Error: No implementation for AbstractTransport.Invoke')\n  }\n}\n\nexport default AbstractTransport\n"
+        },
+        {
+          "id": null,
+          "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/abstract.js",
+          "name": "./node_modules/@spices/cayenne/src/logger/interfaces/abstract.js",
+          "index": 14,
+          "index2": 8,
+          "size": 1983,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+          "issuerId": null,
+          "issuerName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/master/plugin.js",
+              "name": "./src/master/plugin.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/src/helpers/capacities.js",
+              "name": "./src/helpers/capacities.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/index.js",
+              "name": "./node_modules/@spices/cayenne/src/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/index.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/index.js"
+            },
+            {
+              "id": null,
+              "identifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "name": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./abstract",
+              "loc": "2:0-42"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/mnt/d/projects/spices/ginger/ginger/node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "module": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "moduleName": "./node_modules/@spices/cayenne/src/logger/interfaces/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "./abstract",
+              "loc": "4:31-48"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 6,
+          "source": "import LoggerLevel from '../../level'\n\nclass AbstractInterface{\n  constructor({colors, formatter, level, name, handler}){\n    this.colors = colors;\n    this.formatter = formatter;\n    this.level = level;\n    this.name = name;\n    this.handler = handler;\n  }\n\n  /**\n   * Return the logger level\n   * @return {Level} The level\n   */\n  get level(){\n    return this._level;\n  }\n\n  /**\n   * Define the logger level\n   * @param  {Level} value The level\n   */\n  set level(value){\n    if (value && value.hasOwnProperty('value')){\n      this._level = value;\n    }\n  }\n\n  /**\n   * Return the context of the interace\n   * @return {Object}\n   */\n  get context(){\n    return {\n      colors: this.colors,\n      formatter: this.formatter,\n      level: this.level,\n      name: this.name\n    }\n  }\n\n  /**\n   * Is the logger enabled for the given level\n   * @param  {Level} level The level to evaluate\n   * @return {Boolean}\n   */\n  enabledFor(level){\n    return this._level.value & level.value;\n  }\n\n  /**\n   * Get a new interface to log from\n   * @param  {Object} opts    The configuration object\n   * @return {Interface}      An interface to log from\n   */\n  get(opts){\n    return this.handler.get(opts);\n  }\n\n  /**\n   * Update the interface options\n   * @param {Boolean} colors \n   * @param {Function} formatter \n   * @param {Level} level \n   * @param {String} name \n   * @param {Logger} handler \n   */\n  update({colors, formatter, level, name, handler}){\n    this.colors = colors;\n    this.formatter = formatter;\n    this.level = level;\n    this.name = name;\n    this.handler = handler;\n  }\n\n  /**\n   * Invoke the handler if the level is enabled\n   * @param  {Level} level    The level of the messages\n   * @param  {String} action  The action to take\n   * @param  {*}     messages The messages\n   */\n  _invoke({action, level, messages}) {\n    if (this.enabledFor(level)){\n      this.handler._invoke({action, level, context: this.context, messages});\n    }\n  }\n}\n\nexport default AbstractInterface\n"
+        }
+      ],
+      "filteredModules": 0
+    }
+  ],
+  "filteredModules": 0,
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 2,
+      "debug": false
+    }
+  },
+  "children": []
+}

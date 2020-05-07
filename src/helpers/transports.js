@@ -1,5 +1,3 @@
-import Axios from 'axios'
-
 export default class GingerTransports {
   
   /**
@@ -7,7 +5,11 @@ export default class GingerTransports {
    * @param {Array} transports 
    */
   constructor(transports) {
-    this.list = transports;
+    this.list = transports || {};
+
+    if (transports && !transports.hasOwnProperty('http')){
+      throw new Error('@spices/ginger: No HTTP transport available');
+    }
   }
 
   /**
@@ -15,7 +17,7 @@ export default class GingerTransports {
    * @return {Axios}
    */
   get http() {
-    return this.list.http || Axios.create({});
+    return this.list.http || null;
   }
 
   /**

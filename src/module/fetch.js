@@ -1,4 +1,4 @@
-export default async function fetchModule(url) {
+export default async (url) => {
   const name = url.split('/').reverse()[0].match(/^(.*?)\.umd/)[1];
 
   if (window[name]) { 

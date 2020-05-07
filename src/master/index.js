@@ -9,28 +9,19 @@ export default class Ginger{
    * @param {GingerCapacities} capacities
    * @param {Array.<GingerModuleConfig>} config 
    */
-  constructor({ capacities, config }){
+  constructor({ capacities, config = [] }){
     this._capacities = capacities;
-    this._config = config;
-
+    
     // Validations
     if (!this._capacities instanceof GingerCapacities){
-      throw new Exception('@spices/ginger: The capacities are not a valid <GingerCapacities>');
-    }
-
-    if (!Array.isArray(this._config)){
-      throw new Exception('@spices/ginger: The config must be an Array.<GingerModuleConfig>')
+      throw new Error('@spices/ginger: The capacities are not a valid <GingerCapacities>');
     }
     
-    this._config.forEach( e => {
-      if (!e instanceof GingerModuleConfig){
-        throw new Exception('@spices/ginger: The config must be an Array.<GingerModuleConfig>')
-      }
-    })
-
     // Initialisation
     this._capacities.store && this._capacities.store.registerModule('ginger', Store);
     this._modules = [];
+    this._config = [];
+    this.configure( config );
   }
 
   /**
@@ -64,20 +55,45 @@ export default class Ginger{
     return this._modules.find( m => m.fqn === fqn ) || null
   }
 
+  /**
+   * Configure ginger based on one or more module configuration
+   * 
+   * @param {Array.<GingerModuleConfig>} config 
+   * @return {Array.<Promise>} - One Promise per entry
+   */
+  configure( config ){
+    if (!Array.isArray(config)) {
+      throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')
+    }
+
+    return config.map(entry => { 
+      if (!entry instanceof GingerModuleConfig) {
+        throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')
+      }
+
+      return this.register(new GingerModule({
+        capacities: this._capacities,
+        config: entry
+      }))
+    });
+  }
+
     
   /**
    * Register a module
    * @param {GingerModule} module 
+   * @return {Promise}
    */
-  register( module ){
-    if (this.get(module.fqn)){
-      throw new Exception(`@spices/ginger: A module with the given fqn (${fqn}) already exists`);
+  register( m ){
+    if (this.get(m.fqn)){
+      throw new Error(`@spices/ginger: A module with the given fqn (${fqn}) already exists`);
     }
-
-    this._modules.push( module );
-    module.register().then((manifest) => {
-      console.log('module registered', manifest);
+    return new Promise((resolve, reject) => {
+      this._modules.push( m );
+      m.register().then((manifest) => {
+        console.log('module registered', manifest);
+        resolve();
+      })
     })
   }
-  
 }
