@@ -50,7 +50,7 @@ class Ginger{
    */
   register({fqn, url, options}){
     return new Promise((resolve, reject) => {
-      let cap = { ...this.capacities };
+      let cap = Object.assign({}, this.capacities);
 
       // Custom logger per module
       if (this.capacities.logger){
