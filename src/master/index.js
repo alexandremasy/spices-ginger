@@ -1,7 +1,7 @@
-import GingerModule from '@/module'
-import GingerModuleConfig from '@/module/config'
-import GingerCapacities from '@/helpers/capacities'
-import Store from '@/master/data'
+import GingerModule from '../module'
+import GingerModuleConfig from '../module/config'
+import GingerCapacities from '../helpers/capacities'
+import Store from './data'
 
 export default class Ginger{
   /**
@@ -88,6 +88,7 @@ export default class Ginger{
     if (this.get(m.fqn)){
       throw new Error(`@spices/ginger: A module with the given fqn (${fqn}) already exists`);
     }
+
     return new Promise((resolve, reject) => {
       this._modules.push( m );
       m.register().then((manifest) => {

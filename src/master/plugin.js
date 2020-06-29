@@ -1,5 +1,7 @@
-import Ginger from '@/master'
-import GingerCapacities from '@/helpers/capacities'
+import Ginger from './'
+import GingerCapacities from '../helpers/capacities'
+
+import { GingerLink, GingerRouterView } from './components'
 
 const VueGinger = {};
 VueGinger.install = function (Vue, opts) {
@@ -7,6 +9,7 @@ VueGinger.install = function (Vue, opts) {
     Vue.prototype.$spices = {}
   }
 
+  // Install the $spices.ginger utility
   let o = opts || {};
   Vue.prototype.$spices.ginger = new Ginger({
     capacities: new GingerCapacities({
@@ -18,6 +21,10 @@ VueGinger.install = function (Vue, opts) {
     }),
     config: o.config || [],
   });
+
+  // Install the components
+  Vue.component('ginger-link', GingerLink);
+  Vue.component('ginger-router-view', GingerRouterView);
 }
 
 export default VueGinger

@@ -2,6 +2,7 @@ export default class GingerTransports {
   
   /**
    * Constructor
+   * 
    * @param {Array} transports 
    */
   constructor(transports) {
@@ -14,6 +15,7 @@ export default class GingerTransports {
 
   /**
    * Return the http utility
+   * 
    * @return {Axios}
    */
   get http() {

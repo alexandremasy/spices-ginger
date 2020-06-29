@@ -14,11 +14,11 @@
     "webpack-cli": "^3.3.10"
   },
   "files": [
-    "dist"
+    "src"
   ],
   "keywords": [],
   "license": "UNLICENSED",
-  "main": "dist/spices-ginger.js",
+  "main": "src/index.js",
   "name": "@spices/ginger",
   "publishConfig": {
     "access": "public",

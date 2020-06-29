@@ -1,12 +1,7 @@
-import Ginger from '@/master'
-import VueGinger from '@/master/plugin'
+export { default as Ginger } from './master'
+export { default as VueGinger } from './master/plugin'
 
-import GingerModuleManifest from '@/module/manifest'
-import GingerModuleConfig from '@/module/config'
-
-export {
-  Ginger,
-  GingerModuleConfig,
-  GingerModuleManifest,
-  VueGinger
-}
+export { default as GingerModuleCapacitiy } from './module/capacity'
+export { default as GingerModuleConfig } from './module/config'
+export { default as GingerModuleManifest } from './module/manifest'
+export { default as GingerModuleView } from './module/view'

@@ -1,16 +1,20 @@
-import GingerModuleManifest from '@/module/manifest'
-import fetch from '@/module/fetch'
+import GingerCapacities from './capacity'
+import GingerModuleManifest from './manifest'
+import umd from '../helpers/umd'
 
 export default class GingerModule{
 
   /**
    * Constructor
-   * @param {GingerCapacities} capacities - The module capacities 
-   * @param {GingerModuleConfig} config   - The module configuration
+   * 
+   * @param {Object} options                      - The module options
+   * @param {GingerCapacities} options.capacities - The module capacities 
+   * @param {GingerModuleConfig} options.config   - The module configuration
    */
   constructor({ capacities, config }){
     this._capacities = capacities;
     this._config = config;
+    this.$id = Symbol();
     
     this._loaded = false;
     this._manifest = null;
@@ -82,15 +86,25 @@ export default class GingerModule{
    * @return {Promise.<GingerModuleManifest>}
    */
   register(){
+    console.group(this.fqn);
+    console.log(!!this._manifest ? this._manifest : 'loading the manifest');
+    
     if (this._manifest){
       return Promise.resolve(this._manifest);
     }
     
     return new Promise((resolve, reject) => {
-      fetch(this._config.manifest).then(response => {
-        this._manifest = response.default;
+      umd({ 
+        name: `${this.fqn}-manifest`,
+        url: this._config.manifest
+      })
+      .then(() => {
+        this._manifest = GingerModuleManifest.instanciate(window[this.fqn].default);
+        console.log('manifest', this._manifest);
+        console.groupEnd(this.fqn);
         return resolve(this._manifest);
       })
+      .catch(err => reject(err))
     })
   }
 

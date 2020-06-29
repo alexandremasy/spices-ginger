@@ -7,24 +7,16 @@ class GingerModule {
    * @param {Capacities} capacities 
    * @param {String} fqn 
    * @param {Object} options 
-   * @param {String} url 
    */
-  constructor({ capacities, fqn, options, url }){
-    this.capacities = capacities;
-    this._fqn = fqn;
-    this._url = url;
-    this._options = options;
-
-    this._loaded = false;
-    this._bundle = null;
-
+  constructor({ capacities, fqn, options}){
     if (!fqn){
       throw new Exception('@spices/ginger', 'The fqn is required');
     }
 
-    if (!url){
-      throw new Exception('@spices/ginger', 'The url is required');
-    }
+    this.capacities = capacities;
+    this._id = new Symbol(fqn);
+    this._fqn = fqn;
+    this._options = options;
   }
 
   /**

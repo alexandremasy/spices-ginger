@@ -1,26 +1,29 @@
-export default async (url) => {
-  const name = url.split('/').reverse()[0].match(/^(.*?)\.umd/)[1];
+import uuid from '../helpers/uuid'
 
-  if (window[name]) { 
-    return window[name]; 
+export default async function fetchModule({url, name}) {
+  // const name = url.split('/').reverse()[0].match(/^(.*?)\.umd/)[1];
+
+  if (window[name]) {
+    return window[name];
   }
 
-  window[name] = new Promise((resolve, reject) => {
+  let ret = new Promise((resolve, reject) => {
     const script = document.createElement('script');
     script.async = true;
-    
+    script.type = 'module';
+
     let onLoad = () => {
       script.removeEventListener('load', onLoad);
       script.removeEventListener('error', onError);
-      
-      resolve(window[name]);
+
+      resolve();
     };
 
     let onError = () => {
       script.removeEventListener('load', onLoad);
       script.removeEventListener('error', onError);
-      
-      reject( new Error(`Error loading ${url}`) );
+
+      reject(new Error(`Error loading ${url}`));
     };
 
     script.addEventListener('load', onLoad);
@@ -29,5 +32,5 @@ export default async (url) => {
     document.head.appendChild(script);
   });
 
-  return window[name];
+  return ret;
 }

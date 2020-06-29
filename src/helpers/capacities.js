@@ -6,11 +6,12 @@ export default class GingerCapacities {
   /**
    * Constructor
    * 
-   * @param {Vue} eventbus 
-   * @param {GingerTransports} transports
-   * @param {Logger} logger
-   * @param {VueRouter} router
-   * @param {VueX} store
+   * @param {Object} options
+   * @param {Vue} options.eventbus 
+   * @param {GingerTransports} options.transports
+   * @param {Logger} options.logger
+   * @param {VueRouter} options.router
+   * @param {VueX} options.store
    */
   constructor({ eventbus, transports, logger, router, store }) {
     this.eventbus = eventbus || null;
