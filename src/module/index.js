@@ -86,8 +86,7 @@ export default class GingerModule{
    * @return {Promise.<GingerModuleManifest>}
    */
   register(){
-    console.group(this.fqn);
-    console.log(!!this._manifest ? this._manifest : 'loading the manifest');
+    this._capacities.logger.group(this.fqn);
     
     if (this._manifest){
       return Promise.resolve(this._manifest);
@@ -100,9 +99,28 @@ export default class GingerModule{
       })
       .then(() => {
         this._manifest = GingerModuleManifest.instanciate(window[this.fqn].default);
-        console.log('manifest', this._manifest);
-        console.groupEnd(this.fqn);
-        return resolve(this._manifest);
+        this._capacities.logger.debug(`${this._manifest.name}@${this._manifest.version.version}`);
+        
+        // Register the routes
+        if (this._manifest.routes) {
+          this._capacities.store.dispatch('ginger/addRoutes', this._manifest.routes);
+          this._capacities.router.addRoutes(this._manifest.routes);
+          this._capacities.logger.debug(`${this._manifest.routes.length || 0} route(s)`)
+          this._capacities.logger.debug(`${this._manifest.navigation.length || 0} navigation(s)`);
+        }
+
+        // Register the stores
+        if (this._manifest.stores) {
+          this._capacities.logger.debug('%d stores', this._manifest.stores);
+
+          this._manifest.stores.forEach(store => {
+            this._capacities.store.registerModule(store.name, store);
+          });
+        }
+    
+        console.dir(this._manifest);
+        this._capacities.logger.groupEnd(this.fqn);
+        return resolve();
       })
       .catch(err => reject(err))
     })

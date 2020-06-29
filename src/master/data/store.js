@@ -21,7 +21,7 @@ const actions = {
     commit('addError', error);
   },
 
-  setRoutes({commit}, routes){
+  addRoutes({commit}, routes){
     commit('addRoutes', routes);
   },
 

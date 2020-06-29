@@ -91,8 +91,9 @@ export default class Ginger{
 
     return new Promise((resolve, reject) => {
       this._modules.push( m );
-      m.register().then((manifest) => {
-        console.log('module registered', manifest);
+      m.register()
+      .then((manifest) => {
+        console.log('module registered');
         resolve();
       })
     })

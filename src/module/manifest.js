@@ -51,7 +51,6 @@ export default class GingerModuleManifest{
       views: data._views
     });
     
-    console.log(data);
     return ret;
   }
 }
