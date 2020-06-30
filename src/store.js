@@ -55,8 +55,8 @@ export default {
      * @param {GingerModule} module - The module to register 
      */
     register({ commit }, module) {
-      console.log('store.register', module);
       commit('addModule', module);
+      commit('addViews', module.views);
     },
 
     error({ commit }, error) {
@@ -83,8 +83,13 @@ export default {
       state.modules.push(module);
     },
 
+    /**
+     * Add some views to the state
+     * 
+     * @param {*} views 
+     */
     addViews(state, views){
-
+      state.views = state.views.concat(views);
     },
 
     addRoutes(state, routes) {

@@ -91,6 +91,23 @@ export default class GingerModule {
 
   /////////////////////////////////////////////////////////
 
+  /**
+   * Returns the module view with the given fqn
+   * 
+   * @param {GingerView} fqn FQN of the view to retrieve
+   */
+  getView(fqn) {
+    return this.views.find(v => v.fqn === fqn)
+  }
+
+  /**
+   * Whether or not the given fqn is a view of this module
+   * 
+   * @param {Boolean} fqn The view fqn to search for
+   */
+  hasView(fqn){
+    return !!this.getView(fqn);
+  }
 
   /**
    * Register the module

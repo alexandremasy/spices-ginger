@@ -29,34 +29,27 @@ export default class Ginger{
     // Router setup
     if (isDef(this._capabilities.router)){
       this._capabilities.router.beforeEach((to, from, next) => {
-        console.log('to', to);
+        // console.log('to', to);
         next();
       })
     }
 
     this._modules = [];
     this._config = [];
-    this.configure( config );
-  }
-
-  /**
-   * The list of actives module. 
-   * @type {Array}
-   */
-  get actives(){
-    return this._config.filter((module) => !module.hasOwnProperty('enabled') || module.enabled === true);
-  }
-
-  /**
-   * The list of routes
-   */
-  get routes(){
-    let ret = [];
-    this.actives.forEach((module, i) => {
-      ret = ret.concat(module.routes);
+    this._capabilities.vue.util.defineReactive(this, '_loading', true);
+    Promise.all(this.configure( config ))
+    .then(() => {
+      this._loading = false;
     });
+  }
 
-    return ret;
+  /**
+   * Whether or not a module is loading
+   * 
+   * @property {Boolean}
+   */
+  get loading(){
+    return this._loading;
   }
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -89,8 +82,43 @@ export default class Ginger{
    * @param {String} fqn 
    * @returns {GingerModule}
    */
-  get(fqn) {
+  getModule(fqn) {
     return this._modules.find(m => m.fqn === fqn) || null
+  }
+
+  /**
+   * Return the view linked to the given fqn
+   * 
+   * @param {String} fqn The view to retrieve
+   * @returns {Promise}
+   */
+  getView(fqn){
+    let ret = null;
+
+    return new Promise((resolve, reject) => {
+      // 1. find the view
+      this._modules.forEach( m => {
+        let v = m.getView(fqn);
+        if (isDef(v)){
+          ret = v;
+        }
+      });
+
+      // 2a. Not found 
+      if (!ret){
+        return reject(`@spices/ginger: The requested views can not be found (${fqn})`);
+      }
+
+      // 2b. Fetch the view
+      ret.fetch()
+      .then(() => {
+        resolve(ret.component);
+      })
+
+      return ret;
+    })
+
+
   }
 
   init(fqn){
@@ -103,7 +131,7 @@ export default class Ginger{
    * @return {Promise}
    */
   register( m ){
-    if (this.get(m.fqn)){
+    if (this.getModule(m.fqn)){
       throw new Error(`@spices/ginger: A module with the given fqn (${fqn}) already exists`);
     }
 

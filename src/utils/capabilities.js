@@ -13,13 +13,15 @@ export default class GingerCapabilities {
    * @param {Logger} options.logger - A logger to display message in the console
    * @param {VueRouter} options.router - An instance of the Vue Router
    * @param {VueX} options.store - An instance of VueX
+   * @param {Vue} options.vue - An instance of the current Vue
    */
-  constructor({ eventbus, transports, logger, router, store }) {
+  constructor({ eventbus, transports, logger, router, store, vue }) {
     this._eventbus = eventbus || null;
     this._logger = logger || Logger.get();
     this._router = router || null;
     this._store = store;
     this._transports = new GingerTransports(transports);
+    this._vue = vue;
   }
 
   /**
@@ -93,4 +95,13 @@ export default class GingerCapabilities {
   get transports(){
     return this._transports
   }  
+
+  /**
+   * An instance of the current Vue
+   * 
+   * @property {Vue}
+   */
+  get vue(){
+    return this._vue;
+  }
 }

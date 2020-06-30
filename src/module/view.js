@@ -13,16 +13,17 @@ export default class GingerView{
    * 
    * @param {Object} options - the module option 
    * @param {GingerViewContext} options.context - the view context on which the view can be displayed
+   * @param {String} options.fqn - the fully qualified name of the view
    * @param {String} options.name - the name of the view
    * @param {GingerModule} options.parent - the parent module
    * @param {Promise} options.src - The Promise to resolve in order to load the view
    */
-  constructor({ context = GingerViewContext.SUM, name, parent, src}){
+  constructor({ context = GingerViewContext.SUM, fqn, name, parent, src}){
     this._context = context;
+    this._fqn = fqn;
     this._name = name;
     
     this._src = src;
-    this.loading = false;
     
     this.$id = Symbol();
     this.$parent = parent;
@@ -30,6 +31,15 @@ export default class GingerView{
 
     this._depth = -1;
     this._layer = -1;
+  }
+
+  /**
+   * The component to display
+   * 
+   * @return {VueComponent}
+   */
+  get component(){
+    return this.$el;
   }
 
   /**
@@ -42,12 +52,30 @@ export default class GingerView{
   }
 
   /**
+   * The fully qualified name of the view
+   * 
+   * @property {String}
+   */
+  get fqn(){
+    return this._fqn;
+  }
+
+  /**
    * The unique id
    * 
    * @property {Symbol}
    */
   get id(){
     return this.$id;
+  }
+
+  /**
+   * Whether the view is loaded or not
+   * 
+   * @returns {Boolean}
+   */
+  get loaded(){
+    return this.$el !== null;
   }
 
   /**
@@ -86,11 +114,32 @@ export default class GingerView{
   static instantiate(data){
     let ret = new GingerView({
       context: data.context,
+      fqn: data.fqn,
       name: data.name,
       parent: data.parent,
       src: data.src
     });
 
     return ret;
+  }
+
+  /**
+   * Fetch the view
+   * 
+   * @returns {Promise}
+   */
+  fetch(){
+    return new Promise((resolve, reject) => {
+      if (this.loaded){
+        return resolve(this.component);
+      }
+
+      this.src()
+      .then((component) => {
+        this.$el = component.default;
+        resolve(this.component);
+      })
+      .catch(err => reject(err))
+    })
   }
 }

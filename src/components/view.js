@@ -1,7 +1,39 @@
-export default { 
-  name: 'GingerRouterView',
-  
-  render: (h) => {
-    return h('router-view')
+export default {
+  name: 'GingerView',
+  functional: true,
+
+  props: {
+    name: {
+      type: String,
+      required: true
+    }
+  },
+
+  render(_, { props, children, parent, data }) {
+    const h = parent.$createElement;
+    const ginger = parent.$ginger;
+    
+    if (ginger.loading){
+      // console.warn('@spices/ginger modules are still loading. View rendering delayed after the loading');
+      return;
+    }
+
+    const name = props.name;
+    const view = ginger.getView(name);
+
+    console.log('render :>> ', name);
+    console.log('view :>> ', view);
   }
 }
+
+// (resolve, reject) => {
+//   console.log('view', arguments);
+//   console.log('resolve', resolve);
+//   console.log('parent', $parent);
+//   setTimeout(() => {
+//     resolve({
+//       name: 'GingerView',
+//       template: '<h1>Coucou</h1>'
+//     })
+//   }, 1000);
+// }
