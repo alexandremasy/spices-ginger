@@ -1,4 +1,4 @@
-import uuid from '../helpers/uuid'
+import { uuid } from '../utils'
 
 export default class GingerModuleConfig{
 

@@ -3,7 +3,8 @@ export default class GingerTransports {
   /**
    * Constructor
    * 
-   * @param {Array} transports 
+   * @param {Array} transports
+   * @constructor
    */
   constructor(transports) {
     this.list = transports || {};
@@ -25,7 +26,7 @@ export default class GingerTransports {
   /**
    * Return a socket utility
    * 
-   * @return {Object | null}
+   * @return {Object}
    */
   get socket() {
     return this.list.socket || null;

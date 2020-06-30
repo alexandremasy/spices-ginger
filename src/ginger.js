@@ -1,24 +1,39 @@
-import GingerModule from '../module'
-import GingerModuleConfig from '../module/config'
-import GingerCapacities from '../helpers/capacities'
-import Store from './data'
+import { GingerModule, GingerModuleConfig } from './module'
+import { GingerCapabilities } from './utils'
+import GingerStore from './store'
+
+const isDef = v => v != undefined
 
 export default class Ginger{
   /**
    * Constructor
-   * @param {GingerCapacities} capacities
+   * @param {GingerCapabilities} capabilities
    * @param {Array.<GingerModuleConfig>} config 
    */
-  constructor({ capacities, config = [] }){
-    this._capacities = capacities;
+  constructor({ capabilities, config = [] }){
+    this._capabilities = capabilities;
     
     // Validations
-    if (!this._capacities instanceof GingerCapacities){
-      throw new Error('@spices/ginger: The capacities are not a valid <GingerCapacities>');
+    if (!this._capabilities instanceof GingerCapabilities){
+      throw new Error('@spices/ginger: The capabilities are not a valid <GingerCapabilities>');
     }
     
-    // Initialisation
-    this._capacities.store && this._capacities.store.registerModule('ginger', Store);
+    // Store setup
+    if (isDef(this._capabilities.store)){
+      this._capabilities.store.registerModule('ginger', GingerStore);
+    }
+    else{
+      this._capabilities.store = GingerStore;
+    }
+
+    // Router setup
+    if (isDef(this._capabilities.router)){
+      this._capabilities.router.beforeEach((to, from, next) => {
+        console.log('to', to);
+        next();
+      })
+    }
+
     this._modules = [];
     this._config = [];
     this.configure( config );
@@ -47,15 +62,6 @@ export default class Ginger{
   ////////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Return the module base on the given fqn
-   * @param {String} fqn 
-   * @returns {GingerModule}
-   */
-  get(fqn){
-    return this._modules.find( m => m.fqn === fqn ) || null
-  }
-
-  /**
    * Configure ginger based on one or more module configuration
    * 
    * @param {Array.<GingerModuleConfig>} config 
@@ -72,12 +78,24 @@ export default class Ginger{
       }
 
       return this.register(new GingerModule({
-        capacities: this._capacities,
+        capabilities: this._capabilities,
         config: entry
       }))
     });
   }
 
+  /**
+   * Return the module base on the given fqn
+   * @param {String} fqn 
+   * @returns {GingerModule}
+   */
+  get(fqn) {
+    return this._modules.find(m => m.fqn === fqn) || null
+  }
+
+  init(fqn){
+    console.log('ginger.init', fqn);
+  }
     
   /**
    * Register a module

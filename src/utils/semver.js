@@ -2,7 +2,6 @@ const MAX_LENGTH = 256;
 const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || 9007199254740991;
 
 const NUMERIC_IDENTIFIER = '0|[1-9]\\d*';
-const NUMERIC_LETTERS_IDENTIFIER = '[0-9A-Za-z-]*';
 const BUILD_IDENTIFIER = `[0-9A-Za-z-]+`;
 const NON_NUMERIC_IDENTIFIER = '\\d*[a-zA-Z-][a-zA-Z0-9-]*';
 const MAIN_VERSION_IDENTIFIER = `(${NUMERIC_IDENTIFIER})\\.(${NUMERIC_IDENTIFIER})\\.(${NUMERIC_IDENTIFIER})`;
@@ -11,11 +10,10 @@ const PRERELEASE = `(?:\\-(${PRERELEASE_IDENTIFIER}(?:\\.${PRERELEASE_IDENTIFIER
 const BUILD = `(?:\\+(${BUILD_IDENTIFIER}(?:\\.${BUILD_IDENTIFIER})*))`;
 const FULL_VERSION_IDENTIFIER = `^v?${MAIN_VERSION_IDENTIFIER}${PRERELEASE}?${BUILD}?$`;
 
-const REGEX_MAIN_VERSION = new RegExp(MAIN_VERSION_IDENTIFIER);
 const REGEX_FULL_VERSION = new RegExp(FULL_VERSION_IDENTIFIER);
 const REGEX_NUMERIC = /^[0-9]+$/;
 
-class SemverVersion {
+export default class SemverVersion {
   constructor(version) {
     if (version instanceof SemverVersion) {
       return version;
@@ -178,5 +176,3 @@ class SemverVersion {
     }
   }
 }
-
-export default SemverVersion
