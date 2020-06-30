@@ -1,5 +1,6 @@
 import { Logger } from '@spices/cayenne'
 import { GingerTransports } from './index'
+const isDef = v => v != undefined && v != null
 
 export default class GingerCapabilities {
 
@@ -14,11 +15,29 @@ export default class GingerCapabilities {
    * @param {VueX} options.store - An instance of VueX
    */
   constructor({ eventbus, transports, logger, router, store }) {
-    this.eventbus = eventbus || null;
-    this.logger = logger || Logger.get();
-    this.router = router || null;
-    this.store = store;
-    this.transports = new GingerTransports(transports);
+    this._eventbus = eventbus || null;
+    this._logger = logger || Logger.get();
+    this._router = router || null;
+    this._store = store;
+    this._transports = new GingerTransports(transports);
+  }
+
+  /**
+   * The Eventbus
+   * 
+   * @property {Vue}
+   */
+  get eventbus(){
+    return this._eventbus
+  }
+
+  /**
+  * Whether there is a store or not
+  * 
+  * @returns {Boolean}
+  */
+  get hasStore() {
+    return isDef(this.store)
   }
 
   /**
@@ -27,6 +46,51 @@ export default class GingerCapabilities {
    * @return { Axios }
    */
   get http() {
-    return this.transports.http;
+    return this.transports.http
   }
+
+  /**
+   * Whether or not there is a Vue Router
+   * 
+   * @return {Boolean}
+   */
+  get hasRouter() {
+    return isDef(this.router)
+  }
+
+  /**
+   * The logger
+   * 
+   * @property {Logger}
+   */
+  get logger(){
+    return this._logger
+  }
+
+  /**
+   * The Vue Router instance
+   * 
+   * @property {VueRouter}
+   */
+  get router(){
+    return this._router
+  }
+
+  /**
+   * The VueX instance
+   * 
+   * @property {VueX}
+   */
+  get store(){
+    return this._store
+  }
+
+  /**
+   * The available transports
+   * 
+   * @property {GingerTransports}
+   */
+  get transports(){
+    return this._transports
+  }  
 }

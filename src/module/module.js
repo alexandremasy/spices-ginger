@@ -1,5 +1,6 @@
 import { GingerCapabilities, UMD } from '../utils'
 import { GingerModuleManifest } from './index'
+const isDef = v => v != undefined && v != null
 
 /**
  * @class
@@ -53,7 +54,7 @@ export default class GingerModule {
    */
   get routes(){
     let ret = this._bundle && this._bundle.routes ? this._bundle.routes : null;
-    if (this._options && this._options.router && this._options.router.prefix) {
+    if (isDef(this._options) && isDef(this._options.router) && isDef(this._options.router.prefix)) {
       ret = ret.map(route => {
         route.path = this._options.router.prefix + route.path;
         return route;
@@ -76,7 +77,16 @@ export default class GingerModule {
    * @return {Array}
    */
   get stores(){
-    return this._bundle && this._bundle.stores ? this._bundle.stores : null;
+    return isDef(this._bundle) && isDef(this._bundle.stores) ? this._bundle.stores : null;
+  }
+
+  /**
+   * The list of views
+   * 
+   * @return {Array.GingerView}
+   */
+  get views(){
+    return isDef(this._manifest) && isDef(this._manifest.views) ? this._manifest.views : [];
   }
 
   /////////////////////////////////////////////////////////
@@ -90,7 +100,7 @@ export default class GingerModule {
   register(){
     this._capabilities.logger.group(this.fqn);
     
-    if (this._manifest){
+    if (isDef(this._manifest)){
       return Promise.resolve(this._manifest);
     }
     
@@ -100,21 +110,34 @@ export default class GingerModule {
         url: this._config.manifest
       })
       .then(() => {
-        this._manifest = GingerModuleManifest.instanciate(window[this.fqn].default);
+        this._bundle = window[this.fqn].default;
+
+        this._manifest = GingerModuleManifest.instanciate(this._bundle);
         this._manifest.parent = this;
 
         this._capabilities.logger.debug(`${this._manifest.name}@${this._manifest.version.version}`);
+
+        // Register in the store
+        if (this._capabilities.hasStore){
+          this._capabilities.store.dispatch('ginger/register', this);
+        }
         
         // Register the routes
-        if (this._manifest.routes) {
-          this._capabilities.store.dispatch('ginger/addRoutes', this._manifest.routes);
-          this._capabilities.router.addRoutes(this._manifest.routes);
+        if (isDef(this._manifest.routes)) {
+          if (this._capabilities.hasStore){
+            this._capabilities.store.dispatch('ginger/addRoutes', this._manifest.routes);
+          }
+
+          if (this._capabilities.hasRouter){
+            this._capabilities.router.addRoutes(this._manifest.routes);
+          }
+
           this._capabilities.logger.debug(`${this._manifest.routes.length || 0} route(s)`)
           this._capabilities.logger.debug(`${this._manifest.navigation.length || 0} navigation(s)`);
         }
 
         // Register the stores
-        if (this._manifest.stores) {
+        if (this._manifest.stores && this._capabilities.hasStore) {
           this._capabilities.logger.debug('%d stores', this._manifest.stores);
 
           this._manifest.stores.forEach(store => {

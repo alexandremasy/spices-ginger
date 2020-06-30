@@ -42,7 +42,7 @@ export default {
      * 
      * @returns {Array.<GingerModule>}
      */
-    modules: state => state.module.filter(m => !m.hasOwnProperty('enabled') || m.enabled === true )
+    modules: state => state.modules.filter(m => !m.hasOwnProperty('enabled') || m.enabled === true )
   },
   
   /////////////////////////////////////////////////////////////////////////////////////
@@ -55,6 +55,7 @@ export default {
      * @param {GingerModule} module - The module to register 
      */
     register({ commit }, module) {
+      console.log('store.register', module);
       commit('addModule', module);
     },
 
