@@ -149,7 +149,8 @@ export default class GingerModule {
             this._capabilities.router.addRoutes(this._manifest.routes);
           }
 
-          this._capabilities.logger.debug(`${this._manifest.routes.length || 0} route(s)`)
+          this._capabilities.logger.debug(`${this._manifest.views.length || 0} views(s)`);
+          this._capabilities.logger.debug(`${this._manifest.routes.length || 0} route(s)`);
           this._capabilities.logger.debug(`${this._manifest.navigation.length || 0} navigation(s)`);
         }
 

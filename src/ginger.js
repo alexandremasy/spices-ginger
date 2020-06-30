@@ -89,20 +89,32 @@ export default class Ginger{
   /**
    * Return the view linked to the given fqn
    * 
+   * @param {String} fqn The view fqn to retrieve
+   */
+  getView(fqn){
+    let ret = null;
+    this._modules.forEach(m => {
+      let v = m.getView(fqn);
+      if (isDef(v)) {
+        ret = v;
+      }
+    });
+
+    return ret;
+  }
+
+  /**
+   * Return the view linked to the given fqn
+   * 
    * @param {String} fqn The view to retrieve
    * @returns {Promise}
    */
-  getView(fqn){
+  view(fqn){
     let ret = null;
 
     return new Promise((resolve, reject) => {
       // 1. find the view
-      this._modules.forEach( m => {
-        let v = m.getView(fqn);
-        if (isDef(v)){
-          ret = v;
-        }
-      });
+      ret = this.getView(fqn);
 
       // 2a. Not found 
       if (!ret){
@@ -117,8 +129,6 @@ export default class Ginger{
 
       return ret;
     })
-
-
   }
 
   init(fqn){
