@@ -1,4 +1,4 @@
-import { GingerModule, GingerModuleConfig } from './module'
+import { GingerModule, GingerModuleConfig, GingerView } from './module'
 import { GingerCapabilities } from './utils'
 import GingerStore from './store'
 
@@ -8,9 +8,9 @@ export default class Ginger{
   /**
    * Constructor
    * @param {GingerCapabilities} capabilities
-   * @param {Array.<GingerModuleConfig>} config 
+   * @param {Array.<GingerModuleConfig>} modules 
    */
-  constructor({ capabilities, config = [] }){
+  constructor({ capabilities, modules = [] }){
     this._capabilities = capabilities;
     
     // Validations
@@ -19,30 +19,25 @@ export default class Ginger{
     }
     
     // Store setup
-    if (isDef(this._capabilities.store)){
-      this._capabilities.store.registerModule('ginger', GingerStore);
-    }
-    else{
-      this._capabilities.store = GingerStore;
-    }
-
+    isDef(this._capabilities.store) ? this._capabilities.store.registerModule('ginger', GingerStore) : this._capabilities.store = GingerStore;
+    
     // Router setup
     if (isDef(this._capabilities.router)){
-      this._capabilities.router.beforeEach((to, from, next) => {
-        // console.log('to', to);
-        next();
-      })
+      // this._capabilities.router.beforeEach((to, from, next) => {
+      //   // console.log('to', to);
+      //   next();
+      // })
     }
-
+    
     this._modules = [];
     this._config = [];
     this._capabilities.vue.util.defineReactive(this, '_loading', true);
-    Promise.all(this.configure( config ))
+    Promise.all(this.configure( modules ))
     .then(() => {
       this._loading = false;
     });
   }
-
+  
   /**
    * Whether or not a module is loading
    * 
@@ -51,21 +46,30 @@ export default class Ginger{
   get loading(){
     return this._loading;
   }
-
+  
+  /**
+   * The store to use to save the states of data
+   * 
+   * @returns {Object}
+   */
+  get store(){
+    return this._capabilities.store;
+  }
+  
   ////////////////////////////////////////////////////////////////////////////////
 
   /**
    * Configure ginger based on one or more module configuration
    * 
-   * @param {Array.<GingerModuleConfig>} config 
+   * @param {Array.<GingerModuleConfig>} modules 
    * @return {Array.<Promise>} - One Promise per entry
    */
-  configure( config ){
-    if (!Array.isArray(config)) {
+  configure(modules){
+    if (!Array.isArray(modules)) {
       throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')
     }
 
-    return config.map(entry => { 
+    return modules.map(entry => { 
       if (!entry instanceof GingerModuleConfig) {
         throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')
       }
@@ -90,6 +94,7 @@ export default class Ginger{
    * Return the view linked to the given fqn
    * 
    * @param {String} fqn The view fqn to retrieve
+   * @returns {GingerView}
    */
   getView(fqn){
     let ret = null;
@@ -131,10 +136,6 @@ export default class Ginger{
     })
   }
 
-  init(fqn){
-    console.log('ginger.init', fqn);
-  }
-    
   /**
    * Register a module
    * @param {GingerModule} module 

@@ -126,12 +126,11 @@ export default class GingerModule {
         url: this._config.manifest
       })
       .then(() => {
-        this._bundle = window[this.fqn].default;
         let log = [];
 
+        this._bundle = window[this.fqn].default;
         this._manifest = GingerModuleManifest.instanciate(this._bundle);
         this._manifest.parent = this;
-
 
         // Register in the store
         if (this._capabilities.hasStore){
@@ -165,6 +164,18 @@ export default class GingerModule {
         this._capabilities.logger.debug(`${this._manifest.name}@${this._manifest.version.version}`);
         this._capabilities.logger.info(log.join(' - '));
         console.dir(this._manifest);
+
+        // @created event
+        if (this._manifest._createdHooks.length > 0) {
+          this._manifest._createdHooks.forEach(h => {
+            h.call(h, { 
+              capabilities: this._capabilities,
+              fqn: this.fqn,
+              opts: this._config
+            });
+          })
+        }
+        
         return resolve();
       })
       .catch(err => reject(err))

@@ -14,7 +14,7 @@ VueGinger.install = function (Vue, opts) {
       router: o.router,
       vue: Vue
     }),
-    config: o.config || [],
+    modules: o.modules || [],
   });
   
   // Install the $spices.ginger utility

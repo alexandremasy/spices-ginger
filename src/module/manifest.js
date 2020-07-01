@@ -23,6 +23,13 @@ export default class GingerModuleManifest{
     this._views = views;
 
     this.$parent = null;
+
+    this._beforeHooks = [];
+    this._createdHooks = [];
+    this._destroyHooks = [];
+    this._loadHooks = [];
+    this._mountHooks = [];
+    this._progressHooks = [];
   }
 
   /**
@@ -89,6 +96,8 @@ export default class GingerModuleManifest{
     this.views.forEach( v => v.$parent = value );
   }
 
+  /////////////////////////////////////////////////////////////////////////////////
+  
   /**
    * Instantiate a manifest from its data
    * 
@@ -106,6 +115,69 @@ export default class GingerModuleManifest{
       views: data._views.map( v => GingerView.instantiate(v) )
     });
 
+    ret._beforeHooks = data._beforeHooks || [];
+    ret._createdHooks = data._createdHooks || [];
+    ret._destroyHooks = data._destroyHooks || [];
+    ret._loadHooks = data._loadHooks || [];
+    ret._mountHooks = data._mountHooks || [];
+    ret._progressHooks = data._progressHooks || [];
+
     return ret;
+  }
+  
+  /////////////////////////////////////////////////////////////////////////////////
+  
+  /**
+   * Before view load hooks
+   * 
+   * @param {Function} fn 
+   */
+  beforeLoad(fn){
+    this._beforeHooks.push(fn);
+  }
+  
+  /**
+   * Creation hooks
+   * 
+   * @param {Function} fn 
+   */
+  created(fn){
+    this._createdHooks.push(fn)
+  }  
+  
+  /**
+   * View Destroy hooks
+   * 
+   * @param {Function} fn 
+   */
+  destroy(fn){
+    this._destroyHooks.push(fn)
+  }
+  
+  /**
+   * View Loaded hooks
+   * 
+   * @param {Function} fn 
+   */
+  load(fn){
+    this._loadHooks.push(fn)
+  }
+  
+  /**
+   * View Mount(ing-ed) hooks
+   * 
+   * @param {Function} fn 
+   */
+  mount(fn){
+    this._mountHooks.push(fn)
+  }
+  
+  /**
+   * Load progress hooks
+   * 
+   * @param {Function} fn 
+   */
+  progress(fn){
+    this._progressHooks.push(fn)
   }
 }
