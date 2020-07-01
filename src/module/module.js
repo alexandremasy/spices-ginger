@@ -115,7 +115,6 @@ export default class GingerModule {
    * @return {Promise.<GingerModuleManifest>}
    */
   register(){
-    this._capabilities.logger.group(this.fqn);
     
     if (isDef(this._manifest)){
       return Promise.resolve(this._manifest);
@@ -128,11 +127,11 @@ export default class GingerModule {
       })
       .then(() => {
         this._bundle = window[this.fqn].default;
+        let log = [];
 
         this._manifest = GingerModuleManifest.instanciate(this._bundle);
         this._manifest.parent = this;
 
-        this._capabilities.logger.debug(`${this._manifest.name}@${this._manifest.version.version}`);
 
         // Register in the store
         if (this._capabilities.hasStore){
@@ -149,22 +148,23 @@ export default class GingerModule {
             this._capabilities.router.addRoutes(this._manifest.routes);
           }
 
-          this._capabilities.logger.debug(`${this._manifest.views.length || 0} views(s)`);
-          this._capabilities.logger.debug(`${this._manifest.routes.length || 0} route(s)`);
-          this._capabilities.logger.debug(`${this._manifest.navigation.length || 0} navigation(s)`);
+          log.push(`${this._manifest.views.length || 0} views(s)`);
+          log.push(`${this._manifest.routes.length || 0} route(s)`);
+          log.push(`${this._manifest.navigation.length || 0} navigation(s)`);
         }
 
         // Register the stores
         if (this._manifest.stores && this._capabilities.hasStore) {
-          this._capabilities.logger.debug('%d stores', this._manifest.stores);
+          log.push('%d stores', this._manifest.stores);
 
           this._manifest.stores.forEach(store => {
             this._capabilities.store.registerModule(store.name, store);
           });
         }
     
+        this._capabilities.logger.debug(`${this._manifest.name}@${this._manifest.version.version}`);
+        this._capabilities.logger.info(log.join(' - '));
         console.dir(this._manifest);
-        this._capabilities.logger.groupEnd(this.fqn);
         return resolve();
       })
       .catch(err => reject(err))
