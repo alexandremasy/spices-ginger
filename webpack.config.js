@@ -1,12 +1,12 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const version = process.env.VERSION || require('./package.json').version
 const banner = 
-`
-@spices/ginger v${version}
+`@spices/ginger v${version}
 (c) ${new Date().getFullYear()} Alexandre Masy
-@license MIT
-`
+@license MIT`
+
 const resolve = _path => path.resolve(__dirname, _path);
 
 module.exports = [
@@ -64,7 +64,12 @@ function genConfig(opts){
       filename: opts.file,
       library: 'spices-ginger',
       libraryTarget: opts.format
-    }
+    },
+    plugins: [
+      new webpack.BannerPlugin({
+        banner
+      })
+    ]
   }
 
   return config;

@@ -11,11 +11,15 @@
     "webpack-cli": "^3.3.10"
   },
   "files": [
-    "src"
+    "dist/*.js"
   ],
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "umd",
+    "umd handler"
+  ],
   "license": "UNLICENSED",
-  "main": "src/index.js",
+  "main": "dist/spices-ginger.min.js",
   "name": "@spices/ginger",
   "publishConfig": {
     "access": "public",
@@ -23,8 +27,8 @@
   },
   "scripts": {
     "analyse": "webpack --json > stats.json",
-    "bundle": "webpack",
-    "watch": "nodemon --exec \"yarn bundle\""
+    "bundle": "webpack --mode=production",
+    "start": "nodemon --exec \"yarn bundle\""
   },
   "version": "0.2.5",
   "nodemonConfig": {
