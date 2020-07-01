@@ -129,6 +129,7 @@ export default class GingerView{
    * @returns {Promise}
    */
   fetch(){
+    console.log('fetch');
     return new Promise((resolve, reject) => {
       if (this.loaded){
         return resolve(this.component);
@@ -137,6 +138,13 @@ export default class GingerView{
       this.src()
       .then((component) => {
         this.$el = component.default;
+
+        // Trigger hooks
+        console.log('trigger');
+        this.parent._manifest.trigger('load', {
+          view: this
+        });
+
         resolve(this.component);
       })
       .catch(err => reject(err))

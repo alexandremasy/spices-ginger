@@ -166,15 +166,11 @@ export default class GingerModule {
         console.dir(this._manifest);
 
         // @created event
-        if (this._manifest._createdHooks.length > 0) {
-          this._manifest._createdHooks.forEach(h => {
-            h.call(h, { 
-              capabilities: this._capabilities,
-              fqn: this.fqn,
-              opts: this._config
-            });
-          })
-        }
+        this._manifest.trigger('created', {
+          capabilities: this._capabilities,
+          fqn: this.fqn,
+          opts: this._config
+        })
         
         return resolve();
       })

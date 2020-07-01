@@ -19,7 +19,10 @@ export default class Ginger{
     }
     
     // Store setup
-    isDef(this._capabilities.store) ? this._capabilities.store.registerModule('ginger', GingerStore) : this._capabilities.store = GingerStore;
+    this._store = GingerStore;
+    if (isDef(this._capabilities.store)){
+      this._capabilities.store.registerModule('ginger', this._store);
+    } 
     
     // Router setup
     if (isDef(this._capabilities.router)){
@@ -53,7 +56,7 @@ export default class Ginger{
    * @returns {Object}
    */
   get store(){
-    return this._capabilities.store;
+    return this._store;
   }
   
   ////////////////////////////////////////////////////////////////////////////////
@@ -126,7 +129,12 @@ export default class Ginger{
         return reject(`@spices/ginger: The requested views can not be found (${fqn})`);
       }
 
-      // 2b. Fetch the view
+      // 2b. Trigger hooks
+      ret.parent._manifest.trigger('before', {
+        view: ret
+      });
+
+      // 2c. Fetch the view
       ret.fetch()
       .then(() => {
         resolve(ret.component);

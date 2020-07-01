@@ -132,7 +132,7 @@ export default class GingerModuleManifest{
    * 
    * @param {Function} fn 
    */
-  beforeLoad(fn){
+  before(fn){
     this._beforeHooks.push(fn);
   }
   
@@ -179,5 +179,26 @@ export default class GingerModuleManifest{
    */
   progress(fn){
     this._progressHooks.push(fn)
+  }
+
+  /**
+   * Trigger the hooks
+   * 
+   * @private
+   * @param {String} stage
+   * @param {*} args 
+   */
+  trigger(stage, args){
+    let hooks = [];
+    if (stage === 'created'){ hooks = this._createdHooks }
+    if (stage === 'before'){ hooks = this._beforeHooks }
+    if (stage === 'destroy'){ hooks = this._destroyHooks }
+    if (stage === 'load'){ hooks = this._loadHooks }
+    if (stage === 'mount'){ hooks = this.mountHooks }
+    if (stage === 'progress'){ hooks = this._progressHooks }
+
+    if (hooks.length > 0){
+      hooks.forEach( h => h.call(h, args) )
+    }
   }
 }

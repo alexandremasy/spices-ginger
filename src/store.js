@@ -48,7 +48,6 @@ export default {
   /////////////////////////////////////////////////////////////////////////////////////
 
   actions: {
-
     /**
      * Register a module
      * 
@@ -58,6 +57,8 @@ export default {
       commit('addModule', module);
       commit('addViews', module.views);
     },
+
+
 
     error({ commit }, error) {
       commit('addError', error);
