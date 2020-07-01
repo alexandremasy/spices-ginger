@@ -20,7 +20,7 @@ export default {
 
     const name = props.name;
     const view = ginger.getView(name);
-    console.log('view :>> ', view.loaded);
+    // console.log('view :>> ', view.loaded);
 
     if (!view.loaded){
       view.fetch();

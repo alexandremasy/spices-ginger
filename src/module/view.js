@@ -135,10 +135,6 @@ export default class GingerView{
         return resolve(this.component);
       }
 
-      if (this._loading){
-        return resolve(null);
-      }
-
       this._loading = true;
 
       this.src()

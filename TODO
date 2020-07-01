@@ -1,4 +1,16 @@
 
+# Application
+
+- Load progress
+  - Better management
+  - Being able to provide a component
+
+- Better store management (with vs non store)
 
 
+# Module
 
+- Load progress issue
+- Handle a head manager to edit the title
+- Add the @mount event
+- Add the @destroy event
