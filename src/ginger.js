@@ -26,10 +26,14 @@ export default class Ginger{
     
     // Router setup
     if (isDef(this._capabilities.router)){
-      // this._capabilities.router.beforeEach((to, from, next) => {
-      //   // console.log('to', to);
-      //   next();
-      // })
+      this._capabilities.router.beforeEach((to, from, next) => {
+        if (!this._loading){
+          const name = to.name;
+          console.log('to', name, to);
+        }  
+
+        next();
+      })
     }
     
     this._modules = [];

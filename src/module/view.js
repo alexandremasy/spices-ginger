@@ -28,6 +28,7 @@ export default class GingerView{
     this.$id = Symbol();
     this.$parent = parent;
     this.$el = null;
+    this._loading = false;
 
     this._depth = -1;
     this._layer = -1;
@@ -129,18 +130,22 @@ export default class GingerView{
    * @returns {Promise}
    */
   fetch(){
-    console.log('fetch');
     return new Promise((resolve, reject) => {
       if (this.loaded){
         return resolve(this.component);
       }
+
+      if (this._loading){
+        return resolve(null);
+      }
+
+      this._loading = true;
 
       this.src()
       .then((component) => {
         this.$el = component.default;
 
         // Trigger hooks
-        console.log('trigger');
         this.parent._manifest.trigger('load', {
           view: this
         });
