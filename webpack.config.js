@@ -35,14 +35,14 @@ module.exports = [
     env: 'production'
   },
   {
-    entry: resolve('src/index.app.js'),
-    file: 'spices-ginger.app.js',
+    entry: resolve('src/index.host.js'),
+    file: 'spices-ginger.host.js',
     format: 'umd',
     env: 'development'
   },
   {
-    entry: resolve('src/index.app.js'),
-    file: 'spices-ginger.app.min.js',
+    entry: resolve('src/index.host.js'),
+    file: 'spices-ginger.host.min.js',
     format: 'umd',
     env: 'production'
   },

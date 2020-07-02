@@ -1,6 +1,3 @@
-import GingerModule from "./module";
-import Ginger from "./ginger";
-
 export default {
   namespaced: true,
 

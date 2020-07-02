@@ -1,6 +1,5 @@
-import Ginger from './ginger'
-import { GingerCapabilities, updateMeta } from './utils'
-import { GingerLink, GingerRouterView, GingerView } from './components'
+import { Ginger, GingerRouterView, GingerView }  from './host'
+import { GingerCapabilities } from './utils'
 
 const VueGinger = {};
 VueGinger.install = function (Vue, opts) {
@@ -24,17 +23,11 @@ VueGinger.install = function (Vue, opts) {
   window.$ginger = g;
 
   // Install the components
-  Vue.component('ginger-link', GingerLink);
   Vue.component('ginger-router-view', GingerRouterView);
   Vue.component('ginger-view', GingerView);
 
   // Install the mixins
-  Vue.mixin({
-    beforeCreate(){
-      // Update the head
-      updateMeta(this, this.$options);
-    }
-  })
+  Vue.mixin({})
 }
 
 export default VueGinger
