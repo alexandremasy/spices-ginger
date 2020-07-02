@@ -1,5 +1,5 @@
 import Ginger from './ginger'
-import { GingerCapabilities } from './utils'
+import { GingerCapabilities, updateMeta } from './utils'
 import { GingerLink, GingerRouterView, GingerView } from './components'
 
 const VueGinger = {};
@@ -30,9 +30,10 @@ VueGinger.install = function (Vue, opts) {
 
   // Install the mixins
   Vue.mixin({
-    // beforeCreate(){
-    //   g.init(this);
-    // }
+    beforeCreate(){
+      // Update the head
+      updateMeta(this, this.$options);
+    }
   })
 }
 
