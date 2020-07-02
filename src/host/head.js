@@ -65,6 +65,7 @@ export default class GingerHTMLHead{
       return ret;
     });
 
+    title = title.join(' - ');
     document.title = title.join(' - ');
 
     console.log('updateTitle', title);
