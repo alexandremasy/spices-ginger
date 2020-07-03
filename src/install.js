@@ -1,5 +1,5 @@
-import { Ginger, GingerPlugins, GingerRouterView, GingerView }  from './host'
-import { GingerCapabilities, isArray } from './utils'
+import { Ginger, GingerRouterView, GingerView }  from './host'
+import { GingerCapabilities } from './utils'
 
 const VueGinger = {};
 export let _Vue;
@@ -13,7 +13,10 @@ VueGinger.install = function (Vue, opts) {
   let c = GingerCapabilities.instantiate(o, Vue);
   let g = new Ginger({
     capabilities: c,
+    loader: o.loader || null,
+    middlewares: o.middlewares || [],
     modules: o.modules || [],
+    plugins: o.plugins || []
   });
   
   // Install the $ginger utility
@@ -25,12 +28,6 @@ VueGinger.install = function (Vue, opts) {
   // Install the components
   Vue.component('ginger-router-view', GingerRouterView);
   Vue.component('ginger-view', GingerView);
-
-  // Install the plugins
-  if (isArray(opts.plugins)){
-    opts.plugins.forEach(p => GingerPlugins.install(p, c))
-  }
- 
 }
 
 export default VueGinger

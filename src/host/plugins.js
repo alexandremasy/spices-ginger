@@ -1,4 +1,4 @@
-import { GingerCapabilities, isArray } from "../utils";
+import { isArray } from "../utils"
 
 export default class GingerPlugins{
 

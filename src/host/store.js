@@ -50,12 +50,10 @@ export default {
      * 
      * @param {GingerModule} module - The module to register 
      */
-    register({ commit }, module) {
+    addModule({ commit }, module) {
       commit('addModule', module);
       commit('addViews', module.views);
     },
-
-
 
     error({ commit }, error) {
       commit('addError', error);

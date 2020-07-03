@@ -1,6 +1,7 @@
 import { GingerModule, GingerModuleConfig, GingerView } from '../module'
-import { GingerCapabilities } from '../utils'
-import { GingerStore } from './index'
+import { CREATE, GingerCapabilities, isArray, PLUGINS_START, PLUGINS_COMPLETE, MIDDLEWARE_START, MIDDLEWARE_COMPLETE } from '../utils'
+import { GingerPlugins, GingerStore } from './index'
+import { GingerModulesMiddleware } from './middlewares'
 
 const isDef = v => v != undefined
 
@@ -9,10 +10,13 @@ export default class Ginger{
   /**
    * Constructor
    * @param {GingerCapabilities} capabilities
+   * @param {VueComponent} loader
+   * @param {Array.<Object>} middlewares
    * @param {Array.<GingerModuleConfig>} modules 
    */
-  constructor({ capabilities, modules = [] }){
+  constructor({ capabilities, loader, middlewares = [], modules = [], plugins = [] }){
     this._capabilities = capabilities;
+    this._loader = loader;
     
     // Validations
     if (!this._capabilities instanceof GingerCapabilities){
@@ -25,24 +29,40 @@ export default class Ginger{
       this._capabilities.store.registerModule('ginger', this._store);
     } 
     
-    // Router setup
-    if (isDef(this._capabilities.router)){
-      this._capabilities.router.beforeEach((to, from, next) => {
-        
-        // Head update
-        // this._head.setCurrentRoute(to);
-
-        next();
-      })
-    }
-    
-    this._modules = [];
+    this._modules = modules;
     this._config = [];
+
+    // Trigger created hooks
+    this.eventbus.$emit(CREATE, {});
+
+    // Setup the loading
     this._capabilities.vue.util.defineReactive(this, '_loading', true);
-    Promise.all(this.configure( modules ))
+
+    // Install the plugins
+    this.installPlugins(plugins)
+  
+    // Install (middleware)
+    .then( this.installMiddlewares.bind(this, middlewares) )
+
+    // 
     .then(() => {
-      this._loading = false;
-    });
+      console.log('installed');
+    })
+
+    // Start (modules)
+    // Promise.all(this.configure( modules ))
+    // .then(() => {
+    //   this._loading = false;
+    // });
+  }
+
+  /**
+   * The eventbus
+   * 
+   * @returns {Vue}
+   */
+  get eventbus(){
+    return this._capabilities.eventbus;
   }
   
   /**
@@ -66,26 +86,48 @@ export default class Ginger{
   ////////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Configure ginger based on one or more module configuration
+   * Install the middlewares
    * 
-   * @param {Array.<GingerModuleConfig>} modules 
-   * @return {Array.<Promise>} - One Promise per entry
+   * @private
+   * @param {Array.<Function>} middlewares
+   * @returns {Promise}
    */
-  configure(modules){
-    if (!Array.isArray(modules)) {
-      throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')
-    }
+  installMiddlewares(middlewares){
+    return new Promise((resolve, reject) => {
+      this.eventbus.$emit(MIDDLEWARE_START, {});
+      
+      middlewares = middlewares.concat([GingerModulesMiddleware]);
+      middlewares = middlewares.map( 
+        m => m.apply(m, {capabilities: this._capabilities, $ginger: this, modules: this._modules}) 
+      );
+      
+      Promise.all(middlewares)
+      .then(() => {
+        this.eventbus.$emit(MIDDLEWARE_COMPLETE, {});
+        resolve()
+      })
+      .catch(reject)
+    })
 
-    return modules.map(entry => { 
-      if (!entry instanceof GingerModuleConfig) {
-        throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')
+  }
+
+  /**
+   * Install the plugins
+   * 
+   * @private
+   * @param {Array.<Function} plugins The list of plugins to install
+   */
+  installPlugins(plugins){
+    return new Promise((resolve, reject) => {
+      this.eventbus.$emit(PLUGINS_START, {});
+      
+      if (isArray(plugins)) {
+        plugins.forEach(p => GingerPlugins.install(p, this._capabilities))
       }
-
-      return this.register(new GingerModule({
-        capabilities: this._capabilities,
-        config: entry
-      }))
-    });
+      
+      this.eventbus.$emit(PLUGINS_COMPLETE, {});
+      resolve();
+    })
   }
 
   /**

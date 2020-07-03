@@ -134,7 +134,7 @@ export default class GingerModule {
 
         // Register in the store
         if (this._capabilities.hasStore){
-          this._capabilities.store.dispatch('ginger/register', this);
+          this._capabilities.store.dispatch('ginger/addModule', this);
         }
         
         // Register the routes
