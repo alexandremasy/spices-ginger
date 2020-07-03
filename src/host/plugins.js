@@ -18,7 +18,7 @@ export default class GingerPlugins{
 
     // Install the mixins
     if (payload.mixin){
-      capabilities.vue.mixin( payload.mixin.call(payload.mixin, capabilities) );
+      capabilities.vue.mixin( payload.mixin.call(payload.mixin, { capabilities, options }) );
     }
   }
 }
