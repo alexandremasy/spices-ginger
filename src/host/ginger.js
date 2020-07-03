@@ -1,5 +1,5 @@
 import { GingerModule, GingerModuleConfig, GingerView } from '../module'
-import { CREATE, GingerCapabilities, isArray, PLUGINS_START, PLUGINS_COMPLETE, MIDDLEWARE_START, MIDDLEWARE_COMPLETE } from '../utils'
+import { CREATE, GingerCapabilities, isArray, PLUGINS_START, PLUGINS_COMPLETE, MIDDLEWARE_START, MIDDLEWARE_COMPLETE, READY } from '../utils'
 import { GingerPlugins, GingerStore } from './index'
 import { GingerModulesMiddleware } from './middlewares'
 
@@ -29,7 +29,8 @@ export default class Ginger{
       this._capabilities.store.registerModule('ginger', this._store);
     } 
     
-    this._modules = modules;
+    this.__modules = modules;
+    this._modules = [];
     this._config = [];
 
     // Trigger created hooks
@@ -46,7 +47,7 @@ export default class Ginger{
 
     // 
     .then(() => {
-      console.log('installed');
+      this.eventbus.$emit(READY, {});
     })
 
     // Start (modules)
@@ -95,11 +96,10 @@ export default class Ginger{
   installMiddlewares(middlewares){
     return new Promise((resolve, reject) => {
       this.eventbus.$emit(MIDDLEWARE_START, {});
-      
+
+      let opts = { capabilities: this._capabilities, $ginger: this, modules: this.__modules };
       middlewares = middlewares.concat([GingerModulesMiddleware]);
-      middlewares = middlewares.map( 
-        m => m.apply(m, {capabilities: this._capabilities, $ginger: this, modules: this._modules}) 
-      );
+      middlewares = middlewares.map( m => m.call(m, opts) );
       
       Promise.all(middlewares)
       .then(() => {
@@ -196,9 +196,18 @@ export default class Ginger{
    * @return {Promise}
    */
   register( m ){
-    if (this.getModule(m.fqn)){
-      throw new Error(`@spices/ginger: A module with the given fqn (${fqn}) already exists`);
+    if (!m instanceof GingerModuleConfig) {
+      throw new Error('@spices/ginger: The module must be an instance of <GingerModuleConfig>')
     }
+    
+    if (!m.fqn){
+      throw new Error('@spices/ginger: The module must be have a fqn');
+    }
+
+    if (this.getModule(m.fqn)){
+      throw new Error(`@spices/ginger: A module with the given fqn (${m.fqn}) already exists`);
+    }
+
 
     return new Promise((resolve, reject) => {
       this._modules.push( m );

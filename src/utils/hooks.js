@@ -6,6 +6,11 @@
  */
 export const CREATE = 'ginger:create';
 
+/**
+ * Ginger application ready. Middlewares and plugins executed
+ */
+export const READY = 'ginger:ready';
+
 /////////////////////////////////////////////////////////////////////////////////
 
 /**
