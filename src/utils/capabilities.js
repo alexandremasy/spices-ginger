@@ -9,13 +9,13 @@ export default class GingerCapabilities {
    * 
    * @param {Object} options - All the capacities
    * @param {Vue} options.eventbus - An Vue Eventbus
-   * @param {GingerTransports} options.transports - The available transports
    * @param {Logger} options.logger - A logger to display message in the console
    * @param {VueRouter} options.router - An instance of the Vue Router
    * @param {VueX} options.store - An instance of VueX
+   * @param {GingerTransports} options.transports - The available transports
    * @param {Vue} options.vue - An instance of the current Vue
    */
-  constructor({ eventbus, transports, logger, router, store, vue }) {
+  constructor({ eventbus, logger, router, store, transports, vue }) {
     this._eventbus = eventbus || null;
     this._logger = logger || Logger.get();
     this._router = router || null;
@@ -103,5 +103,25 @@ export default class GingerCapabilities {
    */
   get vue(){
     return this._vue;
+  }
+
+
+  /**
+   * Instantiate the capabilities from the given options
+   * 
+   * @param {Object} options 
+   * @param {Vue} vue 
+   * @returns {GingerCapabilities}
+   * @private
+   */
+  static instantiate(options, vue){
+    return new GingerCapabilities({
+      eventbus: options.eventbus,
+      logger: options.logger,
+      router: options.router,
+      store: options.store,
+      transports: options.transports,
+      vue: vue
+    })
   }
 }

@@ -1,6 +1,6 @@
 import { GingerModule, GingerModuleConfig, GingerView } from '../module'
 import { GingerCapabilities } from '../utils'
-import { GingerStore, GingerHTMLHead } from './index'
+import { GingerStore } from './index'
 
 const isDef = v => v != undefined
 
@@ -13,7 +13,6 @@ export default class Ginger{
    */
   constructor({ capabilities, modules = [] }){
     this._capabilities = capabilities;
-    this._head = new GingerHTMLHead();
     
     // Validations
     if (!this._capabilities instanceof GingerCapabilities){
@@ -31,7 +30,7 @@ export default class Ginger{
       this._capabilities.router.beforeEach((to, from, next) => {
         
         // Head update
-        this._head.setCurrentRoute(to);
+        // this._head.setCurrentRoute(to);
 
         next();
       })

@@ -163,7 +163,7 @@ export default class GingerModule {
     
         this._capabilities.logger.debug(`${this._manifest.name}@${this._manifest.version.version}`);
         this._capabilities.logger.info(log.join(' - '));
-        console.dir(this._manifest);
+        // console.dir(this._manifest);
 
         // @created event
         this._manifest.trigger('created', {
