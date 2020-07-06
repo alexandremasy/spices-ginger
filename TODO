@@ -14,3 +14,22 @@
 - Handle a head manager to edit the title
 - Add the @mount event
 - Add the @destroy event
+
+
+# Hooks
+
+[v] Create
+[v] Ready
+[v] Plugins Start
+[v] Plugins Complete
+[v] Middleware Start
+[v] Middleware Complete
+[v] Module register
+[v] Module routes
+[v] Module stores
+[v] View created
+[v] View before
+[ ] View progress
+[ ] View load
+[ ] View mount
+[ ] View destroy

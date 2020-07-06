@@ -1,4 +1,4 @@
-import { GingerCapabilities, UMD } from '../utils'
+import { GingerCapabilities, UMD, VIEW_CREATED, MODULE_REGISTER, MODULE_STORES, MODULE_ROUTES } from '../utils'
 import { GingerModuleManifest } from './index'
 const isDef = v => v != undefined && v != null
 
@@ -115,7 +115,6 @@ export default class GingerModule {
    * @return {Promise.<GingerModuleManifest>}
    */
   register(){
-    
     if (isDef(this._manifest)){
       return Promise.resolve(this._manifest);
     }
@@ -131,9 +130,19 @@ export default class GingerModule {
         this._bundle = window[this.fqn].default;
         this._manifest = GingerModuleManifest.instanciate(this._bundle);
         this._manifest.parent = this;
+        
+        // Module register event
+        let args = {
+          module: this
+        };
+        this._capabilities.eventbus.$emit(MODULE_REGISTER, args);
+        args.capabilities = this._capabilities;
+        this._manifest.trigger(MODULE_REGISTER, args);
 
+        
         // Register in the store
         if (this._capabilities.hasStore){
+          this._capabilities.eventbus.$emit(MODULE_STORES, args);
           this._capabilities.store.dispatch('ginger/addModule', this);
         }
         
@@ -142,11 +151,12 @@ export default class GingerModule {
           if (this._capabilities.hasStore){
             this._capabilities.store.dispatch('ginger/addRoutes', this._manifest.routes);
           }
-
+          
           if (this._capabilities.hasRouter){
             this._capabilities.router.addRoutes(this._manifest.routes);
           }
-
+          
+          this._capabilities.eventbus.$emit(MODULE_ROUTES, args);
           log.push(`${this._manifest.views.length || 0} views(s)`);
           log.push(`${this._manifest.routes.length || 0} route(s)`);
           log.push(`${this._manifest.navigation.length || 0} navigation(s)`);
@@ -165,13 +175,6 @@ export default class GingerModule {
         this._capabilities.logger.info(log.join(' - '));
         // console.dir(this._manifest);
 
-        // @created event
-        this._manifest.trigger('created', {
-          capabilities: this._capabilities,
-          fqn: this.fqn,
-          opts: this._config
-        })
-        
         return resolve();
       })
       .catch(err => reject(err))

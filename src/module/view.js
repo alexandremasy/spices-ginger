@@ -1,4 +1,5 @@
 import { GingerViewContext, GingerModule } from './index'
+import { VIEW_LOAD } from '../utils';
 
 /**
  * A component to be used as a View. Either in the context of a route or not. 
@@ -142,7 +143,7 @@ export default class GingerView{
         this.$el = component.default;
 
         // Trigger hooks
-        this.parent._manifest.trigger('load', {
+        this.parent._manifest.trigger(VIEW_LOAD, {
           view: this
         });
 

@@ -1,5 +1,5 @@
 import { GingerModule, GingerModuleConfig, GingerView } from '../module'
-import { CREATE, GingerCapabilities, isArray, PLUGINS_START, PLUGINS_COMPLETE, MIDDLEWARE_START, MIDDLEWARE_COMPLETE, READY } from '../utils'
+import { CREATE, GingerCapabilities, isArray, PLUGINS_START, PLUGINS_COMPLETE, MIDDLEWARE_START, MIDDLEWARE_COMPLETE, READY, VIEW_BEFORE } from '../utils'
 import { GingerPlugins, GingerStore } from './index'
 import { GingerModulesMiddleware } from './middlewares'
 
@@ -47,14 +47,9 @@ export default class Ginger{
 
     // 
     .then(() => {
+      this._loading = false;
       this.eventbus.$emit(READY, {});
-    })
-
-    // Start (modules)
-    // Promise.all(this.configure( modules ))
-    // .then(() => {
-    //   this._loading = false;
-    // });
+    });
   }
 
   /**
@@ -176,9 +171,9 @@ export default class Ginger{
       }
 
       // 2b. Trigger hooks
-      ret.parent._manifest.trigger('before', {
-        view: ret
-      });
+      let args = { view: ret };
+      this.eventbus.$emit(VIEW_BEFORE, args);
+      ret.parent._manifest.trigger(VIEW_BEFORE, args);
 
       // 2c. Fetch the view
       ret.fetch()

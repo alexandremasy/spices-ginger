@@ -1,4 +1,4 @@
-import { SemverVersion } from '../utils'
+import { SemverVersion, VIEW_CREATED, VIEW_BEFORE, VIEW_DESTROY, VIEW_LOAD, VIEW_MOUNT, VIEW_PROGRESS, MODULE_REGISTER } from '../utils'
 import { GingerView, GingerModule } from '.';
 
 export default class GingerModuleManifest{
@@ -30,6 +30,7 @@ export default class GingerModuleManifest{
     this._loadHooks = [];
     this._mountHooks = [];
     this._progressHooks = [];
+    this._registerHooks = [];
   }
 
   /**
@@ -121,6 +122,7 @@ export default class GingerModuleManifest{
     ret._loadHooks = data._loadHooks || [];
     ret._mountHooks = data._mountHooks || [];
     ret._progressHooks = data._progressHooks || [];
+    ret._registerHooks = data._registerHooks || [];
 
     return ret;
   }
@@ -137,7 +139,7 @@ export default class GingerModuleManifest{
   }
   
   /**
-   * Creation hooks
+   * View Creation hooks
    * 
    * @param {Function} fn 
    */
@@ -180,6 +182,15 @@ export default class GingerModuleManifest{
   progress(fn){
     this._progressHooks.push(fn)
   }
+  
+  /**
+   * Register module hooks
+   * 
+   * @param {Function} fn 
+   */
+  register(fn){
+    this._registerHooks.push(fn)
+  }
 
   /**
    * Trigger the hooks
@@ -190,12 +201,13 @@ export default class GingerModuleManifest{
    */
   trigger(stage, args){
     let hooks = [];
-    if (stage === 'created'){ hooks = this._createdHooks }
-    if (stage === 'before'){ hooks = this._beforeHooks }
-    if (stage === 'destroy'){ hooks = this._destroyHooks }
-    if (stage === 'load'){ hooks = this._loadHooks }
-    if (stage === 'mount'){ hooks = this.mountHooks }
-    if (stage === 'progress'){ hooks = this._progressHooks }
+    if (stage === VIEW_CREATED){ hooks = this._createdHooks }
+    if (stage === VIEW_BEFORE){ hooks = this._beforeHooks }
+    if (stage === VIEW_DESTROY){ hooks = this._destroyHooks }
+    if (stage === VIEW_LOAD){ hooks = this._loadHooks }
+    if (stage === VIEW_MOUNT){ hooks = this.mountHooks }
+    if (stage === VIEW_PROGRESS){ hooks = this._progressHooks }
+    if (stage === MODULE_REGISTER){ hooks = this._registerHooks }
 
     if (hooks.length > 0){
       hooks.forEach( h => h.call(h, args) )
