@@ -33,3 +33,7 @@
 [v] View load
 [ ] View mount
 [ ] View destroy
+
+
+
+- Allow parameter to a ginger view

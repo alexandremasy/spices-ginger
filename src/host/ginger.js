@@ -1,6 +1,7 @@
 import { GingerModule, GingerModuleConfig, GingerView } from '../module'
 import { CREATE, GingerCapabilities, isArray, PLUGINS_START, PLUGINS_COMPLETE, MIDDLEWARE_START, MIDDLEWARE_COMPLETE, READY, VIEW_BEFORE } from '../utils'
 import { GingerPlugins, GingerStore } from './index'
+import { default as installRouter } from './router'
 import { GingerModulesMiddleware } from './middlewares'
 
 const isDef = v => v != undefined
@@ -15,19 +16,24 @@ export default class Ginger{
    * @param {Array.<GingerModuleConfig>} modules 
    */
   constructor({ capabilities, loader, middlewares = [], modules = [], plugins = [] }){
-    this._capabilities = capabilities;
+    this.$c = capabilities;
     this._loader = loader;
     
     // Validations
-    if (!this._capabilities instanceof GingerCapabilities){
+    if (!this.$c instanceof GingerCapabilities){
       throw new Error('@spices/ginger: The capabilities are not a valid <GingerCapabilities>');
     }
     
     // Store setup
     this._store = GingerStore;
-    if (isDef(this._capabilities.store)){
-      this._capabilities.store.registerModule('ginger', this._store);
+    if (this.$c.hasStore){
+      this.$c.store.registerModule('ginger', this._store);
     } 
+
+    // Router setup
+    if (this.$c.hasRouter){
+      installRouter({ capabilities });
+    }
     
     this.__modules = modules;
     this._modules = [];
@@ -37,7 +43,7 @@ export default class Ginger{
     this.eventbus.$emit(CREATE, {});
 
     // Setup the loading
-    this._capabilities.vue.util.defineReactive(this, '_loading', true);
+    this.$c.vue.util.defineReactive(this, '_loading', true);
 
     // Install the plugins
     this.installPlugins(plugins)
@@ -58,7 +64,7 @@ export default class Ginger{
    * @returns {Vue}
    */
   get eventbus(){
-    return this._capabilities.eventbus;
+    return this.$c.eventbus;
   }
   
   /**
@@ -92,13 +98,14 @@ export default class Ginger{
     return new Promise((resolve, reject) => {
       this.eventbus.$emit(MIDDLEWARE_START, {});
 
-      let opts = { capabilities: this._capabilities, $ginger: this, modules: this.__modules };
+      let opts = { capabilities: this.$c, $ginger: this, modules: this.__modules };
       middlewares = middlewares.concat([GingerModulesMiddleware]);
       middlewares = middlewares.map( m => m.call(m, opts) );
       
       Promise.all(middlewares)
       .then(() => {
         this.eventbus.$emit(MIDDLEWARE_COMPLETE, {});
+        delete this.__modules;
         resolve()
       })
       .catch(reject)
@@ -117,7 +124,7 @@ export default class Ginger{
       this.eventbus.$emit(PLUGINS_START, {});
       
       if (isArray(plugins)) {
-        plugins.forEach(p => GingerPlugins.install(p, this._capabilities))
+        plugins.forEach(p => GingerPlugins.install(p, this.$c))
       }
       
       this.eventbus.$emit(PLUGINS_COMPLETE, {});

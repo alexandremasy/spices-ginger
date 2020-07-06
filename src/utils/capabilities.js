@@ -32,6 +32,15 @@ export default class GingerCapabilities {
   get eventbus(){
     return this._eventbus
   }
+  
+  /**
+   * Whether or not there is a Vue Router
+   * 
+   * @return {Boolean}
+   */
+  get hasRouter() {
+    return isDef(this.router)
+  }
 
   /**
   * Whether there is a store or not
@@ -49,15 +58,6 @@ export default class GingerCapabilities {
    */
   get http() {
     return this.transports.http
-  }
-
-  /**
-   * Whether or not there is a Vue Router
-   * 
-   * @return {Boolean}
-   */
-  get hasRouter() {
-    return isDef(this.router)
   }
 
   /**
