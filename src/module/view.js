@@ -141,6 +141,7 @@ export default class GingerView{
       this.src()
       .then((component) => {
         this.$el = component.default;
+        this.$el.fqn = this.fqn;
 
         // Trigger hooks
         this.parent._manifest.trigger(VIEW_LOAD, {

@@ -32,7 +32,7 @@ export default class Ginger{
 
     // Router setup
     if (this.$c.hasRouter){
-      installRouter({ capabilities });
+      installRouter({ capabilities, ginger: this });
     }
     
     this.__modules = modules;

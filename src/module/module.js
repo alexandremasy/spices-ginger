@@ -1,5 +1,5 @@
 import { GingerCapabilities, UMD, VIEW_CREATED, MODULE_REGISTER, MODULE_STORES, MODULE_ROUTES } from '../utils'
-import { GingerModuleManifest } from './index'
+import { GingerModuleManifest, GingerView } from './index'
 const isDef = v => v != undefined && v != null
 
 /**
@@ -26,7 +26,7 @@ export default class GingerModule {
 
   /**
    * The FQN
-   * @returns {String}
+   * @property {String}
    */
   get fqn(){
     return this._config.fqn;
@@ -34,15 +34,24 @@ export default class GingerModule {
   
   /**
    * Whether the bundle is loaded or not
-   * @returns {Boolean}
+   * @property {Boolean}
    */
   get loaded(){
     return this._loaded;
   }
 
   /**
+   * The module manifest
+   * 
+   * @property {GingerModuleManifest}
+   */
+  get manifest(){
+    return this._manifest;
+  }
+
+  /**
    * The module options
-   * @return {Object}
+   * @property {Object}
    */
   get options(){
     return this._config.options
@@ -50,7 +59,7 @@ export default class GingerModule {
   
   /**
    * The module routes
-   * @return {Array}
+   * @property {Array}
    */
   get routes(){
     let ret = this._bundle && this._bundle.routes ? this._bundle.routes : null;
@@ -66,7 +75,7 @@ export default class GingerModule {
   
   /**
    * The module src
-   * @return {String | Function}
+   * @property {String | Function}
    */
   get src(){
     return this._config.src
@@ -74,7 +83,7 @@ export default class GingerModule {
   
   /**
    * The module stores
-   * @return {Array}
+   * @property {Array}
    */
   get stores(){
     return isDef(this._bundle) && isDef(this._bundle.stores) ? this._bundle.stores : null;
@@ -83,7 +92,7 @@ export default class GingerModule {
   /**
    * The list of views
    * 
-   * @return {Array.GingerView}
+   * @property {Array.GingerView}
    */
   get views(){
     return isDef(this._manifest) && isDef(this._manifest.views) ? this._manifest.views : [];
@@ -94,7 +103,8 @@ export default class GingerModule {
   /**
    * Returns the module view with the given fqn
    * 
-   * @param {GingerView} fqn FQN of the view to retrieve
+   * @param {String} fqn FQN of the view to retrieve
+   * @returns {GingerView}
    */
   getView(fqn) {
     return this.views.find(v => v.fqn === fqn)
@@ -103,7 +113,8 @@ export default class GingerModule {
   /**
    * Whether or not the given fqn is a view of this module
    * 
-   * @param {Boolean} fqn The view fqn to search for
+   * @param {String} fqn The view fqn to search for
+   * @returns {Boolean}
    */
   hasView(fqn){
     return !!this.getView(fqn);

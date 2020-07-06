@@ -201,13 +201,13 @@ export default class GingerModuleManifest{
    */
   trigger(stage, args){
     let hooks = [];
+    if (stage === MODULE_REGISTER){ hooks = this._registerHooks }
     if (stage === VIEW_CREATED){ hooks = this._createdHooks }
     if (stage === VIEW_BEFORE){ hooks = this._beforeHooks }
     if (stage === VIEW_DESTROY){ hooks = this._destroyHooks }
     if (stage === VIEW_LOAD){ hooks = this._loadHooks }
-    if (stage === VIEW_MOUNT){ hooks = this.mountHooks }
+    if (stage === VIEW_MOUNT){ hooks = this._mountHooks }
     if (stage === VIEW_PROGRESS){ hooks = this._progressHooks }
-    if (stage === MODULE_REGISTER){ hooks = this._registerHooks }
 
     if (hooks.length > 0){
       hooks.forEach( h => h.call(h, args) )

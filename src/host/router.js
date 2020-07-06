@@ -1,15 +1,19 @@
-import { VIEW_MOUNT, VIEW_DESTROY } from "../utils";
+import { VIEW_MOUNT, VIEW_DESTROY, GingerCapabilities } from "../utils"
+import { Ginger } from "."
 
-export default ({capabilities}) => {
+/**
+ * Router handler
+ * 
+ * @param {Object} options
+ * @param {GingerCapabilities} options.capabilities
+ * @param {Ginger} options.ginger
+ */
+export default ({capabilities, ginger}) => {
 
   let current = null;
-  let entries = [];
   let updater = null;
 
   capabilities.router.beforeEach((to, from, next) => {
-
-    console.log('from', from);
-
     if (to.matched && to.matched.length > 0) {
       if (updater) {
         clearInterval(updater);
@@ -28,17 +32,21 @@ export default ({capabilities}) => {
           // Destroy event
           if (current && current !== to) {
             capabilities.eventbus.$emit(VIEW_DESTROY, current);
+            current.view.parent.manifest.trigger(VIEW_DESTROY, current);
           }
 
-          let m = to.matched[0];
+          let m = to.matched.pop();
+          let c = m.components.default;
           current = {
             route: m,
-            component: m.components.default,
-            instance: m.instances.default
+            component: c,
+            instance: m.instances.default,
+            view: ginger.getView(c.fqn)
           };
 
           // Mount event
           capabilities.eventbus.$emit(VIEW_MOUNT, current);
+          current.view.parent.manifest.trigger(VIEW_MOUNT, current);
         }
       }, 100);
     }

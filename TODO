@@ -7,33 +7,17 @@
 
 - Better store management (with vs non store)
 
+- Allow the middlewares to add modules
+- Allow the declaration of a module from the api (ginger.register)
 
 # Module
 
 - Load progress issue
 - Handle a head manager to edit the title
-- Add the @mount event
-- Add the @destroy event
 
 
-# Hooks
-
-[v] Create
-[v] Ready
-[v] Plugins Start
-[v] Plugins Complete
-[v] Middleware Start
-[v] Middleware Complete
-[v] Module register
-[v] Module routes
-[v] Module stores
-[v] View created
-[v] View before
-[ ] View progress
-[v] View load
-[ ] View mount
-[ ] View destroy
 
 
 
 - Allow parameter to a ginger view
+- Add the hooks trigger in a ginger view
