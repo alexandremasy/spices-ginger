@@ -1,5 +1,5 @@
 import { GingerCapabilities, UMD, VIEW_CREATED, MODULE_REGISTER, MODULE_STORES, MODULE_ROUTES } from '../utils'
-import { GingerModuleManifest, GingerView } from './index'
+import { GingerModuleManifest, GingerView, GingerModuleConfig } from './index'
 const isDef = v => v != undefined && v != null
 
 /**
@@ -96,6 +96,25 @@ export default class GingerModule {
    */
   get views(){
     return isDef(this._manifest) && isDef(this._manifest.views) ? this._manifest.views : [];
+  }
+
+  /////////////////////////////////////////////////////////
+
+  /**
+   * Generate a module from its config
+   * 
+   * @param {Object} options
+   * @param {GingerCapabilities} options.capabilities
+   * @param {GingerModuleConfig} options.config
+   * @returns {GingerModule}
+   * @static
+   */
+  static fromConfig({ capabilities, config }){
+    console.log('config', config);
+    return new GingerModule({
+      capabilities, 
+      config
+    })
   }
 
   /////////////////////////////////////////////////////////

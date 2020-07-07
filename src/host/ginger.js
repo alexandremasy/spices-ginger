@@ -98,10 +98,8 @@ export default class Ginger{
     return new Promise((resolve, reject) => {
       this.eventbus.$emit(MIDDLEWARE_START, {});
 
-      let opts = { capabilities: this.$c, $ginger: this, modules: this.__modules };
+      let opts = { capabilities: this.$c, $ginger: this, modules: [ ...this.__modules ] };
       middlewares = middlewares.concat([GingerModulesMiddleware]);
-      // middlewares = middlewares.map( m => m.call(m, opts) );
-
       sequence(middlewares, opts)
       .then(() => {
         this.eventbus.$emit(MIDDLEWARE_COMPLETE, {});
@@ -194,12 +192,14 @@ export default class Ginger{
 
   /**
    * Register a module
+   * 
    * @param {GingerModule} module 
    * @return {Promise}
    */
   register( m ){
-    if (!m instanceof GingerModuleConfig) {
-      throw new Error('@spices/ginger: The module must be an instance of <GingerModuleConfig>')
+    console.log('register', m);
+    if (!m instanceof GingerModule) {
+      throw new Error('@spices/ginger: The module must be an instance of <GingerModule>')
     }
     
     if (!m.fqn){
@@ -209,7 +209,6 @@ export default class Ginger{
     if (this.getModule(m.fqn)){
       throw new Error(`@spices/ginger: A module with the given fqn (${m.fqn}) already exists`);
     }
-
 
     return new Promise((resolve, reject) => {
       this._modules.push( m );
