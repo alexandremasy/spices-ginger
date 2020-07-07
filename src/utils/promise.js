@@ -3,8 +3,6 @@ export default function sequence(promises, args){
     throw new Error('First argument need to be an array of Promises');
   }
 
-  console.log('sequence', promises);
-
   let count = 0;
   let results = [];
 
