@@ -46,6 +46,7 @@ export default ({capabilities, ginger}) => {
 
           // Mount event
           capabilities.eventbus.$emit(VIEW_MOUNT, current);
+          console.log('current', current);
           current.view.parent.manifest.trigger(VIEW_MOUNT, current);
         }
       }, 100);

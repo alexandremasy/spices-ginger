@@ -7,3 +7,4 @@ export * from './type'
 export * from './hooks'
 
 export { default as uuid } from './uuid'
+export { default as sequence } from './promise'

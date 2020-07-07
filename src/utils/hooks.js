@@ -11,6 +11,11 @@ export const CREATE = 'ginger:create';
  */
 export const READY = 'ginger:ready';
 
+/**
+ * Ginger refresh. Make sure everything is properly registered. 
+ */
+export const REFRESH = 'ginger:refresh';
+
 /////////////////////////////////////////////////////////////////////////////////
 
 /**
