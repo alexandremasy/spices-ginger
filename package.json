@@ -32,7 +32,7 @@
     "bundle": "webpack --mode=production",
     "start": "nodemon --exec \"yarn bundle\""
   },
-  "version": "0.6.0",
+  "version": "0.6.1",
   "nodemonConfig": {
     "ignore": [
       ".git",
