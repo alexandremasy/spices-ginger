@@ -197,7 +197,6 @@ export default class Ginger{
    * @return {Promise}
    */
   register( m ){
-    console.log('register', m);
     if (!m instanceof GingerModule) {
       throw new Error('@spices/ginger: The module must be an instance of <GingerModule>')
     }

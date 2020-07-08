@@ -110,7 +110,6 @@ export default class GingerModule {
    * @static
    */
   static fromConfig({ capabilities, config }){
-    console.log('config', config);
     return new GingerModule({
       capabilities, 
       config
