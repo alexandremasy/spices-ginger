@@ -44,9 +44,10 @@ export default ({capabilities, ginger}) => {
             view: ginger.getView(c.fqn)
           };
 
+          console.log('current', current);
+          
           // Mount event
           capabilities.eventbus.$emit(VIEW_MOUNT, current);
-          console.log('current', current);
           current.view.parent.manifest.trigger(VIEW_MOUNT, current);
         }
       }, 100);

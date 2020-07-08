@@ -150,11 +150,15 @@ export default class GingerModule {
     
     return new Promise((resolve, reject) => {
       UMD.fetch({ 
-        name: `${this.fqn}-manifest`,
+        name: this.fqn,
         url: this._config.manifest
       })
       .then(() => {
         let log = [];
+
+        if (!window.hasOwnProperty(this.fqn)){
+          throw new Error(`@spices/ginger: The bundle with the name ${this.fqn} has been loaded but is register to a different name. Update the fqn of the module in the configuration.`);
+        }
 
         this._bundle = window[this.fqn].default;
         this._manifest = GingerModuleManifest.instanciate(this._bundle);

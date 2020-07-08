@@ -88,6 +88,15 @@ export default class Ginger{
   ////////////////////////////////////////////////////////////////////////////////
 
   /**
+   * Add the module to the list of modules to preload by the middleware
+   * 
+   * @param {GingerModuleConfig} m The module config
+   */
+  add(m) {
+    this.__modules.push(m);
+  }
+
+  /**
    * Install the middlewares
    * 
    * @private
@@ -98,8 +107,9 @@ export default class Ginger{
     return new Promise((resolve, reject) => {
       this.eventbus.$emit(MIDDLEWARE_START, {});
 
-      let opts = { capabilities: this.$c, $ginger: this, modules: [ ...this.__modules ] };
+      let opts = { capabilities: this.$c, $ginger: this, modules: this.__modules };
       middlewares = middlewares.concat([GingerModulesMiddleware]);
+
       sequence(middlewares, opts)
       .then(() => {
         this.eventbus.$emit(MIDDLEWARE_COMPLETE, {});
