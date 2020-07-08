@@ -6,8 +6,8 @@ export default {
 
     const h = parent.$createElement;
     const $ginger = parent.$ginger;
-
-    const component = $ginger.loading ? $ginger.loader || 'h1' : 'router-view';
+    
+    const component = $ginger.loading ? $ginger.loader ? $ginger.loader : 'h1' : 'router-view';
     return h(component);
   }
 }

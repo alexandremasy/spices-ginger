@@ -61,16 +61,28 @@ export default class Ginger{
   /**
    * The eventbus
    * 
-   * @returns {Vue}
+   * @property {Vue}
+   * @readonly
    */
   get eventbus(){
     return this.$c.eventbus;
+  }
+
+  /**
+   * The loader to use
+   * 
+   * @property {VueComponent}
+   * @readonly
+   */
+  get loader(){
+    return this._loader
   }
   
   /**
    * Whether or not a module is loading
    * 
    * @property {Boolean}
+   * @readonly
    */
   get loading(){
     return this._loading;
@@ -80,6 +92,7 @@ export default class Ginger{
    * The store to use to save the states of data
    * 
    * @returns {Object}
+   * @readonly
    */
   get store(){
     return this._store;
