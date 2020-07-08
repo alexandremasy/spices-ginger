@@ -39,7 +39,14 @@ export default {
      * 
      * @returns {Array.<GingerModule>}
      */
-    modules: state => state.modules.filter(m => !m.hasOwnProperty('enabled') || m.enabled === true )
+    modules: state => state.modules.filter(m => !m.hasOwnProperty('enabled') || m.enabled === true ),
+
+    /**
+     * Get the list of routes
+     * 
+     * @property {Array.<Object>}
+     */
+    routes: state => state.routes
   },
   
   /////////////////////////////////////////////////////////////////////////////////////

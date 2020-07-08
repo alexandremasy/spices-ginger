@@ -39,6 +39,7 @@ export default ({capabilities, ginger}) => {
           let c = m.components.default;
           current = {
             route: m,
+            routes: to,
             component: c,
             instance: m.instances.default,
             view: ginger.getView(c.fqn)
