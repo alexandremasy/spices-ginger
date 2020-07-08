@@ -1,7 +1,11 @@
-import { SemverVersion, VIEW_CREATED, VIEW_BEFORE, VIEW_DESTROY, VIEW_LOAD, VIEW_MOUNT, VIEW_PROGRESS, MODULE_REGISTER } from '../utils'
-import { GingerView, GingerModule } from '.';
+import { default as SemverVersion } from '../utils/semver'
+import { VIEW_CREATED, VIEW_BEFORE, VIEW_DESTROY, VIEW_LOAD, VIEW_MOUNT, VIEW_PROGRESS, MODULE_REGISTER } from '../utils/hooks'
+import { default as GingerView } from './view'
 
-export default class GingerModuleManifest{
+/**
+ * @class
+ */
+export default class GingerModuleManifest {
 
   /**
    * Create a Module Manifest

@@ -1,8 +1,16 @@
-import { GingerModule, GingerModuleConfig, GingerView } from '../module'
-import { CREATE, GingerCapabilities, isArray, PLUGINS_START, PLUGINS_COMPLETE, MIDDLEWARE_START, MIDDLEWARE_COMPLETE, READY, VIEW_BEFORE, REFRESH, sequence } from '../utils'
-import { GingerPlugins, GingerStore } from './index'
+import { default as GingerModule } from '../module/module'
+import { default as GingerModuleConfig } from '../module/config'
+import { default as GingerView } from '../module/view'
+
+import { default as GingerCapabilities } from '../utils/capabilities'
+import { isArray } from '../utils/type'
+import { CREATE, PLUGINS_START, PLUGINS_COMPLETE, MIDDLEWARE_START, MIDDLEWARE_COMPLETE, READY, VIEW_BEFORE } from '../utils/hooks'
+import { default as sequence } from '../utils/promise'
+
+import { default as GingerPlugins } from './plugins'
+import { default as GingerStore } from './store'
 import { default as installRouter } from './router'
-import { GingerModulesMiddleware } from './middlewares'
+import { default as GingerModulesMiddleware } from './middlewares/module'
 
 const isDef = v => v != undefined
 

@@ -1,5 +1,5 @@
-import { GingerViewContext, GingerModule } from './index'
-import { VIEW_LOAD } from '../utils';
+import { default as GingerViewContext } from './view-context'
+import { VIEW_LOAD } from '../utils/hooks'
 
 /**
  * A component to be used as a View. Either in the context of a route or not. 

@@ -1,5 +1,10 @@
-import { GingerCapabilities, UMD, VIEW_CREATED, MODULE_REGISTER, MODULE_STORES, MODULE_ROUTES } from '../utils'
-import { GingerModuleManifest, GingerView, GingerModuleConfig } from './index'
+import { default as GingerCapabilities } from '../utils/capabilities'
+import { default as UMD } from '../utils/umd'
+import { MODULE_REGISTER, MODULE_STORES, MODULE_ROUTES } from '../utils/hooks'
+import { default as GingerModuleManifest } from './manifest'
+import { default as GingerView } from './view'
+import { default as GingerModuleConfig } from './config'
+
 const isDef = v => v != undefined && v != null
 
 /**

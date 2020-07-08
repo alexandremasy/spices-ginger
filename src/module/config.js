@@ -1,4 +1,4 @@
-import { uuid } from '../utils'
+import { default as uuid } from '../utils/uuid'
 
 /**
  * Ginger Module Configuration

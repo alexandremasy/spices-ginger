@@ -1,5 +1,8 @@
-import { Ginger, GingerRouterView, GingerView }  from './host'
-import { GingerCapabilities } from './utils'
+import { default as Ginger } from './host/ginger'
+import { default as GingerRouterView } from './host/components/router'
+import { default as GingerView } from './host/components/view'
+
+import { default as GingerCapabilities } from './utils/capabilities'
 
 const VueGinger = {};
 export let _Vue;
