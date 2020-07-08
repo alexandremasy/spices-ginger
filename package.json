@@ -30,7 +30,8 @@
   "scripts": {
     "analyse": "webpack --json > stats.json",
     "bundle": "webpack --mode=production",
-    "start": "nodemon --exec \"yarn bundle\""
+    "start": "nodemon --exec \"yarn bundle\"",
+    "prepublish": "yarn bundle"
   },
   "version": "0.6.1",
   "nodemonConfig": {
