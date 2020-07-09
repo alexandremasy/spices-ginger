@@ -29,7 +29,7 @@
     "start": "nodemon --exec \"yarn bundle\"",
     "prepublish": "yarn bundle"
   },
-  "version": "0.6.6",
+  "version": "0.6.7",
   "nodemonConfig": {
     "ignore": [
       ".git",
