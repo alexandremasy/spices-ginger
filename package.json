@@ -13,10 +13,11 @@
     "dist/*.js"
   ],
   "keywords": [
+    "spices",
     "umd",
     "umd handler"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "dist/spices-gigner.min.js.js",
   "module": "dist/spices-ginger.esm.min.js",
   "name": "@spices/ginger",
