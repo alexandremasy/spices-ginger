@@ -1,5 +1,6 @@
-import { GingerModuleConfig, GingerModule } from '../../module'
-import { sequence } from '../../utils';
+import { default as GingerModuleConfig } from '../../module/config'
+import { default as GingerModule } from '../../module/module'
+import { default as sequence } from '../../utils/promise'
 
 export default function ({capabilities, $ginger, modules}){
   return new Promise((resolve, reject) => {
@@ -8,10 +9,7 @@ export default function ({capabilities, $ginger, modules}){
     .then(() => {
       resolve();
     })
-  })
-
-
-  return Promise.all( configure({capabilities, modules, $ginger}) );
+  });
 }
 
 /**
@@ -26,5 +24,4 @@ function configure({capabilities, $ginger, modules}){
   }
 
   return modules.map(entry => $ginger.register.bind( $ginger, GingerModule.fromConfig({capabilities, config: entry})) );
-  // return modules.map(entry => $ginger.register( GingerModule.fromConfig({capabilities, config: entry})) );
 }

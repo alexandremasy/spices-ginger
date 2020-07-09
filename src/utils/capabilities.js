@@ -1,7 +1,6 @@
-import Vue from 'vue'
 import { Logger } from '@spices/cayenne'
-import { GingerTransports } from './index'
-import { REFRESH } from './hooks';
+import { default as GingerTransports } from './transports'
+
 const isDef = v => v != undefined && v != null
 
 export default class GingerCapabilities {
@@ -18,7 +17,7 @@ export default class GingerCapabilities {
    * @param {Vue} options.vue - An instance of the current Vue
    */
   constructor({ eventbus, logger, router, store, transports, vue }) {
-    this._eventbus = eventbus || new Vue();
+    this._eventbus = eventbus;
     this._logger = logger || Logger.get();
     this._router = router || null;
     this._store = store;

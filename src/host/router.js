@@ -1,5 +1,5 @@
-import { VIEW_MOUNT, VIEW_DESTROY, GingerCapabilities } from "../utils"
-import { Ginger } from "."
+import { default as GingerCapabilities } from '../utils/capabilities'
+import { VIEW_MOUNT, VIEW_DESTROY } from '../utils/hooks.js'
 
 /**
  * Router handler
