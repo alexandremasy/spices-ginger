@@ -7,7 +7,7 @@ const banner =
   `/*!
   * @spices/ginger v${version}
   * (c) ${new Date().getFullYear()} Alexandre Masy
-  * @license MIT
+  * @license All right reserved. see license.md
   */`
 
 const resolve = _path => path.resolve(__dirname, _path)
