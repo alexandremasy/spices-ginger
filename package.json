@@ -1,9 +1,9 @@
 {
   "author": "Alexandre Masy <hello@alexandremasy.com",
-  "description": "A minimalist UMD module loader and handler. Allows you to create distributed web application.",
   "dependencies": {
     "@spices/cayenne": "^0.0.3"
   },
+  "description": "A minimalist UMD module loader and handler. Allows you to create distributed web application.",
   "devDependencies": {
     "rollup": "^2.21.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -17,20 +17,10 @@
     "umd",
     "umd handler"
   ],
-  "license": "MIT",
+  "license": "SEE LICENSE IN license.md",
   "main": "dist/spices-gigner.min.js.js",
   "module": "dist/spices-ginger.esm.min.js",
   "name": "@spices/ginger",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.infinity-commerce.io/"
-  },
-  "scripts": {
-    "bundle": "rollup -c",
-    "start": "nodemon --exec \"yarn bundle\"",
-    "prepublish": "yarn bundle"
-  },
-  "version": "0.6.7",
   "nodemonConfig": {
     "ignore": [
       ".git",
@@ -40,5 +30,15 @@
       "src"
     ],
     "ext": "js"
-  }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.infinity-commerce.io/"
+  },
+  "scripts": {
+    "bundle": "rollup -c",
+    "start": "nodemon --exec \"yarn bundle\"",
+    "prepublish": "yarn bundle"
+  },
+  "version": "0.6.7"
 }
