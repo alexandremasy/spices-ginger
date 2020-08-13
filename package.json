@@ -18,7 +18,7 @@
     "umd handler"
   ],
   "license": "SEE LICENSE IN license.md",
-  "main": "dist/spices-gigner.min.js.js",
+  "main": "dist/spices-ginger.min.js.js",
   "module": "dist/spices-ginger.esm.min.js",
   "name": "@spices/ginger",
   "nodemonConfig": {
