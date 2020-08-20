@@ -95,6 +95,7 @@ class Ginger{
               }
 
               this.capacities.store.dispatch('ginger/error', error);
+              reject(error);
             })
       this.capacities.store.dispatch('ginger/register', module);
     })
