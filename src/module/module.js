@@ -176,7 +176,6 @@ export default class GingerModule {
         this._capabilities.eventbus.$emit(MODULE_REGISTER, args);
         args.capabilities = this._capabilities;
         this._manifest.trigger(MODULE_REGISTER, args);
-
         
         // Register in the store
         if (this._capabilities.hasStore){
@@ -201,8 +200,8 @@ export default class GingerModule {
         }
 
         // Register the stores
+        log.push('%d stores', this._manifest.stores.length || 0);
         if (this._manifest.stores && this._capabilities.hasStore) {
-          log.push('%d stores', this._manifest.stores);
 
           this._manifest.stores.forEach(store => {
             this._capabilities.store.registerModule(store.name, store);

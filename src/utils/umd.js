@@ -23,6 +23,7 @@ export default class UMD{
       const script = document.createElement('script');
       script.async = true;
       script.type = 'module';
+      script.crossorigin = 'anonymous';
 
       let onLoad = () => {
         script.removeEventListener('load', onLoad);

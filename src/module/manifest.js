@@ -18,11 +18,12 @@ export default class GingerModuleManifest {
    * @param {SemverVersion} options.version - The version of the module 
    * @param {Array.<String>}  options.views - The list of views 
    */
-  constructor({ enabled = true, name, navigation, routes, version, views }){
+  constructor({ enabled = true, name, navigation, routes, stores, version, views }){
     this._enabled = enabled;
     this._name = name;
-    this._navigation = navigation;
-    this._routes = routes;
+    this._navigation = navigation || [];
+    this._routes = routes || [];
+    this._stores = stores || [];
     this._version = new SemverVersion(version || '0.0.0');
     this._views = views;
 
@@ -71,6 +72,18 @@ export default class GingerModuleManifest {
    */
   get routes(){
     return this._routes;
+  }
+
+  /**
+   * The list of stores available inside the module
+   * 
+   * @property {Array}
+   */
+  get stores(){
+    return this._stores
+  }
+  set stores(value){
+    this._stores = value
   }
 
   /**
