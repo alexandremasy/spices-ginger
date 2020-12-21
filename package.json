@@ -1,7 +1,7 @@
 {
   "author": "Alexandre Masy <hello@alexandremasy.com",
   "dependencies": {
-    "@spices/cayenne": "^0.0.3"
+    "@spices/cayenne": "^1.1.0"
   },
   "description": "A minimalist UMD module loader and handler. Allows you to create distributed web application.",
   "devDependencies": {
