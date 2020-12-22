@@ -200,12 +200,12 @@ export default class GingerModule {
           
           this._capabilities.eventbus.$emit(MODULE_ROUTES, args);
           log.push(`${this._manifest.views.length || 0} views(s)`);
-          log.push(`${this._manifest.routes.length || 0} route(s)`);
+          log.push(`${this._manifest.routes.length || 0} primary route(s)`);
           log.push(`${this._manifest.navigation.length || 0} navigation(s)`);
         }
 
         // Register the stores
-        log.push(`${this._manifest.stores.length || 0} stores`);
+        log.push(`${this._manifest.stores.length || 0} store(s)`);
         if (this._manifest.stores && this._capabilities.hasStore) {
 
           this._manifest.stores.forEach(store => {

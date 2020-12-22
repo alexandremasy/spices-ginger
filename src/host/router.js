@@ -1,5 +1,6 @@
 import { default as GingerCapabilities } from '../utils/capabilities'
 import { VIEW_MOUNT, VIEW_DESTROY } from '../utils/hooks.js'
+const isDef = v => v != undefined
 
 /**
  * Router handler
@@ -30,9 +31,12 @@ export default ({capabilities, ginger}) => {
           clearInterval(updater);
 
           // Destroy event
-          if (current && current !== to) {
+          if (isDef(current) && current !== to) {
             capabilities.eventbus.$emit(VIEW_DESTROY, current);
-            current.view.parent.manifest.trigger(VIEW_DESTROY, current);
+
+            if (isDef(current.view) && isDef(current.view.parent) && isDef(current.view.parent.manifest)){
+              current.view.parent.manifest.trigger(VIEW_DESTROY, current);
+            }
           }
 
           let m = to.matched.pop();
@@ -48,7 +52,9 @@ export default ({capabilities, ginger}) => {
           // Mount event
           try {
             capabilities.eventbus.$emit(VIEW_MOUNT, current);
-            current.view.parent.manifest.trigger(VIEW_MOUNT, current);
+            if (isDef(current.view) && isDef(current.view.parent) && isDef(current.view.parent.manifest)) {
+              current.view.parent.manifest.trigger(VIEW_MOUNT, current);
+            }
           } 
           catch (error) {
               
