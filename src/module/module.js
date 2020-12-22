@@ -18,11 +18,13 @@ export default class GingerModule {
    * @param {Object} options - The module options
    * @param {GingerCapabilities} options.capabilities - The module capabilities 
    * @param {GingerModuleConfig} options.config - The module configuration
+   * @param {Ginger} options.$ginger - The main $ginger object
    */
-  constructor({ capabilities, config }){
+  constructor({ capabilities, config, $ginger }){
     this._capabilities = capabilities;
     this._config = config;
     this.$id = Symbol();
+    this.$ginger = $ginger;
     
     this._loaded = false;
     this._manifest = null;
@@ -111,13 +113,15 @@ export default class GingerModule {
    * @param {Object} options
    * @param {GingerCapabilities} options.capabilities
    * @param {GingerModuleConfig} options.config
+   * @param {Ginger} options.$ginger
    * @returns {GingerModule}
    * @static
    */
-  static fromConfig({ capabilities, config }){
+  static fromConfig({ capabilities, config, $ginger }){
     return new GingerModule({
       capabilities, 
-      config
+      config,
+      $ginger
     })
   }
 
@@ -171,7 +175,8 @@ export default class GingerModule {
         
         // Module register event
         let args = {
-          module: this
+          $ginger: this.$ginger,
+          module: this,
         };
         this._capabilities.eventbus.$emit(MODULE_REGISTER, args);
         args.capabilities = this._capabilities;
@@ -200,7 +205,7 @@ export default class GingerModule {
         }
 
         // Register the stores
-        log.push('%d stores', this._manifest.stores.length || 0);
+        log.push(`${this._manifest.stores.length || 0} stores`);
         if (this._manifest.stores && this._capabilities.hasStore) {
 
           this._manifest.stores.forEach(store => {

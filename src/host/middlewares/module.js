@@ -23,5 +23,5 @@ function configure({capabilities, $ginger, modules}){
     throw new Error('@spices/ginger: The config must be an Array.<GingerModuleConfig>')
   }
 
-  return modules.map(entry => $ginger.register.bind( $ginger, GingerModule.fromConfig({capabilities, config: entry})) );
+  return modules.map(entry => $ginger.register.bind( $ginger, GingerModule.fromConfig({capabilities, config: entry, $ginger})) );
 }

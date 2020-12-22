@@ -19,6 +19,7 @@ VueGinger.install = function (Vue, opts) {
     loader: o.loader || null,
     middlewares: o.middlewares || [],
     modules: o.modules || [],
+    options: o.options || {},
     plugins: o.plugins || []
   });
   
@@ -31,6 +32,9 @@ VueGinger.install = function (Vue, opts) {
   // Install the components
   Vue.component('ginger-router-view', GingerRouterView);
   Vue.component('ginger-view', GingerView);
+
+  // Flag
+  VueGinger.installed = true
 }
 
 export default VueGinger

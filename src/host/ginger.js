@@ -18,12 +18,15 @@ export default class Ginger{
 
   /**
    * Constructor
-   * @param {GingerCapabilities} capabilities
-   * @param {VueComponent} loader
-   * @param {Array.<Object>} middlewares
-   * @param {Array.<GingerModuleConfig>} modules 
+   * @param {Object} options
+   * @param {GingerCapabilities} options.capabilities
+   * @param {VueComponent} options.loader
+   * @param {Array.<Object>} options.middlewares
+   * @param {Array.<GingerModuleConfig>} options.modules 
+   * @param {Object} options.options
+   * @param {Array.<GingerPlugins>} options.plugins
    */
-  constructor({ capabilities, loader, middlewares = [], modules = [], plugins = [] }){
+  constructor({ capabilities, loader, middlewares = [], modules = [], options = {}, plugins = [] }){
     this.$c = capabilities;
     this._loader = loader;
     
@@ -46,6 +49,7 @@ export default class Ginger{
     this.__modules = modules;
     this._modules = [];
     this._config = [];
+    this._options = options;
 
     // Trigger created hooks
     this.eventbus.$emit(CREATE, {});
@@ -96,6 +100,15 @@ export default class Ginger{
     return this._loading;
   }
   
+  /**
+   * The custom options object
+   * @property {Object}
+   * @readonly
+   */
+  get options(){
+    return this._options
+  }
+
   /**
    * The store to use to save the states of data
    * 
