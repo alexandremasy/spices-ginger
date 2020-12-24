@@ -103,10 +103,12 @@ export default class Ginger{
   /**
    * The custom options object
    * @property {Object}
-   * @readonly
    */
   get options(){
     return this._options
+  }
+  set options(value){
+    this._options = value
   }
 
   /**

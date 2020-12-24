@@ -213,8 +213,23 @@ export default class GingerModule {
           });
         }
     
-        this._capabilities.logger.debug(`${this._manifest.name}@${this._manifest.version.version}`);
-        this._capabilities.logger.info(log.join(' - '));
+        // this._capabilities.logger.debug(`${this._manifest.name}@${this._manifest.version.version}`);
+        // this._capabilities.logger.info(log.join(' - '));
+        console.log(
+          `%c ${this._manifest.name} %c v${this._manifest.version.version} %c %c ⚓ %c ${this._manifest.views.length || 0} %c %c ✈ %c ${this._manifest.navigation.length || 0} %c %c ⌘  %c ${this._manifest.stores.length || 0} %c`,
+          'background:#4E575D ; padding: 1px; border: 1px solid transparent; border-radius: 3px 0 0 3px;  color: #FBF3EC',
+          'background:#2C9CCB ; padding: 1px; border: 1px solid transparent; border-radius: 0 3px 3px 0;  color: #fff',
+          'background:transparent',
+          'background:#f3f3f3 ; padding: 1px; border: 1px solid #ccc; border-right: 0; border-radius: 3px 0 0 3px;  color: #4E575D',
+          'background:#ccc ; padding: 1px; border: 1px solid #ccc; border-left: 0; border-radius: 0 3px 3px 0;  color: #4E575D',
+          'background:transparent',
+          'background:#f3f3f3 ; padding: 1px; border: 1px solid #ccc; border-right: 0; border-radius: 3px 0 0 3px;  color: #4E575D',
+          'background:#ccc ; padding: 1px; border: 1px solid #ccc; border-left: 0; border-radius: 0 3px 3px 0;  color: #4E575D',
+          'background:transparent',
+          'background:#f3f3f3 ; padding: 1px; border: 1px solid #ccc; border-right: 0; border-radius: 3px 0 0 3px;  color: #4E575D',
+          'background:#ccc ; padding: 1px; border: 1px solid #ccc; border-left: 0; border-radius: 0 3px 3px 0;  color: #4E575D',
+          'background:transparent',
+        )
         // console.dir(this._manifest);
 
         return resolve();
