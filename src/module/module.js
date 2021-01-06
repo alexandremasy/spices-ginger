@@ -182,13 +182,13 @@ export default class GingerModule {
         args.capabilities = this._capabilities;
         this._manifest.trigger(MODULE_REGISTER, args);
         
-        // Register in the store
+        // Register the module in the ginger store
         if (this._capabilities.hasStore){
           this._capabilities.eventbus.$emit(MODULE_STORES, args);
           this._capabilities.store.dispatch('ginger/addModule', this);
         }
         
-        // Register the routes
+        // Register the module routes
         if (isDef(this._manifest.routes)) {
           if (this._capabilities.hasStore){
             this._capabilities.store.dispatch('ginger/addRoutes', this._manifest.routes);
@@ -204,7 +204,7 @@ export default class GingerModule {
           log.push(`${this._manifest.navigation.length || 0} navigation(s)`);
         }
 
-        // Register the stores
+        // Register the module stores
         log.push(`${this._manifest.stores.length || 0} store(s)`);
         if (this._manifest.stores && this._capabilities.hasStore) {
 
