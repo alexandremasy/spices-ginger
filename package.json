@@ -1,26 +1,44 @@
 {
-    "author": "Alexandre Masy <hello@alexandremasy.com",
-    "browserslist": [
-        "> 1%",
-        "last 2 versions",
-        "not dead"
+  "author": "Alexandre Masy <hello@alexandremasy.com",
+  "dependencies": {
+    "@spices/cayenne": "^1.1.0"
+  },
+  "description": "A minimalist UMD module loader and handler. Allows you to create distributed web application.",
+  "devDependencies": {
+    "rollup": "^2.21.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "files": [
+    "dist/*.js"
+  ],
+  "keywords": [
+    "spices",
+    "umd",
+    "umd handler"
+  ],
+  "license": "SEE LICENSE IN license.md",
+  "main": "dist/spices-ginger.min.js.js",
+  "module": "dist/spices-ginger.esm.min.js",
+  "name": "@spices/ginger",
+  "nodemonConfig": {
+    "ignore": [
+      ".git",
+      "node_modules"
     ],
-    "description": "",
-    "devDependencies": {
-        "webpack": "^4.41.5",
-        "webpack-cli": "^3.3.10"
-    },
-    "keywords": [],
-    "license": "UNLICENSED",
-    "main": "dist/spices-ginger.js",
-    "module": "src/index.js",
-    "name": "@spices/ginger",
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://npm.infinity-commerce.io/"
-    },
-    "scripts": {
-        "bundle": "webpack"
-    },
-    "version": "0.5.1"
+    "watch": [
+      "src"
+    ],
+    "ext": "js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.infinity-commerce.io/"
+  },
+  "scripts": {
+    "bundle": "rollup -c",
+    "start": "nodemon --exec \"yarn bundle\"",
+    "prepublish": "yarn bundle"
+  },
+  "version": "1.0.0-alpha.5"
 }
