@@ -1,0 +1,23 @@
+
+# Application
+
+- Load progress
+  - Better management
+  - Being able to provide a component
+
+- Better store management (with vs non store)
+
+- Allow the middlewares to add modules
+- Allow the declaration of a module from the api (ginger.register)
+
+# Module
+
+- Load progress issue
+- Handle a head manager to edit the title
+
+
+
+
+
+- Allow parameter to a ginger view
+- Add the hooks trigger in a ginger view
