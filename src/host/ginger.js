@@ -63,10 +63,12 @@ export default class Ginger{
     // Install (middleware)
     .then( this.installMiddlewares.bind(this, middlewares) )
 
-    // 
+    // Wait 100ms for the application to cope with the module installation
     .then(() => {
-      this._loading = false;
-      this.eventbus.$emit(READY, {});
+      setTimeout(() => {
+        this._loading = false;
+        this.eventbus.$emit(READY, {});
+      }, 100);
     });
   }
 
