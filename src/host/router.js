@@ -15,17 +15,29 @@ export default ({capabilities, ginger}) => {
   let updater = null;
 
   capabilities.router.beforeEach((to, from, next) => {
+    // if (ginger.loading && isDef(current)){
+    //   return next(false)
+    // }
+
     if (to.matched && to.matched.length > 0) {
+      // console.log('to', to)
+
       if (updater) {
         clearInterval(updater);
       }
 
       updater = setInterval(() => {
         let ready = false;
+        let m = to.matched[to.matched.length - 1]
+        // console.log('m', m)
+        ready = isDef(m) && (isDef(m.components) && m.components.hasOwnProperty('default')) && (isDef(m.instances) && m.instances.hasOwnProperty('default'))
 
-        to.matched.forEach(m => {
-          ready = ready || (m.components && m.components.hasOwnProperty('default'))
-        });
+        // to.matched.forEach(m => {
+        //   console.log('instances', m, m.instances && m.instances.hasOwnProperty('default'))
+
+        //   ready = ready || (m.components && m.components.hasOwnProperty('default'))
+        // });
+
 
         if (ready) {
           clearInterval(updater);
@@ -39,7 +51,6 @@ export default ({capabilities, ginger}) => {
             }
           }
 
-          let m = to.matched.pop();
           let c = m.components.default;
           current = {
             route: m,
@@ -48,6 +59,8 @@ export default ({capabilities, ginger}) => {
             instance: m.instances.default,
             view: ginger.getView(c.fqn)
           };
+          
+          // console.log('[c]', current)
 
           // Mount event
           try {
