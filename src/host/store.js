@@ -91,7 +91,6 @@ export default {
     },
 
     addError(state, error) {
-      console.log('adde');
       state.errors.push(error);
     }
   }
