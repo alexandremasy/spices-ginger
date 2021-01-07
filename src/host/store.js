@@ -28,7 +28,7 @@ export default {
      * 
      * @property {Array}
      */
-    error: []
+    errors: []
   },
 
   /////////////////////////////////////////////////////////////////////////////////////
@@ -66,30 +66,6 @@ export default {
   
   /////////////////////////////////////////////////////////////////////////////////////
 
-  actions: {
-    /**
-     * Register a module
-     * 
-     * @param {GingerModule} module - The module to register 
-     */
-    addModule({ commit }, module) {
-      commit('addModule', module);
-      commit('addViews', module.views);
-    },
-
-    error({ commit }, error) {
-      commit('addError', error);
-    },
-
-    addRoutes({ commit }, routes) {
-      commit('addRoutes', routes);
-    },
-
-    getRoutes({ state }) {
-      return Promise.resolve(state.routes);
-    }
-  },
-
   mutations: {
     
     /**
@@ -114,9 +90,9 @@ export default {
       state.routes = state.routes.concat(routes);
     },
 
-
     addError(state, error) {
-      state.error.push(error);
+      console.log('adde');
+      state.errors.push(error);
     }
   }
 }

@@ -78,6 +78,7 @@ export default class Ginger{
       this._errored = true;
 
       this.eventbus.$emit(ERROR, {error: e})
+      this.$c.store.commit('ginger/addError', e)
     })
   }
 
