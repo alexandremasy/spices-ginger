@@ -40,5 +40,5 @@
     "start": "nodemon --exec \"yarn bundle\"",
     "prepublish": "yarn bundle"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
