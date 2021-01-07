@@ -234,7 +234,7 @@ export default class GingerModule {
 
         return resolve();
       })
-      .catch(err => reject(err))
+      .catch(e => reject(e))
     })
   }
 

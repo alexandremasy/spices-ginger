@@ -7,6 +7,11 @@
 export const CREATE = 'ginger:create';
 
 /**
+ * Ginger application error. An error has been triggered by one of the middlewares or plugins.
+ */
+export const ERROR = 'ginger:error';
+
+/**
  * Ginger application ready. Middlewares and plugins executed
  */
 export const READY = 'ginger:ready';

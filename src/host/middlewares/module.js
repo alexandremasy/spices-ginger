@@ -9,6 +9,7 @@ export default function ({capabilities, $ginger, modules}){
     .then(() => {
       resolve();
     })
+    .catch(e => reject(e))
   });
 }
 

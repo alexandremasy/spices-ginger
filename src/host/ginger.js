@@ -4,7 +4,7 @@ import { default as GingerView } from '../module/view'
 
 import { default as GingerCapabilities } from '../utils/capabilities'
 import { isArray } from '../utils/type'
-import { CREATE, PLUGINS_START, PLUGINS_COMPLETE, MIDDLEWARE_START, MIDDLEWARE_COMPLETE, READY, VIEW_BEFORE } from '../utils/hooks'
+import { CREATE, ERROR, PLUGINS_START, PLUGINS_COMPLETE, MIDDLEWARE_START, MIDDLEWARE_COMPLETE, READY, VIEW_BEFORE } from '../utils/hooks'
 import { default as sequence } from '../utils/promise'
 
 import { default as GingerPlugins } from './plugins'
@@ -56,6 +56,7 @@ export default class Ginger{
 
     // Setup the loading
     this.$c.vue.util.defineReactive(this, '_loading', true);
+    this.$c.vue.util.defineReactive(this, '_errored', false);
 
     // Install the plugins
     this.installPlugins(plugins)
@@ -69,7 +70,15 @@ export default class Ginger{
         this._loading = false;
         this.eventbus.$emit(READY, {});
       }, 100);
-    });
+    })
+
+    // Error handling
+    .catch(e => {
+      this._loading = false;
+      this._errored = true;
+
+      this.eventbus.$emit(ERROR, {error: e})
+    })
   }
 
   /**
@@ -154,7 +163,7 @@ export default class Ginger{
         delete this.__modules;
         resolve()
       })
-      .catch(reject)
+      .catch(e => reject(e))
     })
   }
 
@@ -264,7 +273,6 @@ export default class Ginger{
         resolve();
       })
       .catch(err => {
-        console.log('Error', err);
         reject(err);
       })
     })
