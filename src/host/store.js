@@ -17,6 +17,13 @@ export default {
     modules: [],
 
     /**
+     * The current module active
+     * 
+     * @property {GingerModule}
+     */
+    module: null,
+
+    /**
      * The list of all the views
      * 
      * @property {Array.<GingerView>}
@@ -92,6 +99,16 @@ export default {
 
     addError(state, error) {
       state.errors.push(error);
+    },
+
+    /**
+     * Set the current module
+     * 
+     * @param {*} state 
+     * @param {GingerModule} value 
+     */
+    module(state, value){
+      state.module = value
     }
   }
 }
