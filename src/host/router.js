@@ -60,7 +60,9 @@ export default ({capabilities, ginger}) => {
             view: ginger.getView(c.fqn)
           };
           
-          capabilities.store.commit('ginger/module', current.view.$parent)
+          if (current.view){
+            capabilities.store.commit('ginger/module', current.view.$parent)
+          }
 
           // Mount event
           try {
