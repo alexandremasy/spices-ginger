@@ -196,7 +196,7 @@ export default class GingerModule {
           }
           
           if (this._capabilities.hasRouter){
-            this._capabilities.router.addRoutes(this._manifest.routes);
+            this._manifest.routes.forEach(r => this._capabilities.router.addRoute(r))
           }
           
           this._capabilities.eventbus.$emit(MODULE_ROUTES, args);
