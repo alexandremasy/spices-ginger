@@ -52,6 +52,24 @@ export default class GingerModuleManifest {
   }
 
   /**
+   * The module primary icon
+   * 
+   * @property {String}
+   */
+  get icon(){
+    return this._icon
+  }
+
+  /**
+   * The module list of icons
+   * 
+   * @property {Array}
+   */
+  get icons(){
+    return this._icons
+  }
+
+  /**
    * The name of the module
    * 
    * @property {String}
@@ -130,6 +148,8 @@ export default class GingerModuleManifest {
   static instanciate(data){
     let ret = new GingerModuleManifest({
       enabled: data._enabled,
+      icon: data._icon,
+      icons: data._icons,
       name: data._name, 
       navigation: data._navigation,
       routes: data._routes,
