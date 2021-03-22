@@ -12,14 +12,18 @@ export default class GingerModuleManifest {
    * 
    * @param {Object} options - The manifest options
    * @param {Boolean} optins.enabled - Whether or not the module is enabled
+   * @param {String} optins.icon - The module icon
+   * @param {Array} optins.icons - The module icons
    * @param {Object} options.name - The name of the module 
    * @param {Array} options.navigation - The navigation throughout the module
    * @param {Array.<Object>} options.routes - The list of routes availabe inside the module
    * @param {SemverVersion} options.version - The version of the module 
    * @param {Array.<String>}  options.views - The list of views 
    */
-  constructor({ enabled = true, name, navigation, routes, stores, version, views }){
+  constructor({ enabled = true, icon, icons, name, navigation, routes, stores, version, views }){
     this._enabled = enabled;
+    this._icon = icon;
+    this._icons = icons;
     this._name = name;
     this._navigation = navigation || [];
     this._routes = routes || [];
