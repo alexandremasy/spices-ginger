@@ -9,7 +9,7 @@ export default {
     }
   },
 
-  render(_, { props, children, parent, data }) {
+  render(_, { props, children, listeners, parent, data }) {
     const h = parent.$createElement;
     const ginger = parent.$ginger;
     
@@ -26,7 +26,9 @@ export default {
       return h('h1', 'loading view: ' + name);
     }
     else{
-      return h(view.component)
+      return h(view.component, {
+        on: listeners
+      })
     }
   }
 }
