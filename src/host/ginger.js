@@ -52,7 +52,7 @@ export default class Ginger{
     this._options = options;
 
     // Trigger created hooks
-    this.eventbus.$emit(CREATE, {});
+    this.eventbus && this.eventbus.$emit(CREATE, {});
 
     // Setup the loading
     this.$c.vue.util.defineReactive(this, '_loading', true);
@@ -68,7 +68,7 @@ export default class Ginger{
     .then(() => {
       setTimeout(() => {
         this._loading = false;
-        this.eventbus.$emit(READY, {});
+        this.eventbus && this.eventbus.$emit(READY, {});
       }, 100);
     })
 
@@ -77,7 +77,9 @@ export default class Ginger{
       this._loading = false;
       this._errored = true;
 
-      this.eventbus.$emit(ERROR, {error: e})
+      console.log('error', e);
+
+      this.eventbus && this.eventbus.$emit(ERROR, {error: e})
       this.$c.store.commit('ginger/addError', e)
     })
   }
@@ -89,7 +91,9 @@ export default class Ginger{
    * @readonly
    */
   get eventbus(){
-    return this.$c.eventbus;
+    return this.$c && this.$c.eventbus ?
+           this.$c.eventbus : 
+           null
   }
 
   /**
@@ -153,14 +157,14 @@ export default class Ginger{
    */
   installMiddlewares(middlewares){
     return new Promise((resolve, reject) => {
-      this.eventbus.$emit(MIDDLEWARE_START, {});
+      this.eventbus && this.eventbus.$emit(MIDDLEWARE_START, {});
 
       let opts = { capabilities: this.$c, $ginger: this, modules: this.__modules };
       middlewares = middlewares.concat([GingerModulesMiddleware]);
 
       sequence(middlewares, opts)
       .then(() => {
-        this.eventbus.$emit(MIDDLEWARE_COMPLETE, {});
+        this.eventbus && this.eventbus.$emit(MIDDLEWARE_COMPLETE, {});
         delete this.__modules;
         resolve()
       })
@@ -176,13 +180,13 @@ export default class Ginger{
    */
   installPlugins(plugins){
     return new Promise((resolve, reject) => {
-      this.eventbus.$emit(PLUGINS_START, {});
+      this.eventbus && this.eventbus.$emit(PLUGINS_START, {});
       
       if (isArray(plugins)) {
         plugins.forEach(p => GingerPlugins.install(p, this.$c))
       }
       
-      this.eventbus.$emit(PLUGINS_COMPLETE, {});
+      this.eventbus && this.eventbus.$emit(PLUGINS_COMPLETE, {});
       resolve();
     })
   }
@@ -234,7 +238,7 @@ export default class Ginger{
 
       // 2b. Trigger hooks
       let args = { view: ret };
-      this.eventbus.$emit(VIEW_BEFORE, args);
+      this.eventbus && this.eventbus.$emit(VIEW_BEFORE, args);
       ret.parent._manifest.trigger(VIEW_BEFORE, args);
 
       // 2c. Fetch the view
@@ -269,8 +273,10 @@ export default class Ginger{
     return new Promise((resolve, reject) => {
       this._modules.push( m );
       
+      console.log('register');
       m.register()
       .then(() => {
+        console.log('done register')
         resolve();
       })
       .catch(err => {

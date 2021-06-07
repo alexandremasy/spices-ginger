@@ -178,13 +178,17 @@ export default class GingerModule {
           $ginger: this.$ginger,
           module: this,
         };
-        this._capabilities.eventbus.$emit(MODULE_REGISTER, args);
+        if (this._capabilities.eventbus){
+          this._capabilities.eventbus.$emit(MODULE_REGISTER, args);
+        }
         args.capabilities = this._capabilities;
         this._manifest.trigger(MODULE_REGISTER, args);
         
         // Register the module in the ginger store
         if (this._capabilities.hasStore){
-          this._capabilities.eventbus.$emit(MODULE_STORES, args);
+          if (this._capabilities.eventbus){
+            this._capabilities.eventbus.$emit(MODULE_STORES, args);
+          }
           this._capabilities.store.commit('ginger/addModule', this);
           this._capabilities.store.commit('ginger/addViews', this.views);
         }
@@ -199,7 +203,9 @@ export default class GingerModule {
             this._manifest.routes.forEach(r => this._capabilities.router.addRoute(r))
           }
           
-          this._capabilities.eventbus.$emit(MODULE_ROUTES, args);
+          if (this._capabilities.eventbus){
+            this._capabilities.eventbus.$emit(MODULE_ROUTES, args);
+          }
           log.push(`${this._manifest.views.length || 0} views(s)`);
           log.push(`${this._manifest.routes.length || 0} primary route(s)`);
           log.push(`${this._manifest.navigation.length || 0} navigation(s)`);

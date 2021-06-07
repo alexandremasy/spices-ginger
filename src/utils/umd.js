@@ -55,10 +55,19 @@ export default class UMDFetcher {
         script.removeEventListener('load', onLoad);
         script.removeEventListener('error', onError);
 
+        let max = 300
+        let j = 0;
         let i = setInterval(() => {
+          j++
           if (UMDFetcher.exists({ name })) {
             clearInterval(i);
             return resolve(UMDFetcher.get({ name }));
+          }
+          
+          if (j === max){
+            clearInterval(i)
+            console.error(`[@spices/ginger] Unable to locate the module named ${name}. Make sure it was name this way while building the library`);
+            return
           }
         }, 1)
       };

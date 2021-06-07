@@ -44,7 +44,9 @@ export default ({capabilities, ginger}) => {
 
           // Destroy event
           if (isDef(current) && current !== to) {
-            capabilities.eventbus.$emit(VIEW_DESTROY, current);
+            if (capabilities.eventbus){
+              capabilities.eventbus.$emit(VIEW_DESTROY, current);
+            }
 
             if (isDef(current.view) && isDef(current.view.parent) && isDef(current.view.parent.manifest)){
               current.view.parent.manifest.trigger(VIEW_DESTROY, current);
@@ -66,7 +68,9 @@ export default ({capabilities, ginger}) => {
 
           // Mount event
           try {
-            capabilities.eventbus.$emit(VIEW_MOUNT, current);
+            if (capabilities.eventbus){
+              capabilities.eventbus.$emit(VIEW_MOUNT, current);
+            }
             if (isDef(current.view) && isDef(current.view.parent) && isDef(current.view.parent.manifest)) {
               current.view.parent.manifest.trigger(VIEW_MOUNT, current);
             }
