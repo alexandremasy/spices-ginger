@@ -1,29 +1,9 @@
-import Ginger from './ginger'
-import Capacities from './capacities'
+export { default as VueGinger } from './install'
 
-const VueGinger = {};
-VueGinger.install = function(Vue, opts){
-  if (!Vue.prototype.$spices){
-    Vue.prototype.$spices = {}
-  }
+export { default as GingerModule }            from './module/module'
+export { default as GingerModuleConfig }      from './module/config'
+export { default as GingerModuleManifest }    from './module/manifest'
+export { default as GingerModuleView }        from './module/view'
+export { default as GingerModuleViewContext } from './module/view-context'
 
-  let o = opts || {};
-  
-  let capacities = new Capacities({
-    eventbus: o.eventbus || null,
-    transports: o.transports || null,
-    logger: o.logger || null,
-    store: o.store || null,
-    router: o.router || null,
-  });
-
-  Vue.prototype.$spices.ginger = new Ginger({
-    capacities,
-    config: o.config || {},
-  });
-}
-
-export {
-  Ginger,
-  VueGinger
-}
+export * from './utils/hooks'
