@@ -273,10 +273,8 @@ export default class Ginger{
     return new Promise((resolve, reject) => {
       this._modules.push( m );
       
-      console.log('register');
       m.register()
       .then(() => {
-        console.log('done register')
         resolve();
       })
       .catch(err => {
