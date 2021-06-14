@@ -23,7 +23,8 @@ export default {
 
     if (!view.loaded){
       view.fetch();
-      return h('h1', 'loading view: ' + name);
+      const component = $ginger.loader ? $ginger.loader : 'h1'
+      return h(component, name)
     }
     else{
       return h(view.component, {
