@@ -12,6 +12,7 @@ export default class GingerModuleManifest {
    * 
    * @param {Object} options - The manifest options
    * @param {Boolean} optins.enabled - Whether or not the module is enabled
+   * @param {Boolean} optins.home - The route to the homepage of the module
    * @param {String} optins.icon - The module icon
    * @param {Array} optins.icons - The module icons
    * @param {Object} options.name - The name of the module 
@@ -20,8 +21,9 @@ export default class GingerModuleManifest {
    * @param {SemverVersion} options.version - The version of the module 
    * @param {Array.<String>}  options.views - The list of views 
    */
-  constructor({ enabled = true, icon, icons, name, navigation, routes, stores, version, views }){
+  constructor({ enabled = true, home, icon, icons, name, navigation, routes, stores, version, views }){
     this._enabled = enabled;
+    this._home = home;
     this._icon = icon;
     this._icons = icons;
     this._name = name;
@@ -48,7 +50,16 @@ export default class GingerModuleManifest {
    * @property {Boolean}
    */
   get enabled(){
-    return this._enabled;
+    return this._enabled
+  }
+  
+  /**
+   * The route to the homepage of the module
+   * 
+   * @property {String} home
+   */
+  get home(){
+    return this._home
   }
 
   /**
@@ -148,6 +159,7 @@ export default class GingerModuleManifest {
   static instanciate(data){
     let ret = new GingerModuleManifest({
       enabled: data._enabled,
+      home: data._home,
       icon: data._icon,
       icons: data._icons,
       name: data._name, 

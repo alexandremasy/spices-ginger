@@ -20,7 +20,6 @@ export default ({capabilities, ginger}) => {
     // }
 
     if (to.matched && to.matched.length > 0) {
-      // console.log('to', to)
 
       if (updater) {
         clearInterval(updater);
@@ -30,14 +29,17 @@ export default ({capabilities, ginger}) => {
         let ready = false;
         let m = to.matched[to.matched.length - 1]
         // console.log('m', m)
-        ready = isDef(m) && (isDef(m.components) && m.components.hasOwnProperty('default')) && (isDef(m.instances) && m.instances.hasOwnProperty('default'))
+        ready = isDef(m) && 
+                (isDef(m.components) && 
+                m.components.hasOwnProperty('default')) && 
+                (isDef(m.instances) && 
+                m.instances.hasOwnProperty('default'))
 
         // to.matched.forEach(m => {
         //   console.log('instances', m, m.instances && m.instances.hasOwnProperty('default'))
 
         //   ready = ready || (m.components && m.components.hasOwnProperty('default'))
         // });
-
 
         if (ready) {
           clearInterval(updater);
