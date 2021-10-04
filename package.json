@@ -17,7 +17,7 @@
     "umd",
     "umd handler"
   ],
-  "license": "SEE LICENSE IN license.md",
+  "license": "MIT",
   "main": "dist/spices-ginger.min.js.js",
   "module": "dist/spices-ginger.esm.min.js",
   "name": "@spices/ginger",
