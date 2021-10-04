@@ -31,10 +31,6 @@
     ],
     "ext": "js"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.infinity-commerce.io/"
-  },
   "scripts": {
     "bundle": "rollup -c",
     "start": "nodemon --exec \"yarn bundle\"",
